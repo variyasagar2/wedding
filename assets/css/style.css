@@ -1,0 +1,285 @@
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z11lFc-K.woff2)
+    format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
+    U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z1JlFc-K.woff2)
+    format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLDz8Z1xlFQ.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z11lFc-K.woff2)
+    format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
+    U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1JlFc-K.woff2)
+    format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z11lFc-K.woff2)
+    format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200C-200D, U+20A8,
+    U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2)
+    format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z1xlFQ.woff2)
+    format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+body {
+  background-color: #151516;
+  font-family: 'Poppins';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0;
+}
+
+.gallary-main {
+  background-color: #202020;
+  border-radius: 10px;
+}
+
+.gallary .gallary-header {
+  color: #fff;
+}
+
+.gallary .gallary-header span {
+  color: rgba(255, 255, 255, 0.712);
+  font-weight: 300;
+}
+
+.gallary .right-menu {
+  background-color: #292929;
+  padding: 15px 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
+}
+.gallary .left-menu {
+
+  justify-content:unset;
+}
+
+
+.gallary .right-menu ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  column-gap: 40px;
+}
+
+.gallary .right-menu ul li button {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.gallary .right-menu ul li button.active {
+  text-decoration: underline;
+}
+
+.gallary .right-menu ul li button:disabled {
+  color: rgba(255, 255, 255, 0.425);
+}
+
+.gallary .box1 {
+  background-color: #313131;
+  height: 180px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.gallary .box1 img {
+  width: 100%;
+  height: 180px;
+}
+.right-mark{
+  right: 20px !important;
+}
+.gallary .list-box {
+  margin-top: 20px;
+}
+
+.gallary .minus,
+.gallary .check-mark {
+  background-color: #b51023;
+  border-radius: 50%;
+  border: none;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  top: -10px;
+  right: -10px;
+  color: #fff;
+}
+
+.check-mark {
+  color: gray !important;
+  background-color: #fff !important;
+}
+
+.margin-100 {
+  margin-top: 100px;
+}
+
+.user-info {
+  background-color: #292929;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.user-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.user-main {
+  column-gap: 100px;
+}
+
+.user-name span {
+  color: rgba(255, 255, 255, 0.308);
+  font-weight: 300;
+  font-size: 15px;
+}
+
+.user-name h6 {
+  color: #fff;
+}
+
+.user-list {
+  background-color: #292929;
+  padding: 15px 30px;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+@media (max-width: 991px) {
+    .user-list .list-box div{
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 850px) {
+  .user-main {
+    column-gap: 50px;
+  }
+}
+
+@media (max-width: 695px) {
+  .user-main {
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .user-name {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallary .right-menu ul {
+    flex-direction: column;
+  }
+  .right-menu {
+    justify-content: center !important;
+  }
+  .gallary .right-menu ul li {
+    margin-top: 8px;
+  }
+}
