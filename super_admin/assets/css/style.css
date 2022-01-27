@@ -266,12 +266,23 @@ p {
 }
 
 .wardrode .wardrode-box {
-    width: 126px;
-    height: 126px;
+    width: 120px;
+    height: 120px;
     background-color: #313131;
     border-radius: 8px;
     margin-top: 15px;
 }
+
+/*@media screen and (width: 768px) {*/
+/*    .wardrode .wardrode-box {*/
+/*        width: 120px;*/
+/*        height: 120px;*/
+/*    }*/
+
+/*    .wardrode-box img {*/
+/*        margin: 0px 21px;*/
+/*    }*/
+/*}*/
 
 .wardrode .wardrode-box-main {
     display: flex;

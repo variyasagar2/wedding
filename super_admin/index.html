@@ -12,7 +12,7 @@
     <link href="assets/css/style.css" rel="stylesheet"/>
     <link href="assets/css/all.min.css" rel="stylesheet"/>
     <style>
-        .wardrode-box {
+        .wardrode-box, #image_wardrode_form {
             position: relative;
             margin-top: 75px !important;
         }
@@ -20,9 +20,148 @@
         .wardrode-box img {
             position: absolute;
             width: 90px;
+            height: 135px;
             bottom: 45px;
-            margin: 0px 18px;
+            margin: 0px 21px;
         }
+
+        .wardrode-box .minus, .wardrode-box .check-mark {
+            background-color: #b51023;
+            border-radius: 50%;
+            border: none;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            top: -10px;
+            right: -10px;
+            color: #fff;
+        }
+
+        .desc {
+            color: #6b6b6b;
+        }
+
+        .desc a {
+            color: #0092dd;
+        }
+
+        .dropdown {
+            margin: 0px !important;
+            width: 100px;
+        }
+
+        .dropdown dd, .dropdown dt, .dropdown ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .dropdown dd {
+            position: relative;
+        }
+
+        .dropdown a, .dropdown a:visited {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.342);
+            font-weight: 100;
+            text-decoration: none;
+            outline: none;
+        }
+
+        /*.dropdown a:hover {*/
+        /*    color: #5d4617;*/
+        /*}*/
+
+        .dropdown dt a:hover {
+            color: #fff;
+            /*border: 1px solid #d0c9af;*/
+        }
+
+        .dropdown dt a {
+            /*background: #e4dfcb url('http://www.jankoatwarpspeed.com/wp-content/uploads/examples/reinventing-drop-down/arrow.png') no-repeat scroll right center;*/
+            display: block;
+            padding-right: 20px;
+            border: 1px solid transparent;
+            width: 150px;
+        }
+
+        .dropdown dt a span {
+            cursor: pointer;
+            display: block;
+            padding: 5px;
+        }
+
+        .dropdown dd ul {
+            background: #252525 none repeat scroll 0 0;
+            border: 1px solid transparent;
+            color: white;
+            display: none;
+            left: 0px;
+            padding: 5px 0px;
+            position: absolute;
+            top: 2px;
+            width: auto;
+            min-width: 150px;
+            list-style: none;
+        }
+
+        .dropdown span.value {
+            display: none;
+        }
+
+        .dropdown dd ul li a {
+            padding: 5px;
+            display: block;
+        }
+
+        .dropdown dd ul li a:hover {
+            background-color: rgba(68, 67, 67, 0.84);
+        }
+
+        .dropdown img.flag {
+            border: none;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .flagvisibility {
+            display: none;
+        }
+
+        .dropdown dd li b, .dropdown dt b {
+            display: flex;
+            margin-left: 38px;
+            position: relative;
+        }
+
+        b.dark:before {
+
+            background: black;
+        }
+
+        b.white:before {
+            background: white;
+        }
+
+        b.secondary1:before {
+
+            background: linear-gradient(
+                    90deg, rgba(255, 96, 103, 1) 0%, rgba(255, 55, 44, 1) 100%);
+        }
+
+        .dropdown dd li b:before, .dropdown dt b:before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            left: -27px;
+            border-radius: 50%;
+            bottom: 3px;
+        }
+
     </style>
 </head>
 
@@ -70,87 +209,10 @@
     <div class="wardrode-bg">
         <div class="wardrode-header d-flex justify-content-between align-items-center">
             <h5>wardrode vectors</h5>
-            <button class="marriage p-2 px-4">+ Upload</button>
+            <button class="marriage p-2 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Upload</button>
         </div>
-        <div class="wardrode-box-main">
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
-            <div class="wardrode-box">
-                <img src="http://34.222.156.42:8081/wardrobe/0337005993_530202163005.png" alt="">
-            </div>
+        <div class="wardrode-box-main" id="wardrode-img">
+
 
         </div>
     </div>
@@ -230,32 +292,51 @@
                         </div>
                         <div class="select-color mt-4">
                             <div class="row align-items-center">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
                                     <span>Select color</span>
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="col-lg-8 col-md-8 col-sm-12">
                                     <div class="d-flex align-items-center gap-4">
-                                        <select name="" id="">
-                                            <option>
-                                                <div class="primary d-flex align-items-center gap-1">
-                                                    <div class="darck"></div>
-                                                    <span>Primary</span>
-                                                    <!--                                            <input type="hidden" name="is_dark" value="true">-->
-                                                </div>
-                                            </option>
-                                            <option>
-                                                <div class="primary d-flex align-items-center gap-1">
-                                                    <div class="darck"></div>
-                                                    <span>Primary</span>
-                                                    <!--                                            <input type="hidden" name="is_dark" value="true">-->
-                                                </div>
-                                            </option>
-                                        </select>
+                                        <input type="hidden" name="is_dark" id="is_dark" value="true">
+                                        <div class="primary d-flex align-items-center gap-1">
+                                            <dl id="sample1" class="dropdown" data-id="is_dark">
+                                                <dt><a href="#"><b class="dark"> Primary</b><span
+                                                        class="value">true</span></a></dt>
+                                                <dd>
+                                                    <ul>
+                                                        <li><a href="#">
+                                                            <b class="dark"> Primary</b>
+                                                            <span class="value">true</span></a></li>
+                                                        <li><a href="#">
+                                                            <b class="white"> Primary</b>
+                                                            <span class="value">false</span></a></li>
+
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
 
                                         <div class="primary  d-flex align-items-center gap-1">
-                                            <div class="darck secondary"></div>
-                                            <span>Secondary</span>
-                                            <input type="hidden" name="secondary_color[]" value="red">
+                                            <dl id="sample" class="dropdown" data-id="secondary_color">
+                                                <dt><a href="#"><b class="secondary1"> Secondary</b><span
+                                                        class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                </dt>
+                                                <dd>
+                                                    <ul>
+                                                        <li><a href="#">
+                                                            <b class="dark"> Secondary</b>
+                                                            <span class="value">rgba(255, 55, 44, 1)|rgba(255, 96, 103, 1)</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="secondary1"> Secondary</b>
+                                                            <span class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <input type="hidden" name="secondary_color" id="secondary_color"
+                                                   value="rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)">
                                         </div>
                                     </div>
                                 </div>
@@ -265,6 +346,30 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-center mt-3">
                     <button class="save secondary" id="save_btn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-title">
+                    <span>Wardrode vectors </span>
+
+                </div>
+                <div class="moda-form mt-4">
+                    <form id="image_wardrode_form">
+                        <div class="material-textfield">
+                            <label>Select wardrode vectors </label>
+                            <input type="file" name="wardrobe_image" id="wardrobe_image">
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                    <button class="save secondary" id="image_save_btn">Save</button>
                 </div>
             </div>
         </div>
@@ -290,7 +395,7 @@
 <script !src="">
     function cutomdate(dat, formate) {
         var mydate = new Date(dat);
-        return dateFormat(mydate,formate);
+        return dateFormat(mydate, formate);
     }
 
     function mrgHtml(n, v) {
@@ -310,12 +415,51 @@
                         <td>**************</td>
                         <td>
                             <label class="toggle-switch">
-                                <input type="checkbox" class="checkbox" ${v.is_active}  id="checkbox${n}"/>
+                                <input type="checkbox" class="checkbox ckbox" ${v.is_active} data-id="${v.marriage_id}"  id="checkbox${n}"/>
                                 <span class="switch-btn"></span>
                             </label>
                         </td>
                     </tr>`;
     }
+
+    function htmlimg(v) {
+        return `<div class="wardrode-box">
+                    <button class="minus" data-id="${v.wardrobe_id}">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                <img src="${BASE_URL + v.wardrobe_image}" alt="">
+            </div>`;
+    }
+
+    $(".dropdown img.flag").addClass("flagvisibility");
+    $(".dropdown").click(function () {
+        $(this).find("dd ul").toggle();
+    });
+
+    $(".dropdown dd ul li a").click(function () {
+        var text = $(this).html();
+        $(".dropdown dt a span").html(text);
+        $(".dropdown dd ul").hide();
+        // console.log($(this).parents('.dropdown')).
+        var rtn = $(this).parents('.dropdown')
+        $("#"+rtn.data('id')).val($(this).find('.value').html())
+        rtn.find('dt a').html(getSelectedValue(rtn.attr('id')));
+        rtn.find('dd ul').hide();
+        // alert()
+    });
+
+    function getSelectedValue(id) {
+
+        return $("#" + id + " a .value").html();
+    }
+
+    $(document).bind('click', function (e) {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass("dropdown"))
+            $(".dropdown dd ul").hide();
+    });
+
+    $(".dropdown img.flag").toggleClass("flagvisibility");
 </script>
 <script src="../assets/js/custome_superadmin.js"></script>
 </body>
