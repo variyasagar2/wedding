@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hme</title>
+    <title>Home</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -30,6 +30,26 @@
             color: #fff;
         }
 
+        .box-g, .banner-box {
+            position: relative;
+        }
+
+        .minus {
+            background-color: #b51023;
+            border-radius: 50%;
+            border: none;
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            top: -10px;
+            right: -10px;
+            color: #fff;
+        }
+
         .secondary {
             background: rgb(255, 96, 103);
             background: linear-gradient(
@@ -39,20 +59,170 @@
         .home-main .banner-box {
             width: 116px !important;
         }
+
+        .modal-backdrop {
+            z-index: -1;
+        }
+
+        .wardrode-box-main {
+            display: flex;
+            column-gap: 15px;
+            flex-wrap: wrap;
+            justify-content: left;
+        }
+
+        .outfit-box {
+            position: relative;
+        }
+
+        .outfit-box img {
+            position: absolute;
+            bottom: 20px;
+            margin: 0px 10px;
+        }
+
+        .select-ver div {
+            margin-top: 35px;
+        }
+
+
+        .desc {
+            color: #6b6b6b;
+        }
+
+        .desc a {
+            color: #0092dd;
+        }
+
+        .dropdown {
+            margin: 0px !important;
+            width: 100px;
+        }
+
+        .dropdown dd, .dropdown dt, .dropdown ul {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .dropdown dd {
+            position: relative;
+        }
+
+        .dropdown a, .dropdown a:visited {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.342);
+            font-weight: 100;
+            text-decoration: none;
+            outline: none;
+        }
+
+        /*.dropdown a:hover {*/
+        /*    color: #5d4617;*/
+        /*}*/
+
+        .dropdown dt a:hover {
+            color: #fff;
+            /*border: 1px solid #d0c9af;*/
+        }
+
+        .dropdown dt a {
+            /*background: #e4dfcb url('http://www.jankoatwarpspeed.com/wp-content/uploads/examples/reinventing-drop-down/arrow.png') no-repeat scroll right center;*/
+            display: block;
+            padding-right: 20px;
+            border: 1px solid transparent;
+            width: 150px;
+        }
+
+        .dropdown dt a span {
+            cursor: pointer;
+            display: block;
+            padding: 5px;
+        }
+
+        .dropdown dd ul {
+            background: #252525 none repeat scroll 0 0;
+            border: 1px solid transparent;
+            color: white;
+            display: none;
+            left: 0px;
+            padding: 5px 0px;
+            position: absolute;
+            top: 2px;
+            width: auto;
+            min-width: 150px;
+            list-style: none;
+        }
+
+        .dropdown span.value {
+            display: none;
+        }
+
+        .dropdown dd ul li a {
+            padding: 5px;
+            display: block;
+        }
+
+        .dropdown dd ul li a:hover {
+            background-color: rgba(68, 67, 67, 0.84);
+        }
+
+        .dropdown img.flag {
+            border: none;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        .flagvisibility {
+            display: none;
+        }
+
+        .dropdown dd li b, .dropdown dt b {
+            display: flex;
+            margin-left: 38px;
+            position: relative;
+        }
+
+        b.dark:before {
+
+            background: black;
+        }
+
+        b.white:before {
+            background: white;
+        }
+
+        b.secondary1:before {
+
+            background: linear-gradient(
+                    90deg, rgba(255, 96, 103, 1) 0%, rgba(255, 55, 44, 1) 100%);
+        }
+
+        .dropdown dd li b:before, .dropdown dt b:before {
+            content: '';
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            left: -27px;
+            border-radius: 50%;
+            bottom: 3px;
+        }
     </style>
 </head>
-<body>
+<body class=" ">
 
 
 <section class="home-main p-2">
     <div class="logout-btn">
-        <button>Logout</button>
+        <button id="logout">Logout</button>
     </div>
     <div class="main-con">
         <div class="row m-0">
             <div class="col-xl-9 col-lg-12 col-md-12 mt-3">
                 <div class="detail-box-left">
                     <h5>Details</h5>
+                    <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal3">Edit
+                        Marriage
+                    </button>
                     <div class="row justify-content-center">
                         <div class="col-lg-5 col-md-6 col-sm-12 mt-3">
                             <div class="detail-box d-flex align-items-center justify-content-between">
@@ -130,7 +300,10 @@
                             <div class="detail-box d-flex align-items-center justify-content-between">
                                 <div class="detail-def">
                                     <span>Upload wedding invite</span>
-                                    <h6></h6>
+                                    <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                                        Upload
+                                    </button>
+                                    <span  id="count_inv"></span>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +332,7 @@
             <div class="col-xl-3 col-lg-12 col-sm-12 mt-3">
                 <div class="notify-main">
                     <h5>Notification</h5>
-                    <button class="upload-btn mt-2">Send Notification</button>
+                    <button class="upload-btn mt-2"  data-bs-toggle="modal" data-bs-target="#exampleModal4">Send Notification</button>
                     <div id="notification_id">
                         <div class="notyfy-box mt-4">
                             <div class="gap-con d-flex align-items-center">
@@ -209,7 +382,9 @@
                 <div class="detail-box-left">
                     <div class="banner-header d-flex align-items-center gap-4">
                         <h5>Events</h5>
-                        <button class="upload-btn">+ Add new events</button>
+                        <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add new
+                            events
+                        </button>
                     </div>
                     <div id="event_display">
                         <div class="mehendi-box mt-3">
@@ -355,9 +530,9 @@
                 </ul>
             </div>
             <div class="upload-div">
-                <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Upload</button>
+                <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">+ Upload</button>
             </div>
-            <div class="row justify-content-center" id="gallery_image">
+            <div class="row justify-content-left" id="gallery_image">
                 <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
                     <div class="box-g"></div>
                 </div>
@@ -398,15 +573,46 @@
         </div>
     </div>
 </section>
+
+<section class="superadmin">
+
+    <div class="superadmin-header">
+        <h5>GUESTS</h5>
+        <div class="search-main ms-auto">
+            <button class="marriage">All</button>
+        </div>
+    </div>
+    <div class="table-main">
+        <div class="admin-table">
+            <span>Marriages</span>
+            <div class="table-responsive">
+                <table class="table table-borderless mb-0 mt-3">
+                    <div class="admin-table-header">
+                        <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>PHONE NUMBER</th>
+                            <th class="cllect_id_proof">ID PROOF(if enabled)</th>
+                            <th>STATUS</th>
+                        </tr>
+                        </thead>
+                    </div>
+                    <tbody id="display_gest">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</section>
+
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalCenterTitle">Banner</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
             </div>
             <div class="modal-body">
                 <form id="image_wardrode_form">
@@ -418,7 +624,300 @@
             </div>
             <div class="modal-footer">
                 <div class="d-flex align-items-center justify-content-center mt-3">
-                    <button class="save secondary" id="image_save_btn">Save</button>
+                    <button class="save secondary" data-dismiss="modal" id="image_save_btn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Gallery</h5>
+            </div>
+            <div class="modal-body">
+                <form id="image_gallery_form">
+                    <div class="material-textfield">
+                        <label>Select Gallery</label>
+                        <input type="file" name="image_gallery" id="image_gallery">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                    <button class="save secondary" data-dismiss="modal" id="gallery_save_btn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form enctype="multipart/form-data" id="event_data">
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <span>Enter Event Details</span>
+                        <div class="img-counter">
+                            <p>Gallery</p>
+                            <span>250 Images</span>
+                        </div>
+                    </div>
+                    <div class="moda-form mt-4">
+                        <div class="material-textfield">
+                            <input placeholder=" " type="text" name="event_name">
+                            <label class="input-text">Event Name</label>
+                        </div>
+                        <div class="material-textfield  mt-4">
+                            <input placeholder=" " class="font" name="event_tagline" id="id_event_tagline" type="text">
+                            <label class="input-text">Event Tagline</label>
+                            <input type="color" name="event_tagline_color" class="colorpikar">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                <div class="material-textfield">
+                                    <input placeholder=" " type="date" name="event_date">
+                                    <label class="input-text">Event Date</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                <div class="material-textfield">
+                                    <input placeholder=" " type="time" name="event_time">
+                                    <label class="input-text">Event Time</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>DRESS CODE</span>
+                                <label class="toggle-switch">
+                                    <input type="hidden" name="is_dress_code" value="false">
+                                    <input type="checkbox" name="is_dress_code" value="true"
+                                           class="checkbox dress_code_switch" id=""/>
+                                    <span class="switch-btn"></span>
+                                </label>
+                            </div>
+                            <div id="d_c" style="display: none">
+                                <div class="material-textfield mt-3">
+                                    <input placeholder=" " name="dress_code[for_men]" type="text">
+                                    <label class="bg-span input-text">For Men</label>
+                                </div>
+                                <div class="material-textfield mt-3">
+                                    <input placeholder=" " name="dress_code[for_women]" type="text">
+                                    <label class="bg-span input-text">For Women</label>
+                                </div>
+                                <div class="material-textfield mt-3" style="position: unset">
+
+                                    <span class="select-text" style="position: unset">Select outfit</span>
+                                    <input type="hidden" name="dress_code[for_women][outFit]"
+                                           value="wardrobe/0706188926_313202121338.png">
+                                    <div class="row select-ver">
+                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
+                                            <div class="outfit-box">
+                                                <img src="http://34.222.156.42:8081/wardrobe/0056525444_47202220745.png"
+                                                     width="70px" height="90px" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
+                                            <div class="outfit-box"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
+                                            <div class="outfit-box"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
+                                            <div class="outfit-box"></div>
+                                        </div>
+                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
+                                            <div class="outfit-box"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="event_venue">
+                            <label class="input-text">Venue</label>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" type="submit" id="save_event">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-title">
+                    <span>Enter Marriages Details</span>
+                    <div class="img-counter" style="margin-right: -16px">
+                        <p>Gallery</p>
+                        <span>250 Images</span>
+                    </div>
+                </div>
+                <div class="moda-form mt-4">
+                    <form id="add_mrg_from">
+                        <div class="material-textfield">
+                            <input placeholder=" " type="text" name="marriage_name">
+                            <label class="input-text">Marriage Name</label>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                <div class="material-textfield">
+                                    <input placeholder=" " type="text" name="wedding_hashtag">
+                                    <label class="input-text">#Hashtag</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                <div class="material-textfield">
+                                    <input placeholder=" " type="date" name="wedding_date">
+                                    <label class="input-text">Event Date</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="event_manager_name">
+                            <label class="input-text">Event Manager name</label>
+                        </div>
+                        <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="wedding_venue">
+                            <label class="input-text">Venue</label>
+                        </div>
+                        <div class="guest-id mt-4">
+                            <div class="guest-id-box">
+                                <span>Collect guest ID during registration</span>
+                                <label class="toggle-switch">
+                                    <input type="hidden" name="is_guests_id_proof" value="false">
+                                    <input type="checkbox" class="checkbox" name="is_guests_id_proof" value="true"/>
+                                    <span class="switch-btn"></span>
+                                </label>
+                            </div>
+                            <div class="guest-id-box">
+                                <div>
+                                    <span>Enable approving posts before uploading</span>
+                                    <p>(from admin end)</p>
+                                </div>
+                                <label class="toggle-switch">
+                                    <input type="hidden" name="is_approve_post" value="false">
+                                    <input type="checkbox" class="checkbox" name="is_approve_post" value="true"/>
+                                    <span class="switch-btn"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="select-color mt-4">
+                            <div class="row align-items-center">
+                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                    <span>Select color</span>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-12">
+                                    <div class="d-flex align-items-center gap-4">
+                                        <input type="hidden" name="is_dark" id="is_dark" value="true">
+                                        <div class="primary d-flex align-items-center gap-1">
+                                            <dl id="sample1" class="dropdown" data-id="is_dark">
+                                                <dt><a href="#"><b class="dark"> Primary</b><span
+                                                        class="value">true</span></a></dt>
+                                                <dd>
+                                                    <ul>
+                                                        <li><a href="#">
+                                                            <b class="dark"> Primary</b>
+                                                            <span class="value">true</span></a></li>
+                                                        <li><a href="#">
+                                                            <b class="white"> Primary</b>
+                                                            <span class="value">false</span></a></li>
+
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                        </div>
+
+
+                                        <div class="primary  d-flex align-items-center gap-1">
+                                            <dl id="sample" class="dropdown" data-id="secondary_color">
+                                                <dt><a href="#"><b class="secondary1"> Secondary</b><span
+                                                        class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                </dt>
+                                                <dd>
+                                                    <ul>
+                                                        <li><a href="#">
+                                                            <b class="dark"> Secondary</b>
+                                                            <span class="value">rgba(255, 55, 44, 1)|rgba(255, 96, 103, 1)</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="secondary1"> Secondary</b>
+                                                            <span class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                        </li>
+                                                    </ul>
+                                                </dd>
+                                            </dl>
+                                            <input type="hidden" name="secondary_color" id="secondary_color"
+                                                   value="rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                    <button class="save secondary" id="save_btn">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-title">
+                    <span>Enter Notification Details</span>
+                </div>
+                <div class="moda-form mt-4">
+                    <form id="add_noti_from">
+                        <div class="material-textfield">
+                            <input placeholder=" " type="text" name="notification_title">
+                            <label class="input-text">Notification Title</label>
+                        </div>
+                        <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="notification_body">
+                            <label class="input-text">Notification Body</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                    <button class="save secondary" id="save_btn_notification">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" >Invitation</h5>
+            </div>
+            <div class="modal-body">
+                <form id="image_nvi_form">
+                    <div class="material-textfield">
+                        <label>Select Invitation</label>
+                        <input type="file" name="invitation_card" id="invitation_card">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                    <button class="save secondary" data-dismiss="modal" id="invitation_card_Save">Save</button>
                 </div>
             </div>
         </div>
@@ -436,17 +935,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://stevenlevithan.com/assets/misc/date.format.js"></script>
 <script src="../assets/js/config.js"></script>
 <script src="../assets/js/custome_adminhome.js"></script>
-<script src="https://stevenlevithan.com/assets/misc/date.format.js"></script>
 <script !src="">
     function cutomdate(dat, formate) {
         var mydate = new Date(dat);
+        // console.log(dateFormat(mydate, formate))
         return dateFormat(mydate, formate);
     }
 
     function banner(path) {
         return `<div class="banner-box  m-2" >
+                <button class="minus banner-remove" data-id="${path}">
+                        <i class="fas fa-minus"></i>
+                    </button>
 <img src="${BASE_URL + path}" alt="" srcset="" width="120px" height="50px">
 </div>`;
     }
@@ -454,7 +957,7 @@
     function notificaion_details(data) {
         var old_date = new Date(data.created_date_time);
         var time = dateFormat(old_date, "h:MM TT");
-        var date = dateFormat(old_date, "dd/MM/yyyy");
+        var date = dateFormat(old_date, "dd/mm/yyyy");
         return `<div class="notyfy-box mt-4">
                         <div class="gap-con d-flex align-items-center">
                             <div class="white-box"></div>
@@ -470,7 +973,7 @@
 
     function eventdi(data) {
         var old_date = new Date(data.event_date);
-        var date = dateFormat(old_date, "dd/MM/yyyy");
+        var date = dateFormat(old_date, "dd/mm/yyyy");
         return ` <div class="mehendi-box mt-3">
                         <div class="gallary-mini">
                             <span>Gallery</span>
@@ -478,7 +981,7 @@
                         </div>
                         <div class="mehendi-box-header">
                             <h6>${data.event_name}</h6>
-                            <h6 class="text-light-white">Dress code</h6>
+                            <h6 class="text-light-white">Dress code <span class="font" style="color:#${data.event_tagline_color} !important;">${data.event_tagline} </span></h6>
                             <button class="toggle-btn text-light-white"><i class="fas fa-ellipsis-h"></i></button>
                         </div>
                         <div class="row justify-content-center">
@@ -524,10 +1027,83 @@
         // console.log(path)
         return `<div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
                     <div class="box-g">
+                    <button class="minus dalete-gellery" data-id="${path.gallery_id}">
+                        <i class="fas fa-minus"></i>
+                    </button>
                     <img src="${BASE_URL + path.gallery_image}" width="100%" height="100%">
                     </div>
                 </div>`
     }
+
+    function gestrow(d) {
+        var a = `<tr>
+                        <td>
+                          <a  href="${url + "user" + "?id=" + id + "&mrg_id=" + d.guest_id + "&phone=" + d.guest_mobile_number + "&name=" + d.guest_name + "&image=" + d.guest_id_proof.toString()}" ><span class="my-3 d-block" id="">${d.guest_name}</span></a>
+                        </td>
+                        <td>${d.guest_mobile_number}</td>
+                        <td class="cllect_id_proof">`
+        if (typeof d.guest_id_proof == 'object') {
+            // console.log(d.guest_id_proof[0])
+            if (d.guest_id_proof[0] != null && d.guest_id_proof[0].search("pdf") > -1) {
+                //    <div class="anable-btn"></div>
+                a += `
+            <a href="${BASE_URL + d.guest_id_proof[0]}" target="_blank">View Document</a>
+            `
+            } else {
+                $.each(d.guest_id_proof, function (k, v) {
+                    a += `
+             <a href="${BASE_URL + v}" target="_blank">
+             <img src="${BASE_URL + v}" alt="" width="50px" height="50px" srcset="">
+</a>
+            `
+                })
+
+            }
+        }
+        a += `</td>
+                        <td>`
+        if (d.guest_status == 'Pending') {
+            a += `<div class="status-btn" id="gest${d.guest_id}">
+                                <button data-id="${d.guest_id}" class="approve_gest"><i class="fas fa-check"></i></button>
+                                <button class="bg-red reject_gest" data-id="${d.guest_id}"><i class="fas fa-times"></i></button>
+                            </div>`
+        } else {
+            a += `  <span class="my-3 d-block">${d.guest_status}</span>`
+        }
+        a += `</td>
+                    </tr>`;
+        return a;
+    }
+
+    $(".dropdown img.flag").addClass("flagvisibility");
+    $(".dropdown").click(function () {
+        $(this).find("dd ul").toggle();
+    });
+
+    $(".dropdown dd ul li a").click(function () {
+        var text = $(this).html();
+        $(".dropdown dt a span").html(text);
+        $(".dropdown dd ul").hide();
+        // console.log($(this).parents('.dropdown')).
+        var rtn = $(this).parents('.dropdown')
+        $("#" + rtn.data('id')).val($(this).find('.value').html())
+        rtn.find('dt a').html(getSelectedValue(rtn.attr('id')));
+        rtn.find('dd ul').hide();
+        // alert()
+    });
+
+    function getSelectedValue(id) {
+
+        return $("#" + id + " a .value").html();
+    }
+
+    $(document).bind('click', function (e) {
+        var $clicked = $(e.target);
+        if (!$clicked.parents().hasClass("dropdown"))
+            $(".dropdown dd ul").hide();
+    });
+
+    $(".dropdown img.flag").toggleClass("flagvisibility");
 </script>
 </body>
 </html>

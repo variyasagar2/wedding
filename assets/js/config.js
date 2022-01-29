@@ -11,6 +11,7 @@ cnt = urlParams.get('cnt') || 0;
 if (cnt > 5) {
     localStorage.clear();
 }
+
 function checkLogin(redirectURL = null, redirectlogin = false) {
     userdetails = localStorage.getItem('userDetails') || localStorage.getItem('is_admin')
     if (userdetails == 'SuperAdmin') {
@@ -18,18 +19,20 @@ function checkLogin(redirectURL = null, redirectlogin = false) {
         // alert(redirectURL || url + "super_admin");
         var urlParams = new URLSearchParams(window.location.search);
 
-        if (!redirectlogin ) {
+        if (!redirectlogin) {
             // alert('233242');
             document.location.href = redirectURL || url + "super_admin";
         }
 
         var loc = window.location;
         var pathName = loc.pathname.substring(0, loc.pathname.lastIndexOf('/') + 1);
-        pathName =pathName.split("/")
-        pathName= $.grep(pathName,function(n){ return n != '' || n });
+        pathName = pathName.split("/")
+        pathName = $.grep(pathName, function (n) {
+            return n != '' || n
+        });
         // pathName=    loc.href.substring(0, loc.href.length - ((loc.pathname + loc.search + loc.hash).length - pathName.length));
 
-        if ( id == null && (pathName[ pathName.length -1 ] != 'super_admin' || (pathName[ pathName.length -1 ] == 'index.html') && pathName[ pathName.length -2 ] !='super_admin' )) {
+        if (id == null && (pathName[pathName.length - 1] != 'super_admin' || (pathName[pathName.length - 1] == 'index.html') && pathName[pathName.length - 2] != 'super_admin')) {
             // alert();
             document.location.href = redirectURL || url + "super_admin";
         }
@@ -61,3 +64,7 @@ function getresopncesuccess(data) {
     }
     return true;
 }
+
+$(document).on('click', '#logout', function () {
+    document.location.href = url + "admin/?cnt=" + 6;
+})
