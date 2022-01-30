@@ -746,15 +746,126 @@ h1, h2, h3, h4, h5, h6, p {
     height: 80px;
 }
 
+.dropdown dt a:hover {
+    color: #fff;
+    /*border: 1px solid #d0c9af;*/
+}
+
+.dropdown dt a {
+    /*background: #e4dfcb url('http://www.jankoatwarpspeed.com/wp-content/uploads/examples/reinventing-drop-down/arrow.png') no-repeat scroll right center;*/
+    display: block;
+    padding-right: 20px;
+    border: 1px solid transparent;
+    width: 150px;
+}
+
+.dropdown dt a span {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+}
+
+.dropdown dd ul {
+    background: #252525 none repeat scroll 0 0;
+    border: 1px solid transparent;
+    color: white;
+    display: none;
+    left: 0px;
+    padding: 5px 0px;
+    position: absolute;
+    top: 2px;
+    width: auto;
+    min-width: 150px;
+    list-style: none;
+}
+
+.dropdown span.value {
+    display: none;
+}
+
+.dropdown dd ul li a {
+    padding: 5px;
+    display: block;
+}
+
+.dropdown dd ul li a:hover {
+    background-color: rgba(68, 67, 67, 0.84);
+}
+
+.dropdown img.flag {
+    border: none;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.flagvisibility {
+    display: none;
+}
+
+.dropdown dd li b, .dropdown dt b {
+    display: flex;
+    margin-left: 38px;
+    position: relative;
+}
+
+b.dark:before {
+
+    background: black;
+}
+
+b.white:before {
+    background: white;
+}
+
+b.secondary1:before {
+
+    background: linear-gradient(
+            90deg, rgba(255, 96, 103, 1) 0%, rgba(255, 55, 44, 1) 100%);
+}
+
+.dropdown dd li b:before, .dropdown dt b:before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: -27px;
+    border-radius: 50%;
+    bottom: 3px;
+}
+
+select.marriage {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+}
+
+.select-ver .scroll-hro{
+    margin: 10px;
+}
+.select-ver {
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+}
+.detail-def .upload-btn,#count_inv{
+    display: inline-block;
+}
+
 /* light theme */
 .body-light,
 .body-light .notify-main,
 .body-light .gallary-sec,
 .body-light .superadmin,
-.body-light .guest-id {
+.body-light .guest-id,
+.body-light .home-main .notyfy-box {
 
     background-color: #f3f3f7 !important;
     color: #000 !important;
+}
+
+.body-light .home-main .notyfy-box {
+    padding: 5px;
 }
 
 .body-light .detail-box-left,
@@ -765,19 +876,27 @@ h1, h2, h3, h4, h5, h6, p {
 .body-light .anable-btn,
 .body-light .gallery-menu,
 .body-light .admin-table table thead tr,
-.body-light .gallary-sec-main {
+.body-light .gallary-sec-main,
+.body-light .modal .select-color,
+.body-light select.marriage {
     background-color: #fff !important;
     /*color: #fff !important;*/
     color: #000 !important;
 
 }
 
-.body-light .request-box, .body-light .request-box span, .body-light .total-img-box, .body-light .total-img-box span {
+.body-light .request-box, .body-light .request-box span,
+.body-light .total-img-box, .body-light .total-img-box span {
     border-color: #f3f3f7 !important;
     color: black;
 }
 
-.body-light .banner h5, .body-light .superadmin h5, .body-light .home-main .banner-header {
+.home-main .notyfy-box
+.body-light .banner h5,
+.body-light .superadmin h5,
+.body-light .home-main .banner-header,
+.body-light .modal .modal-content,
+.body-light .home-main .notify-main p {
     color: #000 !important;
 }
 
@@ -804,16 +923,46 @@ h1, h2, h3, h4, h5, h6, p {
 .body-light .gallery-menu ul li a,
 .body-light .admin-table table thead tr th,
 .body-light .admin-table table tbody tr td,
-.body-light .admin-table table tbody tr td span {
+.body-light .admin-table table tbody tr td span,
+.body-light .superadmin .admin-table span,
+.body-light .modal-title span,
+.body-light .dropdown dd li b, .dropdown dt b {
     color: #000 !important;
 }
 
-.body-light .banner-box, .body-light .superadmin .admin-table table tbody tr:hover {
-    background-color: #dcdcdf;
+.body-light .modal input, .body-light .modal .login {
+    border: 1px solid rgb(0 0 0 / 27%) !important;
+    background-color: #efefef !important;
+    color: black;
+}
+
+.body-light .modal .input-text, .body-light .modal .select-text {
+    border: 1px solid transparent !important;
+    background-color: #efefef !important;
+    color: black !important;
+}
+
+.body-light .banner-box,
+.body-light .superadmin .admin-table table tbody tr:hover,
+.body-light .admin-table table thead tr,
+.body-light .dropdown dd ul {
+    background-color: #dcdcdf !important;
 }
 
 .body-light .logout-btn {
     background-color: #efefef;
+}
+
+.body-light .outfit-box {
+    background: white;
+}
+
+.body-light .modal input.colorpikar {
+    background-color: red !important;
+}
+
+.body-light .modal.fade.show, .body-light .modal .modal-content {
+    background: #f1ededd9 !important;
 }
 
 .black-box {

@@ -5,7 +5,7 @@ function home() {
     settings.url = BASE_URL + 'get_single_marriages';
 
     settings.data = settings.data = JSON.stringify({marriage_id: id});
-    ;$.ajax(settings).done(function (response) {
+    $.ajax(settings).done(function (response) {
         printHome(response)
     });
 }
@@ -18,7 +18,7 @@ function printHome(response) {
         $(document).find("#count_inv").html(data.invitation_card.length + " Invitations");
 
 
-        // if (!data.is_dark) $(document).find('body').addClass('body-light')
+        if (!data.is_dark) $(document).find('body').addClass('body-light')
         response.data.wedding_date = cutomdate(response.data.wedding_date, 'dd/mm/yyyy')
         $.each(response.data, function (k, v) {
             var x = $(document).find("#d_" + k);
@@ -29,12 +29,15 @@ function printHome(response) {
         if (data.marriage_logo) $(document).find('#profile_pic').css('background', 'url(' + BASE_URL + data.marriage_logo + ')');
         if (data.is_dark) {
             $(document).find('#d_primary').addClass('primary-color');
+            $(document).find('#sample1 dt a b').addClass('dark');
         } else {
             $(document).find('#d_primary').addClass('white-color');
+            $(document).find('#sample1 dt a b').addClass('white')
         }
         color = '#' + data.secondary_color.join(',#');
         // console.log(color)
         $(document).find('#d_secondory').css('background', 'linear-gradient(' + color + ')');
+        $(document).find('#sample .secondary1::before').css('background', 'linear-gradient(' + color + ')');
         var bannerhtml = '';
         $.each(data.banner, function (k, v) {
             bannerhtml += banner(v);
@@ -57,25 +60,27 @@ function printHome(response) {
             $(document).find("[name=is_guests_id_proof]").prop("checked", true);
             $(document).find("#cllect_id_proof").show();
         }
-        // console.log(html,printHtml);
+        // console.log(html,printHtml);        $(document).find('[name=wedding_date]').val(data.wedding_date);
         $.each(data, function (k, v) {
             var x = $(document).find('[name=' + k + ']')
             // console.log(x);
             if (x) {
-                if (k == "wedding_date") {
-                    if (v != null) v = cutomdate(v, "yyyy-mm-dd")
-                    // console.log(v)
+                if (x.attr("type") == 'checkbox') {
+                    x.prop("checked", true);
                 }
-                if (x.val() == "")
-                    x.val(v);
+
+                if (k != "invitation_card" || k != "is_approve_post" || k != "is_guests_id_proof") {
+                        x.val(v);
+
+                }
             }
-            // if (v.name == 'secondary_color') {
-            //     data[v.name] = v.value.split("|")
-            // } else {
-            //     data[v.name] = v.value;
-            // }
+
 
         })
+        $(document).find('.is_approve_post[type=hidden]').val(false)
+        $(document).find('.is_approve_post[type=checkbox]').val(true)
+        $(document).find('.is_guests_id_proof[type=hidden]').val(false)
+        $(document).find('.is_guests_id_proof[type=checkbox]').val(true)
     }
 
 }
@@ -294,7 +299,7 @@ $(document).on('change', '.dress_code_switch', function () {
 
 $(document).on('change', '.colorpikar', function () {
     var clr = $(this).val()
-    $(this).css('background', clr);
+    $(this).attr('style', 'background:' + clr + " !important");
     $(document).find('#id_event_tagline').attr('style', 'color:' + clr + ' !important');
 })
 
@@ -320,6 +325,10 @@ function guest_list(status = null) {
 }
 
 guest_list();
+$(document).on("change", "#marriage_gest", function () {
+    var x = $(this).val();
+    guest_list(x);
+})
 
 function changests(gest_id, sts) {
     var status = 'Rejected'
@@ -378,19 +387,28 @@ function addmrg() {
     var that = $(document).find('#add_mrg_from');
     var frm = that.serializeArray();
     var data = {marriage_id: id};
+    var formData = new FormData();
+    formData.append('marriage_id', id);
     $.each(frm, function (k, v) {
         if (v.name == 'secondary_color') {
             // data[v.name] = v.value.split("|")
+            // formData.append('secondary_color', v.value.split("|"));
         } else {
             data[v.name] = v.value;
+            formData.append(v.name, v.value);
         }
 
     })
-    settings.data = JSON.stringify(data);
-    // console.log( data);
-    settings.url = BASE_URL + "update_marriage"
+    let settingclon = settings;
+    settingclon.processData = false
+    settingclon.contentType = false
+    delete settingclon.headers
+    settingclon.mimeType = "multipart/form-data"
+    settingclon.url = BASE_URL + 'update_marriage'
+    settingclon.data = formData
     //
-    $.ajax(settings).done(function (response) {
+    $.ajax(settingclon).done(function (response) {
+        response = JSON.parse(response);
         if (getresopncesuccess(response)) {
             document.location.reload();
         }
@@ -462,3 +480,55 @@ function add_invi() {
 $(document).on('click', '#invitation_card_Save', function () {
     add_invi()
 })
+
+function getallwardrop() {
+    settings.data = JSON.stringify({});
+    // console.log( data);
+    settings.url = BASE_URL + "get_all_wardrobe"
+    //
+    $.ajax(settings).done(function (response) {
+        if (getresopncesuccess(response)) {
+            var html = '';
+            $.each(response.data, function (k, v) {
+                html += verbs(v);
+            })
+            $(document).find("#werboost").html(html)
+        }
+    });
+}
+
+getallwardrop();
+
+function upload_profile(formData) {
+    let settingclon = settings;
+    settingclon.processData = false
+    settingclon.contentType = false
+    delete settingclon.headers
+    settingclon.mimeType = "multipart/form-data"
+    settingclon.url = BASE_URL + 'update_marriage'
+    settingclon.data = formData
+    settingclon.success = function (response) {
+        // console.log(response);
+        response = JSON.parse(response);
+        if (getresopncesuccess(response)) {
+            document.location.reload();
+        }
+    }
+    $.ajax(settingclon);
+    settings.headers = {
+        "Content-Type": "application/json"
+    }
+}
+
+$(document).on('change', "#profile", function () {
+    //on change event
+    formdata = new FormData();
+    if ($(this).prop('files').length > 0) {
+        file = $(this).prop('files')[0];
+        formdata.append("marriage_logo", file);
+        formdata.append("marriage_id", id);
+        upload_profile(formdata)
+    }
+
+
+});

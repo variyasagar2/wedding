@@ -73,12 +73,20 @@
 
         .outfit-box {
             position: relative;
+            width: 110px;
+
+        }
+
+        .outfit-box input[type=radio] {
+            top: 0px;
+            left: 44px;
+            position: absolute;
         }
 
         .outfit-box img {
             position: absolute;
             bottom: 20px;
-            margin: 0px 10px;
+            margin: 0px 20px;
         }
 
         .select-ver div {
@@ -120,92 +128,7 @@
         /*    color: #5d4617;*/
         /*}*/
 
-        .dropdown dt a:hover {
-            color: #fff;
-            /*border: 1px solid #d0c9af;*/
-        }
 
-        .dropdown dt a {
-            /*background: #e4dfcb url('http://www.jankoatwarpspeed.com/wp-content/uploads/examples/reinventing-drop-down/arrow.png') no-repeat scroll right center;*/
-            display: block;
-            padding-right: 20px;
-            border: 1px solid transparent;
-            width: 150px;
-        }
-
-        .dropdown dt a span {
-            cursor: pointer;
-            display: block;
-            padding: 5px;
-        }
-
-        .dropdown dd ul {
-            background: #252525 none repeat scroll 0 0;
-            border: 1px solid transparent;
-            color: white;
-            display: none;
-            left: 0px;
-            padding: 5px 0px;
-            position: absolute;
-            top: 2px;
-            width: auto;
-            min-width: 150px;
-            list-style: none;
-        }
-
-        .dropdown span.value {
-            display: none;
-        }
-
-        .dropdown dd ul li a {
-            padding: 5px;
-            display: block;
-        }
-
-        .dropdown dd ul li a:hover {
-            background-color: rgba(68, 67, 67, 0.84);
-        }
-
-        .dropdown img.flag {
-            border: none;
-            vertical-align: middle;
-            margin-left: 10px;
-        }
-
-        .flagvisibility {
-            display: none;
-        }
-
-        .dropdown dd li b, .dropdown dt b {
-            display: flex;
-            margin-left: 38px;
-            position: relative;
-        }
-
-        b.dark:before {
-
-            background: black;
-        }
-
-        b.white:before {
-            background: white;
-        }
-
-        b.secondary1:before {
-
-            background: linear-gradient(
-                    90deg, rgba(255, 96, 103, 1) 0%, rgba(255, 55, 44, 1) 100%);
-        }
-
-        .dropdown dd li b:before, .dropdown dt b:before {
-            content: '';
-            width: 15px;
-            height: 15px;
-            position: absolute;
-            left: -27px;
-            border-radius: 50%;
-            bottom: 3px;
-        }
     </style>
 </head>
 <body class=" ">
@@ -230,9 +153,12 @@
                                     <span>Hashtag</span>
                                     <h6 id="d_wedding_hashtag">Enter your hashtag here</h6>
                                 </div>
-                                <div class="upload " id="profile_pic">
-                                    <!--                                    <span>Upload <br/> Logo</span>-->
-                                </div>
+                                <input type="file" accept="image/*" class="d-none" name="profile" id="profile">
+                                <label for="profile">
+                                    <div class="upload " id="profile_pic">
+                                        <!--                                    <span>Upload <br/> Logo</span>-->
+                                    </div>
+                                </label>
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
@@ -299,11 +225,14 @@
                         <div class="col-lg-5 col-md-6 col-sm-12 mt-3">
                             <div class="detail-box d-flex align-items-center justify-content-between">
                                 <div class="detail-def">
+
                                     <span>Upload wedding invite</span>
-                                    <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-                                        Upload
+
+                                    <span id="count_inv"></span>
+                                    <button class="upload-btn mt-2" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal5">
+                                        Upload +
                                     </button>
-                                    <span  id="count_inv"></span>
                                 </div>
                             </div>
                         </div>
@@ -332,7 +261,9 @@
             <div class="col-xl-3 col-lg-12 col-sm-12 mt-3">
                 <div class="notify-main">
                     <h5>Notification</h5>
-                    <button class="upload-btn mt-2"  data-bs-toggle="modal" data-bs-target="#exampleModal4">Send Notification</button>
+                    <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal4">Send
+                        Notification
+                    </button>
                     <div id="notification_id">
                         <div class="notyfy-box mt-4">
                             <div class="gap-con d-flex align-items-center">
@@ -579,7 +510,13 @@
     <div class="superadmin-header">
         <h5>GUESTS</h5>
         <div class="search-main ms-auto">
-            <button class="marriage">All</button>
+            <!--            <button class="marriage">All</button>-->
+            <select id="marriage_gest" class="marriage">
+                <option>All</option>
+                <option>Approved</option>
+                <option>Rejected</option>
+                <option>Pending</option>
+            </select>
         </div>
     </div>
     <div class="table-main">
@@ -618,7 +555,7 @@
                 <form id="image_wardrode_form">
                     <div class="material-textfield">
                         <label>Select Banner</label>
-                        <input type="file" name="wardrobe_image" id="wardrobe_image">
+                        <input type="file" accept="image/*" name="wardrobe_image" id="wardrobe_image">
                     </div>
                 </form>
             </div>
@@ -641,7 +578,7 @@
                 <form id="image_gallery_form">
                     <div class="material-textfield">
                         <label>Select Gallery</label>
-                        <input type="file" name="image_gallery" id="image_gallery">
+                        <input type="file" accept="image/*" name="image_gallery" id="image_gallery">
                     </div>
                 </form>
             </div>
@@ -711,26 +648,11 @@
                                 <div class="material-textfield mt-3" style="position: unset">
 
                                     <span class="select-text" style="position: unset">Select outfit</span>
-                                    <input type="hidden" name="dress_code[for_women][outFit]"
-                                           value="wardrobe/0706188926_313202121338.png">
-                                    <div class="row select-ver">
-                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
-                                            <div class="outfit-box">
-                                                <img src="http://34.222.156.42:8081/wardrobe/0056525444_47202220745.png"
-                                                     width="70px" height="90px" alt="">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
-                                            <div class="outfit-box"></div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
-                                            <div class="outfit-box"></div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
-                                            <div class="outfit-box"></div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 mt-3 scroll-hro">
-                                            <div class="outfit-box"></div>
+                                    <!--                                    <input type="hidden" name="dress_code[for_women][outFit]"-->
+                                    <!--                                           value="wardrobe/0706188926_313202121338.png">-->
+                                    <div class="row ">
+                                        <div class="select-ver" id="werboost">
+
                                         </div>
                                     </div>
                                 </div>
@@ -789,6 +711,14 @@
                             <label class="input-text">Event Manager name</label>
                         </div>
                         <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="bride_name">
+                            <label class="input-text">Event Bride Name</label>
+                        </div>
+                        <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="groom_name">
+                            <label class="input-text">Event Groom Name</label>
+                        </div>
+                        <div class="material-textfield mt-4">
                             <input placeholder=" " type="text" name="wedding_venue">
                             <label class="input-text">Venue</label>
                         </div>
@@ -796,8 +726,10 @@
                             <div class="guest-id-box">
                                 <span>Collect guest ID during registration</span>
                                 <label class="toggle-switch">
-                                    <input type="hidden" name="is_guests_id_proof" value="false">
-                                    <input type="checkbox" class="checkbox" name="is_guests_id_proof" value="true"/>
+                                    <input type="hidden" name="is_guests_id_proof" class="is_guests_id_proof"
+                                           value="false">
+                                    <input type="checkbox" class="checkbox is_guests_id_proof" name="is_guests_id_proof"
+                                           value="true"/>
                                     <span class="switch-btn"></span>
                                 </label>
                             </div>
@@ -807,8 +739,9 @@
                                     <p>(from admin end)</p>
                                 </div>
                                 <label class="toggle-switch">
-                                    <input type="hidden" name="is_approve_post" value="false">
-                                    <input type="checkbox" class="checkbox" name="is_approve_post" value="true"/>
+                                    <input type="hidden" name="is_approve_post" class="is_approve_post" value="false">
+                                    <input type="checkbox" class="checkbox is_approve_post" name="is_approve_post"
+                                           value="true"/>
                                     <span class="switch-btn"></span>
                                 </label>
                             </div>
@@ -905,13 +838,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" >Invitation</h5>
+                <h5 class="modal-title">Invitation</h5>
             </div>
             <div class="modal-body">
                 <form id="image_nvi_form">
                     <div class="material-textfield">
                         <label>Select Invitation</label>
-                        <input type="file" name="invitation_card" id="invitation_card">
+                        <input type="file" accept="image/*" name="invitation_card" id="invitation_card">
                     </div>
                 </form>
             </div>
@@ -1104,6 +1037,18 @@
     });
 
     $(".dropdown img.flag").toggleClass("flagvisibility");
+
+    function verbs(v) {
+        return `<div class=" scroll-hro">
+                                                <div class="outfit-box">
+                                                    <label for="${v._id}">
+                                                    <input type="radio" name="dress_code[for_women][outFit]" id="${v._id}" value="${v.wardrobe_image}">
+                                                    <img src="${BASE_URL + v.wardrobe_image}"
+                                                         width="70px" height="90px" alt="">
+                                                    </label>
+                                                </div>
+                                            </div>`;
+    }
 </script>
 </body>
 </html>
