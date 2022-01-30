@@ -14,6 +14,9 @@ $(document).ready(function () {
                     // console.log(k,v)
                     html += mrgHtml(k + 1, v);
                 })
+                if (html == "") {
+                    html = "<tr><td colspan='8'><h5 class='notfound'>Marriage Not found!</h5></td></tr>"
+                }
                 $(printHtml).html(html);
                 // console.log(html,printHtml);
             }
@@ -46,9 +49,12 @@ $(document).ready(function () {
         //
         $.ajax(settings).done(function (response) {
             if (getresopncesuccess(response)) {
-                that.clear();
+                $("#add_mrg_from")[0].reset()
+                $("#exampleModal").modal('toggle');
+
                 // console.log(response.data)
                 get_all_marriages_ajax();
+                hiddmodel()
             }
         });
     }
@@ -68,6 +74,10 @@ $(document).ready(function () {
                     html += htmlimg(v);
                 })
                 // console.log(html)
+                // html = '';
+                if (html == "") {
+                    html = "<h5 class='notfound'>Wardrobe Not found!</h5>"
+                }
                 wrdhrml.html(html);
             }
         })
@@ -80,6 +90,7 @@ $(document).ready(function () {
         settings.data = JSON.stringify({wardrobe_ids: [id]});
         settings.url = BASE_URL + "delete_wardrobe"
         $.ajax(settings).done(function (response) {
+            response = JSON.parse(response)
             if (getresopncesuccess(response)) {
                 getallimage();
             }
@@ -96,6 +107,10 @@ $(document).ready(function () {
     function add_image() {
         var formData = new FormData();
         datfrom = $(document).find('#wardrobe_image')
+        if (!datfrom[0].files[0]) {
+            alert("Please select image");
+            return 0;
+        }
         formData.append('wardrobe_image', datfrom[0].files[0]);
         // console.log(datfrom[0].files[0]);
         //
@@ -109,6 +124,12 @@ $(document).ready(function () {
         settingclon.success = function (response) {
 
             $("#exampleModal1").modal('hide');
+            hiddmodel()
+            settings = {
+                "url": BASE_URL + "marriage_login", "method": "POST", "timeout": 0, "headers": {
+                    "Content-Type": "application/json"
+                },
+            };
             $("#image_wardrode_form")[0].reset()
             getallimage();
         }

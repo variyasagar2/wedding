@@ -11,66 +11,74 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet"/>
     <link href="../assets/css/all.min.css" rel="stylesheet"/>
+    <style>
+        .loader {
+            background: #1b181866;
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            z-index: 9999999;
+        }
 
+        .loader span {
+            position: absolute;
+            width: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .loader span::before,
+        .loader span::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #ed2c35;
+            position: absolute;
+            animation: load 0.7s infinite alternate ease-in-out;
+        }
+
+        .loader span::before {
+            top: 0;
+        }
+
+        .loader span::after {
+            bottom: 0;
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px;
+            }
+            50% {
+                height: 8px;
+                width: 40px;
+            }
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
+<div class="loader" id="loader"><span>Loading...</span></div>
 
-<section class="gallary">
-
-    <div class="gallary-main py-4 px-5">
-        <div class="gallary-header">
-            <h5><span>Feed</span> Requests</h5>
-        </div>
-        <div class="right-menu left-menu">
-            <ul>
-                <li>
-                    <button class="active feed_s" data-id="All">All</button>
-                </li>
-                <li>
-                    <button class=" feed_s" data-id="Approved">Approved Feeds</button>
-                </li>
-                <li>
-                    <button class=" feed_s" data-id="Padding">Padding Feeds</button>
-                </li>
-                <li>
-                    <button class=" feed_s" data-id="Rejected">Reject Feeds</button>
-                </li>
-            </ul>
-        </div>
-
-        <div class="row list-box" id="gest_details_glr">
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-        </div>
-    </div>
-
-</section>
 
 <section class="gallary margin-100">
 
@@ -116,23 +124,7 @@
 <script src="../assets/js/config.js"></script>
 <script src="../assets/js/user.js"></script>
 <script !src="">
-    function setImage(v) {
-        var x = `
-<div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-            <div class="box1">
-                    <img alt=""
-                         src="${BASE_URL + v.feed_image}">`
-        if (v.feed_status == "Panding") {
-            x += `<button class="minus change_det" data-id="${v.feed_id}" data-value="Rejected">
-                        <i class="fas fa-minus"></i>
-                    </button>`
-            x += `<button class="check-mark right-mark  change_det" data-id="${v.feed_id}" data-value="Approved">
-                        <i class="fas fa-check"></i>
-                    </button>`
-        }
-        x += ` </div> </div>`;
-        return x;
-    }
+
 </script>
 </body>
 

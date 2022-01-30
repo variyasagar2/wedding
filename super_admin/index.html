@@ -12,6 +12,15 @@
     <link href="assets/css/style.css" rel="stylesheet"/>
     <link href="assets/css/all.min.css" rel="stylesheet"/>
     <style>
+        .superadmin .admin-table, .wardrode-box-main {
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        .togglepassword {
+            cursor: pointer;
+        }
+
         .wardrode-box, #image_wardrode_form {
             position: relative;
             margin-top: 75px !important;
@@ -163,10 +172,122 @@
         }
 
     </style>
+    <style>
+        .loader {
+            background: #1b181866;
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            z-index: 9999999;
+        }
+
+        .loader span {
+            position: absolute;
+            width: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .loader span::before,
+        .loader span::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #ed2c35;
+            position: absolute;
+            animation: load 0.7s infinite alternate ease-in-out;
+        }
+
+        .loader span::before {
+            top: 0;
+        }
+
+        .loader span::after {
+            bottom: 0;
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px;
+            }
+            50% {
+                height: 8px;
+                width: 40px;
+            }
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px;
+            }
+        }
+
+        .notfound {
+            text-align: center;
+            display: block;
+        }
+
+         .theme1:before {
+            background: linear-gradient( #0EFFD4, #0076D0) !important;
+        }
+
+         .theme2:before {
+            background: linear-gradient( #08F5FF, #D914F4) !important;
+        }
+
+         .theme3:before {
+            background: linear-gradient( #FF0F87, #4612CC) !important;
+        }
+
+         .theme4:before {
+            background: linear-gradient( #FF191D, #043E9F) !important;
+        }
+
+         .theme5:before {
+            background: linear-gradient( #FF161B, #580DBF) !important;
+        }
+
+         .theme6:before {
+            background: linear-gradient( #08F5FF, #580DBF) !important;
+        }
+
+         .theme7:before {
+            background: linear-gradient( #FF1BC6, #0066A6) !important;
+        }
+
+         .theme8:before {
+            background: linear-gradient( #FFAC1B, #E10B90) !important;
+        }
+
+         .theme9:before {
+            background: linear-gradient( #FF161B, #A810B3) !important;
+        }
+
+         .theme10:before {
+            background: linear-gradient( #00FFB4, #0F2FFF) !important;
+        }
+
+         .theme11:before {
+            background: linear-gradient( #FF1B1B, #0A34D4) !important;
+        }
+    </style>
 </head>
 
 <body>
-
+<div class="loader" id="loader"><span>Loading...</span></div>
 <section class="superadmin">
 
     <div class="superadmin-header">
@@ -305,10 +426,10 @@
                                                 <dd>
                                                     <ul>
                                                         <li><a href="#">
-                                                            <b class="dark"> Primary</b>
+                                                            <b class="dark"> dark</b>
                                                             <span class="value">true</span></a></li>
                                                         <li><a href="#">
-                                                            <b class="white"> Primary</b>
+                                                            <b class="white"> white</b>
                                                             <span class="value">false</span></a></li>
 
                                                     </ul>
@@ -319,19 +440,57 @@
 
                                         <div class="primary  d-flex align-items-center gap-1">
                                             <dl id="sample" class="dropdown" data-id="secondary_color">
-                                                <dt><a href="#"><b class="secondary1"> Secondary</b><span
-                                                        class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                <dt><a href="#"><b class="secondary1 theme1"> Theme 1</b><span
+                                                        class="value">#0EFFD4|#0076D0</span></a>
                                                 </dt>
                                                 <dd>
                                                     <ul>
                                                         <li><a href="#">
-                                                            <b class="dark"> Secondary</b>
-                                                            <span class="value">rgba(255, 55, 44, 1)|rgba(255, 96, 103, 1)</span></a>
+                                                            <b class="theme1"> Theme 1</b>
+                                                            <span class="value">#0EFFD4|#0076D0</span></a>
                                                         </li>
                                                         <li><a href="#">
-                                                            <b class="secondary1"> Secondary</b>
-                                                            <span class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                            <b class="theme2"> Theme 2</b>
+                                                            <span class="value">#08F5FF|#D914F4</span></a>
                                                         </li>
+                                                        <li><a href="#">
+                                                            <b class="theme3"> Theme 3</b>
+                                                            <span class="value">#FF0F87|#4612CC</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme4"> Theme 4</b>
+                                                            <span class="value">#FF191D|#043E9F</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme5"> Theme 5</b>
+                                                            <span class="value">#FF161B|#580DBF</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme6"> Theme 6</b>
+                                                            <span class="value">#08F5FF|#580DBF</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme7"> Theme 7</b>
+                                                            <span class="value">#FF1BC6|#0066A6</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme8"> Theme 8</b>
+                                                            <span class="value">#FFAC1B|#E10B90</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme9"> Theme 9</b>
+                                                            <span class="value">#FF161B|#A810B3</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme10"> Theme 10</b>
+                                                            <span class="value">#00FFB4|#0F2FFF</span></a>
+                                                        </li>
+
+                                                        <li><a href="#">
+                                                            <b class="theme11"> Theme 11</b>
+                                                            <span class="value">#FF1B1B|#0A34D4</span></a>
+                                                        </li>
+
                                                     </ul>
                                                 </dd>
                                             </dl>
@@ -360,11 +519,11 @@
                     <span>Wardrode vectors </span>
 
                 </div>
-                <div class="moda-form mt-4">
+                <div class="moda-form mt-2">
                     <form id="image_wardrode_form">
                         <div class="material-textfield">
                             <label>Select wardrode vectors </label>
-                            <input type="file" name="wardrobe_image" id="wardrobe_image">
+                            <input type="file" name="wardrobe_image" accept="image/*" id="wardrobe_image">
                         </div>
                     </form>
                 </div>
@@ -412,7 +571,7 @@
                         <td>${v.wedding_date}</td>
                         <td>${v.mobile_number}</td>
                         <td>${v.event_manager_name}</td>
-                        <td>**************</td>
+                        <td><p class="togglepassword hide-p" title="${v.password}">**************</p></td>
                         <td>
                             <label class="toggle-switch">
                                 <input type="checkbox" class="checkbox ckbox" ${v.is_active} data-id="${v.marriage_id}"  id="checkbox${n}"/>
@@ -442,9 +601,12 @@
         $(".dropdown dd ul").hide();
         // console.log($(this).parents('.dropdown')).
         var rtn = $(this).parents('.dropdown')
-        $("#"+rtn.data('id')).val($(this).find('.value').html())
+        $("#" + rtn.data('id')).val($(this).find('.value').html())
         rtn.find('dt a').html(getSelectedValue(rtn.attr('id')));
-        rtn.find('dd ul').hide();
+        // console.log(rtn.find('dd ul'));
+        rtn.find("dd ul").toggle();
+        // $(document).find('dd ul').removeAttr('style');
+        // $(document).find('.select-color').click();
         // alert()
     });
 
@@ -460,6 +622,18 @@
     });
 
     $(".dropdown img.flag").toggleClass("flagvisibility");
+    $(document).on("click", ".togglepassword", function () {
+        var x = $(this);
+        var xval = (x.attr("title"));
+        if (x.hasClass("hide-p")) {
+            x.html(xval)
+            x.removeClass("hide-p");
+            // alert("show");
+        } else {
+            x.addClass("hide-p");
+            x.html('**************')
+        }
+    })
 </script>
 <script src="../assets/js/custome_superadmin.js"></script>
 </body>

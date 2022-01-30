@@ -57,7 +57,7 @@
         }
 
         .home-main .banner-box {
-            width: 116px !important;
+            width: 114px !important;
         }
 
         .modal-backdrop {
@@ -130,10 +130,73 @@
 
 
     </style>
+    <style>
+        .loader {
+            background: #1b181866;
+            width: 100%;
+            height: 100%;
+            line-height: 50px;
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            z-index: 9999999;
+        }
+
+        .loader span {
+            position: absolute;
+            width: 250px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #000;
+            text-transform: uppercase;
+        }
+
+        .loader span::before,
+        .loader span::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #ed2c35;
+            position: absolute;
+            animation: load 0.7s infinite alternate ease-in-out;
+        }
+
+        .loader span::before {
+            top: 0;
+        }
+
+        .loader span::after {
+            bottom: 0;
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px;
+            }
+            50% {
+                height: 8px;
+                width: 40px;
+            }
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px;
+            }
+        }
+    </style>
 </head>
 <body class=" ">
 
-
+<div class="loader" id="loader"><span>Loading...</span></div>
 <section class="home-main p-2">
     <div class="logout-btn">
         <button id="logout">Logout</button>
@@ -244,7 +307,7 @@
                         <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Upload
                         </button>
                     </div>
-                    <div class="box-main d-flex " id="banner_display">
+                    <div class="box-main d-flex pt-2" id="banner_display">
 
 
                         <div class="banner-box mt-3 ml-3"></div>
@@ -259,7 +322,7 @@
                 </div>
             </div>
             <div class="col-xl-3 col-lg-12 col-sm-12 mt-3">
-                <div class="notify-main">
+                <div class="notify-main fixsize">
                     <h5>Notification</h5>
                     <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal4">Send
                         Notification
@@ -409,7 +472,7 @@
             </div>
             <div class="col-xl-3 col-lg-12 col-sm-12 mt-5">
                 <div class="notify-main pb-5 pt-4">
-                    <h5>Gallary</h5>
+                    <h5>Feeds</h5>
                     <div class="row mt-3">
                         <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
                             <div class="request-box">
@@ -419,7 +482,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
                             <div class="request-box">
-                                <span>Request</span>
+                                <span>Rejected</span>
                                 <h5 id="rejectcount">2375</h5>
                             </div>
                         </div>
@@ -543,7 +606,61 @@
     </div>
 
 </section>
+<section class="gallary m-2">
 
+    <div class="gallary-main py-4 px-3">
+        <div class="gallary-header">
+            <h5><span>Feed</span> Requests</h5>
+        </div>
+        <div class="right-menu left-menu">
+            <ul>
+                <li>
+                    <button class="active feed_s" data-id="All">All</button>
+                </li>
+                <li>
+                    <button class=" feed_s" data-id="Approved">Approved Feeds</button>
+                </li>
+                <li>
+                    <button class=" feed_s" data-id="Padding">Padding Feeds</button>
+                </li>
+                <li>
+                    <button class=" feed_s" data-id="Rejected">Reject Feeds</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row list-box" id="gest_details_glr">
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                <div class="box1"></div>
+            </div>
+        </div>
+    </div>
+
+</section>
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -597,10 +714,10 @@
                 <div class="modal-body">
                     <div class="modal-title">
                         <span>Enter Event Details</span>
-                        <div class="img-counter">
-                            <p>Gallery</p>
-                            <span>250 Images</span>
-                        </div>
+                        <!--                        <div class="img-counter">-->
+                        <!--                            <p>Gallery</p>-->
+                        <!--                            <span>250 Images</span>-->
+                        <!--                        </div>-->
                     </div>
                     <div class="moda-form mt-4">
                         <div class="material-textfield">
@@ -675,16 +792,102 @@
         </div>
     </div>
 </div>
+<div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form enctype="multipart/form-data" id="event_data_edit">
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <span>Enter Event Details</span>
+                        <!--                        <div class="img-counter">-->
+                        <!--                            <p>Gallery</p>-->
+                        <!--                            <span>250 Images</span>-->
+                        <!--                        </div>-->
+                    </div>
+                    <input placeholder=" " type="text" name="event_id">
+                    <div class="moda-form mt-4">
+                        <div class="material-textfield">
+                            <input placeholder=" " type="text" name="event_name">
+                            <label class="input-text">Event Name</label>
+                        </div>
+                        <div class="material-textfield  mt-4">
+                            <input placeholder=" " class="font id_event_tagline" name="event_tagline" type="text">
+                            <label class="input-text">Event Tagline</label>
+                            <input type="color" name="event_tagline_color" class="colorpikar">
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                <div class="material-textfield">
+                                    <input placeholder=" " type="date" name="event_date">
+                                    <label class="input-text">Event Date</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                <div class="material-textfield">
+                                    <input placeholder=" " type="time" name="event_time">
+                                    <label class="input-text">Event Time</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="login">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <span>DRESS CODE</span>
+                                <label class="toggle-switch">
+                                    <input type="hidden" name="is_dress_code" value="false">
+                                    <input type="checkbox" name="is_dress_code" value="true"
+                                           class="checkbox dress_code_switch" id=""/>
+                                    <span class="switch-btn"></span>
+                                </label>
+                            </div>
+                            <div class="d_c" style="display: none">
+                                <div class="material-textfield mt-3">
+                                    <input placeholder=" " name="dress_code[for_men]" type="text">
+                                    <label class="bg-span input-text">For Men</label>
+                                </div>
+                                <div class="material-textfield mt-3">
+                                    <input placeholder=" " name="dress_code[for_women]" type="text">
+                                    <label class="bg-span input-text">For Women</label>
+                                </div>
+                                <div class="material-textfield mt-3" style="position: unset">
+
+                                    <span class="select-text" style="position: unset">Select outfit</span>
+                                    <!--                                    <input type="hidden" name="dress_code[for_women][outFit]"-->
+                                    <!--                                           value="wardrobe/0706188926_313202121338.png">-->
+                                    <div class="row ">
+                                        <div class="select-ver" id="werboost_id">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="material-textfield mt-4">
+                            <input placeholder=" " type="text" name="event_venue">
+                            <label class="input-text">Venue</label>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" type="button" id="save_event_new">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="modal-title">
-                    <span>Enter Marriages Details</span>
-                    <div class="img-counter" style="margin-right: -16px">
-                        <p>Gallery</p>
-                        <span>250 Images</span>
-                    </div>
+                    <span>Update Marriages Details</span>
+                    <!--                    <div class="img-counter" style="margin-right: -16px">-->
+                    <!--                        <p>Gallery</p>-->
+                    <!--                        <span>250 Images</span>-->
+                    <!--                    </div>-->
                 </div>
                 <div class="moda-form mt-4">
                     <form id="add_mrg_from">
@@ -761,10 +964,10 @@
                                                 <dd>
                                                     <ul>
                                                         <li><a href="#">
-                                                            <b class="dark"> Primary</b>
+                                                            <b class="dark"> dark</b>
                                                             <span class="value">true</span></a></li>
                                                         <li><a href="#">
-                                                            <b class="white"> Primary</b>
+                                                            <b class="white"> white</b>
                                                             <span class="value">false</span></a></li>
 
                                                     </ul>
@@ -781,13 +984,51 @@
                                                 <dd>
                                                     <ul>
                                                         <li><a href="#">
-                                                            <b class="dark"> Secondary</b>
-                                                            <span class="value">rgba(255, 55, 44, 1)|rgba(255, 96, 103, 1)</span></a>
+                                                            <b class="theme1"> Theme 1</b>
+                                                            <span class="value">#0EFFD4|#0076D0</span></a>
                                                         </li>
                                                         <li><a href="#">
-                                                            <b class="secondary1"> Secondary</b>
-                                                            <span class="value">rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)</span></a>
+                                                            <b class="theme2"> Theme 2</b>
+                                                            <span class="value">#08F5FF|#D914F4</span></a>
                                                         </li>
+                                                        <li><a href="#">
+                                                            <b class="theme3"> Theme 3</b>
+                                                            <span class="value">#FF0F87|#4612CC</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme4"> Theme 4</b>
+                                                            <span class="value">#FF191D|#043E9F</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme5"> Theme 5</b>
+                                                            <span class="value">#FF161B|#580DBF</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme6"> Theme 6</b>
+                                                            <span class="value">#08F5FF|#580DBF</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme7"> Theme 7</b>
+                                                            <span class="value">#FF1BC6|#0066A6</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme8"> Theme 8</b>
+                                                            <span class="value">#FFAC1B|#E10B90</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme9"> Theme 9</b>
+                                                            <span class="value">#FF161B|#A810B3</span></a>
+                                                        </li>
+                                                        <li><a href="#">
+                                                            <b class="theme10"> Theme 10</b>
+                                                            <span class="value">#00FFB4|#0F2FFF</span></a>
+                                                        </li>
+
+                                                        <li><a href="#">
+                                                            <b class="theme11"> Theme 11</b>
+                                                            <span class="value">#FF1B1B|#0A34D4</span></a>
+                                                        </li>
+
                                                     </ul>
                                                 </dd>
                                             </dl>
@@ -915,7 +1156,14 @@
                         <div class="mehendi-box-header">
                             <h6>${data.event_name}</h6>
                             <h6 class="text-light-white">Dress code <span class="font" style="color:#${data.event_tagline_color} !important;">${data.event_tagline} </span></h6>
-                            <button class="toggle-btn text-light-white"><i class="fas fa-ellipsis-h"></i></button>
+                            <button class="toggle-btn toggle-btn-main text-light-white">
+                            <i class="fas fa-ellipsis-h"></i>
+                             <div class="d-bt-m">
+                                      <a class="edit-event" data-id="${data.event_id}" data-value='${JSON.stringify(data)}' data-bs-toggle="modal" data-bs-target="#exampleModal6"><div>EDIT</div></a>
+                                      <a class="delete-event" data-id="${data.event_id}"><div>Delete</div></a>
+                            </div>
+                            </button>
+
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
@@ -1021,7 +1269,7 @@
         var rtn = $(this).parents('.dropdown')
         $("#" + rtn.data('id')).val($(this).find('.value').html())
         rtn.find('dt a').html(getSelectedValue(rtn.attr('id')));
-        rtn.find('dd ul').hide();
+        rtn.find("dd ul").toggle();
         // alert()
     });
 
@@ -1042,13 +1290,88 @@
         return `<div class=" scroll-hro">
                                                 <div class="outfit-box">
                                                     <label for="${v._id}">
-                                                    <input type="radio" name="dress_code[for_women][outFit]" id="${v._id}" value="${v.wardrobe_image}">
+                                                    <input type="radio" name="dress_code[outFit]" id="${v._id}" value="${v.wardrobe_image}">
                                                     <img src="${BASE_URL + v.wardrobe_image}"
                                                          width="70px" height="90px" alt="">
                                                     </label>
                                                 </div>
                                             </div>`;
     }
+
+    function setImage(v) {
+        var x = `
+<div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+            <div class="box1">
+                    <img alt=""
+                         src="${BASE_URL + v.feed_image}">`
+        if (v.feed_status == "Panding") {
+            x += `<button class="minus change_det" data-id="${v.feed_id}" data-value="Rejected">
+                        <i class="fas fa-minus"></i>
+                    </button>`
+            x += `<button class="check-mark right-mark  change_det" data-id="${v.feed_id}" data-value="Approved">
+                        <i class="fas fa-check"></i>
+                    </button>`
+        }
+        x += ` </div> </div>`;
+        return x;
+    }
+
+    $(document).on("click", '.edit-event', function () {
+        var olddata = $(this).data('value')
+        // console.log(olddata);
+        $('#loader').show()
+        $.each(olddata, function (k, v) {
+            var el = $(document).find("#event_data_edit [name=" + k + "]")
+            if (el.length > 0) {
+                // var atr = el.attr('type')
+                // console.log(atr);
+                if (el.attr('type') == 'date')
+                    el.val(cutomdate(v, 'yyyy-mm-dd'))
+                else if (el.attr('type') == 'time') {
+                    // console.log(cutomdate("01-01-2001 " + v, 'HH:MM'));
+                    el.val(cutomdate("01-01-2001 " + v, 'HH:MM'))
+                } else if (el.attr('type') != "checkbox" && k != "is_dress_code")
+                    el.val(v)
+
+            }
+        })
+        var chb = $(document).find("#event_data_edit .dress_code_switch[type=checkbox]")
+        if (olddata.is_dress_code) {
+
+            if (!chb.prop('checked'))
+                chb.trigger('change')
+            chb.prop('checked', true)
+            $.each(olddata.dress_code, function (k, v) {
+                var el2 = $(document).find('#event_data_edit [name="dress_code[' + k + ']"]')
+                if (el2.attr('type') == 'text') {
+                    el2.val(v)
+                }
+            })
+            console.log(olddata.dress_code)
+            el2 = $(document).find('#event_data_edit [value="' + olddata.dress_code.outFit + '"]')
+            if (el2.length > 0) {
+                console.log(el2);
+                el2.prop('checked', true)
+            }
+
+        } else {
+            if (chb.prop('checked')) {
+                chb.trigger('change')
+            }
+            chb.prop('checked', false)
+        }
+        // console.log(olddata);
+
+        $('#loader').hide()
+
+
+    })
+    $(document).on("click", '.delete-event', function () {
+        if (confirm("Are you sure to remove event?")) {
+            delete_event($(this).data('id'))
+        }
+
+    })
 </script>
 </body>
 </html>

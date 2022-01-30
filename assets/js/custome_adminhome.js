@@ -19,6 +19,7 @@ function printHome(response) {
 
 
         if (!data.is_dark) $(document).find('body').addClass('body-light')
+        var date = response.data.wedding_date;
         response.data.wedding_date = cutomdate(response.data.wedding_date, 'dd/mm/yyyy')
         $.each(response.data, function (k, v) {
             var x = $(document).find("#d_" + k);
@@ -34,14 +35,16 @@ function printHome(response) {
             $(document).find('#d_primary').addClass('white-color');
             $(document).find('#sample1 dt a b').addClass('white')
         }
-        color = '#' + data.secondary_color.join(',#');
+        color = data.secondary_color.join(',');
         // console.log(color)
-        $(document).find('#d_secondory').css('background', 'linear-gradient(' + color + ')');
-        $(document).find('#sample .secondary1::before').css('background', 'linear-gradient(' + color + ')');
+        $(document).find('#d_secondory').attr('style', 'background:linear-gradient(' + color + ') !important');
+        $('head').append(`<style>.secondary1:before{background:linear-gradient( ${color} ) !important;}</style>`);
+
         var bannerhtml = '';
         $.each(data.banner, function (k, v) {
             bannerhtml += banner(v);
         })
+        if (bannerhtml == "") bannerhtml = `<h5 class="notfound">Data not found!</h5>`;
         // console.log(bannerhtml);
         $(document).find('#banner_display').html(bannerhtml);
         // alert();
@@ -61,6 +64,7 @@ function printHome(response) {
             $(document).find("#cllect_id_proof").show();
         }
         // console.log(html,printHtml);        $(document).find('[name=wedding_date]').val(data.wedding_date);
+        data.wedding_date = cutomdate(date, 'yyyy-mm-dd')
         $.each(data, function (k, v) {
             var x = $(document).find('[name=' + k + ']')
             // console.log(x);
@@ -69,9 +73,11 @@ function printHome(response) {
                     x.prop("checked", true);
                 }
 
-                if (k != "invitation_card" || k != "is_approve_post" || k != "is_guests_id_proof") {
+                if (x.attr("type") != 'file') {
+                    if (k != "invitation_card" && k != "is_approve_post" && k != "is_guests_id_proof") {
                         x.val(v);
 
+                    }
                 }
             }
 
@@ -90,6 +96,10 @@ home();
 function add_image() {
     var formData = new FormData();
     datfrom = $(document).find('#wardrobe_image')
+    if (!datfrom[0].files[0]) {
+        alert("Please select image");
+        return false;
+    }
     formData.append('banner', datfrom[0].files[0]);
     formData.append('marriage_id', id);
     // console.log(datfrom[0].files[0]);
@@ -134,6 +144,7 @@ function getnotification() {
             $.each(data, function (k, v) {
                 html += notificaion_details(v);
             })
+            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             htmltag.html(html);
         }
     });
@@ -172,6 +183,7 @@ function getallevent() {
                         <a data-id="${v.event_id}" >${v.event_name}</a>
                     </li>`;
             })
+            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             htmltag.html(html);
             $(document).find('.gallery-menu ul').html(selectevent);
         }
@@ -200,6 +212,7 @@ function get_images_by_event(event_id = null) {
             $.each(response.data, function (k, v) {
                 html += gallry_image(v);
             })
+            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             htmltag.html(html);
         }
     });
@@ -248,6 +261,10 @@ async function add_gallery() {
     }
     var formData = new FormData();
     datfrom = $(document).find('#image_gallery')
+    if (!datfrom[0].files[0]) {
+        alert("Please select image!");
+        return false;
+    }
     formData.append('gallery_image', datfrom[0].files[0]);
     formData.append('marriage_id', id);
     formData.append('event_id', eventid);
@@ -277,13 +294,6 @@ async function add_gallery() {
 
 }
 
-function hiddmodel() {
-    setTimeout(function () {
-        $('body').css('overflow', 'auto');
-
-
-    }, 3000);
-}
 
 // $(document).on('shown.bs.modal', '.modal', function () {
 //     alert();
@@ -295,12 +305,14 @@ $(document).on('click', '#gallery_save_btn', function () {
 $(document).on('change', '.dress_code_switch', function () {
 
     $(document).find('#d_c').toggle('d-none')
+    $(document).find('.d_c').toggle('d-none')
 })
 
 $(document).on('change', '.colorpikar', function () {
     var clr = $(this).val()
     $(this).attr('style', 'background:' + clr + " !important");
     $(document).find('#id_event_tagline').attr('style', 'color:' + clr + ' !important');
+    $(document).find('.id_event_tagline').attr('style', 'color:' + clr + ' !important');
 })
 
 
@@ -318,7 +330,7 @@ function guest_list(status = null) {
             $.each(response.data, function (k, v) {
                 html += gestrow(v);
             })
-
+            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             htmltag.html(html);
         }
     });
@@ -369,15 +381,29 @@ function add_event() {
     var frm = that.serializeArray();
     var data = {marriage_id: id};
     $.each(frm, function (k, v) {
+        // console.log(v.name);
         data[v.name] = v.value;
     })
+    data.dress_code = {
+        for_men: data['dress_code[for_men]'],
+        for_women: data['dress_code[for_women]'],
+        outFit: data['dress_code[outFit]']
+
+
+    };
+    delete data['dress_code[for_men]']
+    delete data['dress_code[for_women]']
+    delete data['dress_code[outFit]']
     settings.data = JSON.stringify(data);
-    // console.log(data);
+    // console.log(settings.data)
+    // return;
     settings.url = BASE_URL + "add_new_event"
     // //
     $.ajax(settings).done(function (response) {
         if (getresopncesuccess(response)) {
-            that.reset();
+            that[0].reset();
+            $("#exampleModal").modal('toggle');
+            hiddmodel()
             getallevent();
         }
     });
@@ -391,7 +417,8 @@ function addmrg() {
     formData.append('marriage_id', id);
     $.each(frm, function (k, v) {
         if (v.name == 'secondary_color') {
-            // data[v.name] = v.value.split("|")
+            data[v.name] = v.value.split("|")
+            formData.append(v.name, data[v.name]);
             // formData.append('secondary_color', v.value.split("|"));
         } else {
             data[v.name] = v.value;
@@ -449,6 +476,10 @@ $(document).on('click', '#save_btn_notification', function () {
 function add_invi() {
     var formData = new FormData();
     datfrom = $(document).find('#invitation_card')
+    if (!datfrom[0].files[0]) {
+        alert("Please select image!")
+        return false;
+    }
     formData.append('invitation_card', datfrom[0].files[0]);
     formData.append('marriage_id', id);
     // console.log(datfrom[0].files[0]);
@@ -492,7 +523,9 @@ function getallwardrop() {
             $.each(response.data, function (k, v) {
                 html += verbs(v);
             })
+            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             $(document).find("#werboost").html(html)
+            $(document).find("#werboost_id").html(html)
         }
     });
 }
@@ -532,3 +565,82 @@ $(document).on('change', "#profile", function () {
 
 
 });
+
+var x1 = 'All';
+
+function getfeeds(u = 'All') {
+    x1 = u
+    settings.data = JSON.stringify({'marriage_id': id, feed_status: u});
+    // console.log(data);
+    settings.url = BASE_URL + "get_all_feeds_from_a_single_marriage"
+    // //
+    $.ajax(settings).done(function (response) {
+        if (getresopncesuccess(response)) {
+            var html = '';
+            $.each(response.data, function (x, v) {
+                html += setImage(v);
+            })
+            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
+            $(document).find("#gest_details_glr").html(html);
+        }
+    });
+}
+
+getfeeds();
+
+$(document).on("click", ".feed_s", function () {
+    var aa = $(this).data('id');
+    $('.feed_s').removeClass("active");
+    $(this).addClass('active');
+    getfeeds(aa);
+})
+
+function delete_event(eid) {
+    settings.url = BASE_URL + 'delete_event';
+    settings.data = JSON.stringify({event_id: eid});
+    $.ajax(settings).done(function (response) {
+        if (getresopncesuccess(response)) {
+            getallevent()
+        }
+    });
+}
+
+function update_event() {
+    var that = $(document).find('#event_data_edit');
+    var frm = that.serializeArray();
+    var data = {marriage_id: id};
+    $.each(frm, function (k, v) {
+        // console.log(v.name);
+        data[v.name] = v.value;
+    })
+    data.dress_code = {
+        for_men: data['dress_code[for_men]'],
+        for_women: data['dress_code[for_women]'],
+        outFit: data['dress_code[outFit]']
+
+
+    };
+    delete data['dress_code[for_men]']
+    delete data['dress_code[for_women]']
+    delete data['dress_code[outFit]']
+    settings.data = JSON.stringify(data);
+    console.log(settings.data)
+    // return;
+    settings.url = BASE_URL + "update_event"
+    // //
+    $.ajax(settings).done(function (response) {
+        if (getresopncesuccess(response)) {
+            location.reload();
+            // that[0].reset();
+            // $("#exampleModal6").modal('toggle');
+            // hiddmodel()
+            // getallevent();
+        }
+    });
+}
+
+$(document).on("click", "#save_event_new", function (e) {
+    // e.preventDefault();
+    // alert();
+    update_event();
+})

@@ -840,28 +840,182 @@ select.marriage {
     text-overflow: '';
 }
 
-.select-ver .scroll-hro{
+.select-ver .scroll-hro {
     margin: 10px;
 }
+
 .select-ver {
     position: relative;
     display: flex;
     overflow-x: scroll;
 }
-.detail-def .upload-btn,#count_inv{
+
+.detail-def .upload-btn, #count_inv {
     display: inline-block;
+}
+
+/*user*/
+
+.gallary-main {
+    background-color: #202020;
+    border-radius: 10px;
+}
+
+.gallary .gallary-header {
+    color: #fff;
+}
+
+.gallary .gallary-header span {
+    color: rgba(255, 255, 255, 0.712);
+    font-weight: 300;
+}
+
+.gallary .right-menu {
+    background-color: #292929;
+    padding: 15px 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+}
+
+.gallary .left-menu {
+
+    justify-content: unset;
+}
+
+
+.gallary .right-menu ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    column-gap: 40px;
+}
+
+.gallary .right-menu ul li button {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.gallary .right-menu ul li button.active {
+    text-decoration: underline;
+}
+
+.gallary .right-menu ul li button:disabled {
+    color: rgba(255, 255, 255, 0.425);
+}
+
+.gallary .box1 {
+    background-color: #313131;
+    height: 180px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.gallary .box1 img {
+    width: 100%;
+    height: 180px;
+}
+
+.right-mark {
+    right: 20px !important;
+}
+
+.gallary .list-box {
+    margin-top: 20px;
+}
+
+.gallary .minus,
+.gallary .check-mark {
+    background-color: #b51023;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    top: -10px;
+    right: -10px;
+    color: #fff;
+}
+
+.notfound {
+    text-align: center !important;
+}
+
+/*scrollbar*/
+*::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+
+}
+
+*::-webkit-scrollbar-track {
+    background: #202020; /* color of the tracking area */
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: white; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid #202020; /* creates padding around scroll thumb */
+}
+
+.toggle-btn-main {
+    position: relative;
+}
+
+.d-bt-m {
+    /* position: relative; */
+    text-align: left;
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    width: 120px;
+    right: 20px;
+    background: #151516;
+    color: white;
+    top: 0;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.d-bt-m div:hover {
+    color: #ffffff70;
+}
+
+.toggle-btn-main:hover > .d-bt-m {
+    display: block;
 }
 
 /* light theme */
 .body-light,
 .body-light .notify-main,
-.body-light .gallary-sec,
 .body-light .superadmin,
 .body-light .guest-id,
 .body-light .home-main .notyfy-box {
 
     background-color: #f3f3f7 !important;
     color: #000 !important;
+}
+
+.body-light *::-webkit-scrollbar-track {
+    background: #efefef !important; /* color of the tracking area */
+}
+
+.body-light *::-webkit-scrollbar-thumb {
+    background-color: white; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 3px solid transparent !important; /* creates padding around scroll thumb */
 }
 
 .body-light .home-main .notyfy-box {
@@ -874,11 +1028,14 @@ select.marriage {
 .body-light .notify-main,
 .body-light .total-img-box,
 .body-light .anable-btn,
-.body-light .gallery-menu,
 .body-light .admin-table table thead tr,
-.body-light .gallary-sec-main,
 .body-light .modal .select-color,
-.body-light select.marriage {
+.body-light select.marriage,
+.body-light .gallary-header,
+.body-light .gallary-header span,
+.body-light .gallary-sec,
+.body-light .superadmin .admin-table,
+.body-light .gallary-main {
     background-color: #fff !important;
     /*color: #fff !important;*/
     color: #000 !important;
@@ -901,11 +1058,18 @@ select.marriage {
 }
 
 .body-light .detail-box, .body-light .mehendi-box, .body-light .box-g,
-.body-light .superadmin .admin-table,
 .body-light .admin-table1 > span,
-.body-light .table-responsive {
-    background-color: #efefef !important;
+.body-light .table-responsive,
+.body-light .right-menu.left-menu,
+.body-light .gallary-sec-main,
+.body-light .gallery-menu,
+.body-light .right-menu.left-menu .feed_s {
+    background-color: #f3f3f7 !important;
     color: #000 !important;
+}
+
+.body-light .table-responsive {
+    border-radius: 5px;
 }
 
 .body-light .upload-btn,
@@ -930,7 +1094,9 @@ select.marriage {
     color: #000 !important;
 }
 
-.body-light .modal input, .body-light .modal .login {
+.body-light .modal input,
+.body-light .modal .login,
+.body-light .total-img-box {
     border: 1px solid rgb(0 0 0 / 27%) !important;
     background-color: #efefef !important;
     color: black;
@@ -949,9 +1115,9 @@ select.marriage {
     background-color: #dcdcdf !important;
 }
 
-.body-light .logout-btn {
-    background-color: #efefef;
-}
+/*.body-light .logout-btn {*/
+/*    background-color: #efefef;*/
+/*}*/
 
 .body-light .outfit-box {
     background: white;
@@ -968,3 +1134,75 @@ select.marriage {
 .black-box {
     background-color: #252525;
 }
+
+.theme1:before {
+    background: linear-gradient(#0EFFD4, #0076D0) !important;
+}
+
+.theme2:before {
+    background: linear-gradient(#08F5FF, #D914F4) !important;
+}
+
+.theme3:before {
+    background: linear-gradient(#FF0F87, #4612CC) !important;
+}
+
+.theme4:before {
+    background: linear-gradient(#FF191D, #043E9F) !important;
+}
+
+.theme5:before {
+    background: linear-gradient(#FF161B, #580DBF) !important;
+}
+
+.theme6:before {
+    background: linear-gradient(#08F5FF, #580DBF) !important;
+}
+
+.theme7:before {
+    background: linear-gradient(#FF1BC6, #0066A6) !important;
+}
+
+.theme8:before {
+    background: linear-gradient(#FFAC1B, #E10B90) !important;
+}
+
+.theme9:before {
+    background: linear-gradient(#FF161B, #A810B3) !important;
+}
+
+.theme10:before {
+    background: linear-gradient(#00FFB4, #0F2FFF) !important;
+}
+
+.theme11:before {
+    background: linear-gradient(#FF1B1B, #0A34D4) !important;
+}
+
+/**/
+.fixsize {
+    height: 672px !important;
+    overflow-y: scroll;
+}
+
+.box-main {
+    height: 132px !important;
+    overflow-y: scroll;
+}
+
+#event_display {
+    height: 700px;
+    overflow-y: scroll;
+}
+
+#gallery_image {
+    height: 450px;
+    overflow-y: scroll;
+}
+
+.table-responsive {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+

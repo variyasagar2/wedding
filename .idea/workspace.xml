@@ -8,7 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/custome_adminhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custome_adminhome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/custome_superadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custome_superadmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/login/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super_admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +47,12 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wedding_app" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MTHome" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -64,6 +71,7 @@
       <updated>1643450094780</updated>
       <workItem from="1643450096831" duration="23576000" />
       <workItem from="1643514566564" duration="9759000" />
+      <workItem from="1643534980319" duration="20151000" />
     </task>
     <servers />
   </component>

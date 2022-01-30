@@ -27,33 +27,7 @@ $(document).find("#user_phone").html(phone)
 $(document).find("#user_name").html(name)
 
 // alert(mrg_id);
-var x1 = 'All';
 
-function getfeeds(u = 'All') {
-    x1 = u
-    settings.data = JSON.stringify({'marriage_id': id, feed_status: u});
-    // console.log(data);
-    settings.url = BASE_URL + "get_all_feeds_from_a_single_marriage"
-    // //
-    $.ajax(settings).done(function (response) {
-        if (getresopncesuccess(response)) {
-            var html = '';
-            $.each(response.data, function (x, v) {
-                html += setImage(v);
-            })
-            $(document).find("#gest_details_glr").html(html);
-        }
-    });
-}
-
-getfeeds();
-
-$(document).on("click", ".feed_s", function () {
-    var aa = $(this).data('id');
-    $('.feed_s').removeClass("active");
-    $(this).addClass('active');
-    getfeeds(aa);
-})
 
 function getfeeds1(u = 'All') {
 

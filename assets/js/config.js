@@ -11,6 +11,25 @@ cnt = urlParams.get('cnt') || 0;
 if (cnt > 5) {
     localStorage.clear();
 }
+jQuery.ajaxSetup({
+    beforeSend: function () {
+        $('#loader').show()
+    }, complete: function () {
+        $("#loader").hide();
+    }
+});
+jQuery(document).ready(function () {
+    $("#loader").hide();
+});
+
+function hiddmodel() {
+    setTimeout(function () {
+        $('.modal-backdrop').hide();
+        $('body').css('overflow', 'auto');
+
+
+    }, 3000);
+}
 
 function checkLogin(redirectURL = null, redirectlogin = false) {
     userdetails = localStorage.getItem('userDetails') || localStorage.getItem('is_admin')
@@ -58,6 +77,11 @@ var settings = {
 };
 
 function getresopncesuccess(data) {
+    settings = {
+        "url": BASE_URL + "marriage_login", "method": "POST", "timeout": 0, "headers": {
+            "Content-Type": "application/json"
+        },
+    };
     if (!data.is_success) {
         alert(data.message);
         return false;
