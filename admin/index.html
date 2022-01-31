@@ -492,11 +492,23 @@
                         <h5 class="mt-1" id="totalcount">2375 Images</h5>
                     </div>
                 </div>
-                <div class="guest-id mt-4" id="cllect_id_proof">
+                <div class="guest-id mt-4">
                     <p>Collect guest ID during registration</p>
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="checkbox is_guests_id_proof" id="cllect_id_proof1"
+                               data-id="is_guests_id_proof"
+                               value="true"/>
+                        <span class="switch-btn"></span>
+                    </label>
                 </div>
-                <div class="guest-id mt-4" id="approve_image">
+                <div class="guest-id mt-4">
                     <p>Approve social media before uploading</p>
+                    <label class="toggle-switch">
+                        <input type="checkbox" class="checkbox is_approve_post" id="approve_image1"
+                               data-id="is_approve_post"
+                               value="true"/>
+                        <span class="switch-btn"></span>
+                    </label>
                 </div>
             </div>
         </div>
@@ -749,7 +761,7 @@
                                 <label class="toggle-switch">
                                     <input type="hidden" name="is_dress_code" value="false">
                                     <input type="checkbox" name="is_dress_code" value="true"
-                                           class="checkbox dress_code_switch" id=""/>
+                                           class="checkbox dress_code_switch"/>
                                     <span class="switch-btn"></span>
                                 </label>
                             </div>
@@ -1219,7 +1231,7 @@
     function gestrow(d) {
         var a = `<tr>
                         <td>
-                          <a  href="${url + "user" + "?id=" + id + "&mrg_id=" + d.guest_id + "&phone=" + d.guest_mobile_number + "&name=" + d.guest_name + "&image=" + d.guest_id_proof.toString()}" ><span class="my-3 d-block" id="">${d.guest_name}</span></a>
+                          <a  href="${url + "user" + "?id=" + id + "&mrg_id=" + d.guest_id + "&phone=" + d.guest_mobile_number + "&name=" + d.guest_name + "&image=" + d.guest_id_proof.toString() + "&profile=" + d.guest_profile_image}" ><span class="my-3 d-block" id="">${d.guest_name}</span></a>
                         </td>
                         <td>${d.guest_mobile_number}</td>
                         <td class="cllect_id_proof">`

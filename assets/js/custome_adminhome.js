@@ -49,19 +49,19 @@ function printHome(response) {
         $(document).find('#banner_display').html(bannerhtml);
         // alert();
         if (!data.is_approve_post) {
-            $(document).find("#approve_image").hide();
+            $(document).find("#approve_image1").prop("checked", false);
 
         } else {
             $(document).find("[name=is_approve_post]").prop("checked", true);
-            $(document).find("#approve_image").show();
+            $(document).find("#approve_image1").prop("checked", true);
         }
 
 
         if (!data.is_guests_id_proof) {
-            $(document).find("#cllect_id_proof").hide();
+            $(document).find("#cllect_id_proof1").prop("checked", false);
         } else {
             $(document).find("[name=is_guests_id_proof]").prop("checked", true);
-            $(document).find("#cllect_id_proof").show();
+            $(document).find("#cllect_id_proof1").prop("checked", true);
         }
         // console.log(html,printHtml);        $(document).find('[name=wedding_date]').val(data.wedding_date);
         data.wedding_date = cutomdate(date, 'yyyy-mm-dd')
@@ -643,4 +643,31 @@ $(document).on("click", "#save_event_new", function (e) {
     // e.preventDefault();
     // alert();
     update_event();
+})
+
+$(document).on("change", "#cllect_id_proof1,#approve_image1", function () {
+    var name = $(this).data('id');
+    var xa = false;
+    if ($(this).prop('checked') == true) {
+        xa = true
+    }
+    var formData = new FormData();
+    formData.append('marriage_id', id);
+    formData.append(name, xa);
+    let settingclon = settings;
+    settingclon.processData = false
+    settingclon.contentType = false
+    delete settingclon.headers
+    settingclon.mimeType = "multipart/form-data"
+    settingclon.url = BASE_URL + 'update_marriage'
+    settingclon.data = formData
+    settingclon.success = function (response) {
+        // console.log(response);
+        response = JSON.parse(response);
+        if (getresopncesuccess(response)) {
+            document.location.reload();
+        }
+    }
+    $.ajax(settingclon);
+
 })

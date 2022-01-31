@@ -4,6 +4,7 @@ const mrg_id = urlParams.get('mrg_id');
 const phone = urlParams.get('phone');
 const name = urlParams.get('name');
 const image = urlParams.get('image');
+const profile = urlParams.get('profile');
 
 var myArray = image.split(" ")
 var a = '';
@@ -25,6 +26,8 @@ if (myArray[0] != null && myArray[0].search("pdf") > -1) {
 $(document).find("#user_proof").html(a)
 $(document).find("#user_phone").html(phone)
 $(document).find("#user_name").html(name)
+$(document).find(".user-pic").css("background", "url('" + BASE_URL + profile + "')");
+$(document).find(".user-pic").css("background-size", "cover");
 
 // alert(mrg_id);
 
