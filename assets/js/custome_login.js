@@ -1,4 +1,3 @@
-
 checkLogin();
 $(document).on("submit", "#loginSubmit", function (e) {
     // alert();
@@ -12,6 +11,7 @@ $(document).on("submit", "#loginSubmit", function (e) {
         localStorage.setItem('id', 'Admin');
         localStorage.setItem('is_admin', 'SuperAdmin');
         checkLogin();
+        return false;
     }
 
     settings.data = JSON.stringify(data);

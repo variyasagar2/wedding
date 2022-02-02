@@ -210,8 +210,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .home-main .white-box {
-    width: 82px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 10px;
     background-color: #fff;
 }
@@ -222,6 +222,15 @@ h1, h2, h3, h4, h5, h6, p {
 
 .gap-con {
     column-gap: 30px;
+
+}
+
+.gap-con .white-box {
+    width: 80px !important;
+}
+
+.gap-con span {
+    width: calc(100% - 80px);
 }
 
 .home-main .notify-main p {
@@ -976,7 +985,7 @@ select.marriage {
 
 .d-bt-m {
     /* position: relative; */
-    text-align: left;
+    text-align: center;
     display: none;
     position: absolute;
     border-radius: 5px;
@@ -989,12 +998,25 @@ select.marriage {
     padding: 10px;
 }
 
+.d-bt-m a {
+    text-decoration: none !important;
+}
+
+.d-bt-m div {
+    color: white !important;
+    text-decoration: none;
+}
+
 .d-bt-m div:hover {
-    color: #ffffff70;
+    color: #ffffff70  !important;
 }
 
 .toggle-btn-main:hover > .d-bt-m {
     display: block;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
 }
 
 /* light theme */
@@ -1113,6 +1135,10 @@ select.marriage {
 .body-light .admin-table table thead tr,
 .body-light .dropdown dd ul {
     background-color: #dcdcdf !important;
+}
+
+.body-light ::-webkit-calendar-picker-indicator {
+    filter: unset;
 }
 
 /*.body-light .logout-btn {*/

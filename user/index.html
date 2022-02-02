@@ -82,7 +82,7 @@
 
 <section class="gallary margin-100">
 
-    <div class="gallary-main px-5 py-5">
+    <div class="gallary-main m-4">
         <div class="user-info">
             <div class="user-main d-flex align-items-center">
                 <div class="user-pic"></div>
@@ -124,7 +124,23 @@
 <script src="../assets/js/config.js"></script>
 <script src="../assets/js/user.js"></script>
 <script !src="">
-
+    function setImage(v) {
+        var x = `
+<div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+            <div class="box1">
+                    <img alt=""
+                         src="${BASE_URL + v.feed_image}">`
+        // if (v.feed_status == "Panding") {
+        //     x += `<button class="minus change_det" data-id="${v.feed_id}" data-value="Rejected">
+        //                 <i class="fas fa-minus"></i>
+        //             </button>`
+        //     x += `<button class="check-mark right-mark  change_det" data-id="${v.feed_id}" data-value="Approved">
+        //                 <i class="fas fa-check"></i>
+        //             </button>`
+        // }
+        x += ` </div> </div>`;
+        return x;
+    }
 </script>
 </body>
 

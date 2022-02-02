@@ -216,6 +216,11 @@ function get_images_by_event(event_id = null) {
             htmltag.html(html);
         }
     });
+    if (eventid == null) {
+        $('#upload_event').hide();
+    } else {
+        $('#upload_event').show();
+    }
 }
 
 get_images_by_event();
@@ -332,6 +337,10 @@ function guest_list(status = null) {
             })
             if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             htmltag.html(html);
+
+            if (!$('#cllect_id_proof1').prop('checked')) {
+                $('.cllect_id_proof').hide();
+            }
         }
     });
 }
@@ -496,7 +505,7 @@ function add_invi() {
         response = JSON.parse(response);
         $("#exampleModal5").modal('toggle');
         hiddmodel()
-        $("#invitation_card")[0].reset()
+        $("#image_nvi_form")[0].reset()
         printHome(response)
     }
     $.ajax(settingclon);

@@ -240,48 +240,63 @@
             display: block;
         }
 
-         .theme1:before {
-            background: linear-gradient( #0EFFD4, #0076D0) !important;
+        .theme1:before {
+            background: linear-gradient(#0EFFD4, #0076D0) !important;
         }
 
-         .theme2:before {
-            background: linear-gradient( #08F5FF, #D914F4) !important;
+        .theme2:before {
+            background: linear-gradient(#08F5FF, #D914F4) !important;
         }
 
-         .theme3:before {
-            background: linear-gradient( #FF0F87, #4612CC) !important;
+        .theme3:before {
+            background: linear-gradient(#FF0F87, #4612CC) !important;
         }
 
-         .theme4:before {
-            background: linear-gradient( #FF191D, #043E9F) !important;
+        .theme4:before {
+            background: linear-gradient(#FF191D, #043E9F) !important;
         }
 
-         .theme5:before {
-            background: linear-gradient( #FF161B, #580DBF) !important;
+        .theme5:before {
+            background: linear-gradient(#FF161B, #580DBF) !important;
         }
 
-         .theme6:before {
-            background: linear-gradient( #08F5FF, #580DBF) !important;
+        .theme6:before {
+            background: linear-gradient(#08F5FF, #580DBF) !important;
         }
 
-         .theme7:before {
-            background: linear-gradient( #FF1BC6, #0066A6) !important;
+        .theme7:before {
+            background: linear-gradient(#FF1BC6, #0066A6) !important;
         }
 
-         .theme8:before {
-            background: linear-gradient( #FFAC1B, #E10B90) !important;
+        .theme8:before {
+            background: linear-gradient(#FFAC1B, #E10B90) !important;
         }
 
-         .theme9:before {
-            background: linear-gradient( #FF161B, #A810B3) !important;
+        .theme9:before {
+            background: linear-gradient(#FF161B, #A810B3) !important;
         }
 
-         .theme10:before {
-            background: linear-gradient( #00FFB4, #0F2FFF) !important;
+        .theme10:before {
+            background: linear-gradient(#00FFB4, #0F2FFF) !important;
         }
 
-         .theme11:before {
-            background: linear-gradient( #FF1B1B, #0A34D4) !important;
+        .theme11:before {
+            background: linear-gradient(#FF1B1B, #0A34D4) !important;
+        }
+    </style>
+
+    <style>
+        #togglePassword {
+            position: absolute;
+            bottom: 12px;
+            right: 7px;
+            cursor: pointer;
+        }
+
+
+
+        ::-webkit-calendar-picker-indicator {
+            filter: invert(1);
         }
     </style>
 </head>
@@ -346,10 +361,10 @@
             <div class="modal-body">
                 <div class="modal-title">
                     <span>Enter Marriages Details</span>
-                    <div class="img-counter" style="margin-right: -16px">
-                        <p>Gallery</p>
-                        <span>250 Images</span>
-                    </div>
+                    <!--                    <div class="img-counter" style="margin-right: -16px">-->
+                    <!--                        <p>Gallery</p>-->
+                    <!--                        <span>250 Images</span>-->
+                    <!--                    </div>-->
                 </div>
                 <div class="moda-form mt-4">
                     <form id="add_mrg_from">
@@ -378,12 +393,14 @@
                         <div class="login">
                             <span>LOGIN DETAILS</span>
                             <div class="material-textfield mt-3">
-                                <input placeholder=" " type="number" minlength="10" maxlength="10" name="mobile_number">
+                                <input placeholder=" " type="text" pattern="^[0-9]{10}$" name="mobile_number">
                                 <label class="bg-span input-text">Client Phone number</label>
                             </div>
                             <div class="material-textfield mt-3">
                                 <input placeholder=" " type="password" name="password">
                                 <label class="bg-span input-text">Password</label>
+                                <i class="bi bi-eye-slash fa fa-eye-slash"
+                                   id="togglePassword"></i>
                             </div>
                         </div>
                         <div class="material-textfield mt-4">
@@ -634,6 +651,26 @@
             x.html('**************')
         }
     })
+</script>
+<script>
+    const togglePassword = document
+        .querySelector('#togglePassword');
+
+    const password = $(document).find('[name=password]');
+
+    togglePassword.addEventListener('click', () => {
+
+        // Toggle the type attribute using
+        // getAttribure() method
+        const type = password
+            .attr('type') === 'password' ?
+            'text' : 'password';
+
+        password.attr('type', type);
+
+        // Toggle the eye and bi-eye icon
+        this.classList.toggle('fa-eye');
+    });
 </script>
 <script src="../assets/js/custome_superadmin.js"></script>
 </body>

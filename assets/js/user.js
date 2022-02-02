@@ -5,6 +5,10 @@ const phone = urlParams.get('phone');
 const name = urlParams.get('name');
 const image = urlParams.get('image');
 const profile = urlParams.get('profile');
+const theme = urlParams.get('theme');
+if (theme == true) {
+    $(document).find('body').addClass('body-light')
+}
 
 var myArray = image.split(" ")
 var a = '';

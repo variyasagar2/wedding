@@ -59,8 +59,18 @@ $(document).ready(function () {
         });
     }
 
+    function phonenumber(inputtxt) {
+        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (inputtxt.match(phoneno)) {
+            return true;
+        } else {
+            alert("Please Enter valid mobile number");
+            return false;
+        }
+    }
+
     $(document).on('click', '#save_btn', function () {
-        addmrg();
+        if (phonenumber($('[name=mobile_number]').val())) addmrg();
     });
 
     function getallimage() {
@@ -90,7 +100,7 @@ $(document).ready(function () {
         settings.data = JSON.stringify({wardrobe_ids: [id]});
         settings.url = BASE_URL + "delete_wardrobe"
         $.ajax(settings).done(function (response) {
-            response = JSON.parse(response)
+            if (typeof response == "string") response = JSON.parse(response)
             if (getresopncesuccess(response)) {
                 getallimage();
             }
