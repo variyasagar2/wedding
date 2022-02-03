@@ -1004,11 +1004,12 @@ select.marriage {
 
 .d-bt-m div {
     color: white !important;
+    padding: 7px;
     text-decoration: none;
 }
 
 .d-bt-m div:hover {
-    color: #ffffff70  !important;
+    color: #ffffff70 !important;
 }
 
 .toggle-btn-main:hover > .d-bt-m {
@@ -1038,6 +1039,10 @@ select.marriage {
     background-color: white; /* color of the scroll thumb */
     border-radius: 20px; /* roundness of the scroll thumb */
     border: 3px solid transparent !important; /* creates padding around scroll thumb */
+}
+
+.notfound {
+    color: white;
 }
 
 .body-light .home-main .notyfy-box {
@@ -1075,7 +1080,8 @@ select.marriage {
 .body-light .superadmin h5,
 .body-light .home-main .banner-header,
 .body-light .modal .modal-content,
-.body-light .home-main .notify-main p {
+.body-light .home-main .notify-main p,
+.body-light .notfound {
     color: #000 !important;
 }
 
@@ -1227,8 +1233,12 @@ select.marriage {
 }
 
 .table-responsive {
-    height: 250px;
+    height: 600px;
     overflow-y: scroll;
+}
+
+.text-left {
+    text-align: left !important;
 }
 
 

@@ -156,8 +156,12 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #000;
+            color: white;
             text-transform: uppercase;
+        }
+
+        .body-light .loader span {
+            color: black;
         }
 
         .loader span::before,
@@ -208,8 +212,9 @@
         <div class="row m-0">
             <div class="col-xl-9 col-lg-12 col-md-12 mt-3">
                 <div class="detail-box-left">
-                    <h5>Details</h5>
-                    <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal3">Edit
+                    <h5 class="d-inline-block">Details</h5>
+                    <button class="upload-btn mt-2 d-inline-block" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal3">Edit
                         Marriage
                     </button>
                     <div class="row justify-content-center">
@@ -816,12 +821,12 @@
                 <div class="modal-body">
                     <div class="modal-title">
                         <span>Enter Event Details</span>
-                        <!--                        <div class="img-counter">-->
-                        <!--                            <p>Gallery</p>-->
-                        <!--                            <span>250 Images</span>-->
-                        <!--                        </div>-->
+                        <div class="img-counter">
+                            <p>Gallery</p>
+                            <span><b id="imageCount">250</b> Images</span>
+                        </div>
                     </div>
-                    <input placeholder=" " type="text" name="event_id">
+                    <input placeholder=" " type="hidden" name="event_id">
                     <div class="moda-form mt-4">
                         <div class="material-textfield">
                             <input placeholder=" " type="text" name="event_name">
@@ -1176,8 +1181,8 @@
                             <button class="toggle-btn toggle-btn-main text-light-white">
                             <i class="fas fa-ellipsis-h"></i>
                              <div class="d-bt-m">
-                                      <a class="edit-event" data-id="${data.event_id}" data-value='${JSON.stringify(data)}' data-bs-toggle="modal" data-bs-target="#exampleModal6"><div>EDIT</div></a>
-                                      <a class="delete-event" data-id="${data.event_id}"><div>Delete</div></a>
+                                      <a class="edit-event" data-id="${data.event_id}" data-value='${JSON.stringify(data)}' data-bs-toggle="modal" data-bs-target="#exampleModal6"><div class="text-left">EDIT</div></a>
+                                      <a class="delete-event" data-id="${data.event_id}"><div class="text-left">Delete</div></a>
                             </div>
                             </button>
 
@@ -1354,6 +1359,7 @@
 
             }
         })
+        $(document).find("#imageCount").html(olddata.total_gallery)
         var chb = $(document).find("#event_data_edit .dress_code_switch[type=checkbox]")
         if (olddata.is_dress_code) {
 

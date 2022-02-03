@@ -335,7 +335,11 @@ function guest_list(status = null) {
             $.each(response.data, function (k, v) {
                 html += gestrow(v);
             })
-            if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
+            var aaa = 4;
+            if ($(document).find('#cllect_id_proof1').prop('checked')) {
+                aaa = 3
+            }
+            if (html == "") html = `<tr ><td colspan="${aaa}" class="text-center">Data not found!</td></tr>`;
             htmltag.html(html);
 
             if (!$('#cllect_id_proof1').prop('checked')) {
@@ -356,8 +360,7 @@ function changests(gest_id, sts) {
     if (sts) {
         status = 'Approved';
     }
-
-    settings.url = BASE_URL + 'get_all_guest_details';
+    settings.url = BASE_URL + 'update_guest_status';
     var x = {
         marriage_id: id, guest_id: gest_id, guest_status: status
     };
