@@ -18,7 +18,7 @@ $(document).on("submit", "#loginSubmit", function (e) {
     $.ajax(settings).done(function (response) {
         if (getresopncesuccess(response)) {
             // console.log(responsed)
-            localStorage.setItem('id', response.data._id);
+            localStorage.setItem('id', response.data.marriage_id);
             localStorage.setItem('userDetails', JSON.stringify(response.data));
             checkLogin();
         }
