@@ -65,7 +65,7 @@
 
         .dropdown {
             margin: 0px !important;
-            width: 100px;
+            width: 120px;
         }
 
         .dropdown dd, .dropdown dt, .dropdown ul {
@@ -92,6 +92,12 @@
         .dropdown dt a:hover {
             color: #fff;
             /*border: 1px solid #d0c9af;*/
+        }
+
+        .dropdown dt {
+            padding: 5px 13px 5px 0px;
+            background: #202020 !important;
+            border-radius: 33px;
         }
 
         .dropdown dt a {
@@ -179,7 +185,7 @@
     </style>
     <style>
         .loader {
-            background: #1b181866;
+            background: black;
             width: 100%;
             height: 100%;
             line-height: 50px;
@@ -302,13 +308,378 @@
         ::-webkit-calendar-picker-indicator {
             filter: invert(1);
         }
+
+        .logout-btn {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            padding: 8px;
+        }
+
+        .logout-btn button {
+            background-color: #333333;
+            border: none;
+            border-radius: 5px;
+            color: #ff5c5c;
+            padding: 10px 50px;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .unit {
+            text-align: center;
+        }
+
+        .unit p {
+            margin-top: 100px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 1000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #f00;
+        }
+
+        .heart {
+            position: relative;
+            font-size: 0;
+            width: 138px;
+        }
+
+        [class*="heart-piece-"] {
+            position: absolute;
+            top: -5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+        }
+
+        .heart-piece-4 {
+            -webkit-animation: piece-4 3.2s infinite;
+            animation: piece-4 3.2s infinite;
+        }
+
+        .heart-piece-3,
+        .heart-piece-5 {
+            -webkit-animation: piece-3 3.2s infinite;
+            animation: piece-3 3.2s infinite;
+        }
+
+        .heart-piece-2,
+        .heart-piece-6 {
+            -webkit-animation: piece-2 3.2s infinite;
+            animation: piece-2 3.2s infinite;
+        }
+
+        .heart-piece-1,
+        .heart-piece-7 {
+            -webkit-animation: piece-1 3.2s infinite;
+            animation: piece-1 3.2s infinite;
+        }
+
+        .heart-piece-0,
+        .heart-piece-8 {
+            -webkit-animation: piece-0 3.2s infinite;
+            animation: piece-0 3.2s infinite;
+        }
+
+        .heart-piece-0 {
+            left: 0px;
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+            background-color: #ec2d73;
+        }
+
+        .heart-piece-1 {
+            left: 16px;
+            -webkit-animation-delay: 0.15s;
+            animation-delay: 0.15s;
+            background-color: #eb5324;
+        }
+
+        .heart-piece-2 {
+            left: 32px;
+            -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+            background-color: #fdc800;
+        }
+
+        .heart-piece-3 {
+            left: 48px;
+            -webkit-animation-delay: 0.45s;
+            animation-delay: 0.45s;
+            background-color: #47b264;
+        }
+
+        .heart-piece-4 {
+            left: 64px;
+            -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+            background-color: #1470bd;
+        }
+
+        .heart-piece-5 {
+            left: 80px;
+            -webkit-animation-delay: 0.75s;
+            animation-delay: 0.75s;
+            background-color: #76469a;
+        }
+
+        .heart-piece-6 {
+            left: 96px;
+            -webkit-animation-delay: 0.9s;
+            animation-delay: 0.9s;
+            background-color: #ec2d73;
+        }
+
+        .heart-piece-7 {
+            left: 112px;
+            -webkit-animation-delay: 1.05s;
+            animation-delay: 1.05s;
+            background-color: #eb5324;
+        }
+
+        .heart-piece-8 {
+            left: 128px;
+            -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+            background-color: #fdc800;
+        }
+
+        @-webkit-keyframes piece-4 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 94px;
+                top: -23px;
+            }
+        }
+
+        @keyframes piece-4 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 94px;
+                top: -23px;
+            }
+        }
+
+        @-webkit-keyframes piece-3 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 90px;
+                top: -31px;
+            }
+        }
+
+        @keyframes piece-3 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 90px;
+                top: -31px;
+            }
+        }
+
+        @-webkit-keyframes piece-2 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 80px;
+                top: -37px;
+            }
+        }
+
+        @keyframes piece-2 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 80px;
+                top: -37px;
+            }
+        }
+
+        @-webkit-keyframes piece-1 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 60px;
+                top: -31px;
+            }
+        }
+
+        @keyframes piece-1 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 60px;
+                top: -31px;
+            }
+        }
+
+        @-webkit-keyframes piece-0 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 30px;
+                top: -15px;
+            }
+        }
+
+        @keyframes piece-0 {
+            0%, 10%, 90%, 100% {
+                height: 10px;
+                top: -5px;
+            }
+            45%, 55% {
+                height: 30px;
+                top: -15px;
+            }
+        }
+
+    </style>
+
+    <style>
+
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 69px;
+            height: 34px;
+
+
+        }
+
+        .toggle-switch input {
+            display: none;
+        }
+
+        .switch-btn {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 34px;
+            background: transparent;
+            border: 1px solid #b5b5b5;
+        }
+        .checkbox +  .switch-btn:before{
+            background-color: #b5b5b5;
+        }
+        .checkbox:checked +  .switch-btn:before{
+            background-color: white;
+        }
+        .checkbox:checked + .switch-btn {
+            background: #b5b5b5;
+            box-shadow: none;
+        }
+
+
+        .switch-btn:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .on {
+            display: none;
+            color: white;
+        }
+
+        .on, .off {
+            color: white;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            font-size: 10px;
+            font-family: Verdana, sans-serif;
+        }
+
+        .off {
+            right: 42px;
+            color: #b5b5b5 !important;
+        }
+
+        input:checked + .switch-btn .on {
+            display: block;
+            left: 23px;
+        }
+
+        input:checked + .switch-btn .off {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
-<div class="loader" id="loader"><span>Loading...</span></div>
+<div class="loader" id="loader">
+    <div class="flex-container">
+        <div class="unit">
+            <div class="heart">
+                <div class="heart-piece-0"></div>
+                <div class="heart-piece-1"></div>
+                <div class="heart-piece-2"></div>
+                <div class="heart-piece-3"></div>
+                <div class="heart-piece-4"></div>
+                <div class="heart-piece-5"></div>
+                <div class="heart-piece-6"></div>
+                <div class="heart-piece-7"></div>
+                <div class="heart-piece-8"></div>
+            </div>
+            <p>Loading</p>
+        </div>
+    </div>
+</div>
 <section class="superadmin">
-
+    <div class="logout-btn">
+        <button id="logout">Logout</button>
+    </div>
     <div class="superadmin-header">
         <h5><span>Super</span>Admin</h5>
         <div class="search-main ms-auto">
@@ -413,11 +784,16 @@
                         </div>
                         <div class="guest-id mt-4">
                             <div class="guest-id-box">
+
                                 <span>Collect guest ID during registration</span>
                                 <label class="toggle-switch">
                                     <input type="hidden" name="is_guests_id_proof" value="false">
                                     <input type="checkbox" class="checkbox" name="is_guests_id_proof" value="true"/>
-                                    <span class="switch-btn"></span>
+                                    <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
                                 </label>
                             </div>
                             <div class="guest-id-box">
@@ -428,7 +804,10 @@
                                 <label class="toggle-switch">
                                     <input type="hidden" name="is_approve_post" value="false">
                                     <input type="checkbox" class="checkbox" name="is_approve_post" value="true"/>
-                                    <span class="switch-btn"></span>
+                                    <span class="switch-btn">
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
                                 </label>
                             </div>
                         </div>
@@ -447,10 +826,10 @@
                                                 <dd>
                                                     <ul>
                                                         <li><a href="#">
-                                                            <b class="dark"> dark</b>
+                                                            <b class="dark"> Dark</b>
                                                             <span class="value">true</span></a></li>
                                                         <li><a href="#">
-                                                            <b class="white"> white</b>
+                                                            <b class="white"> White</b>
                                                             <span class="value">false</span></a></li>
 
                                                     </ul>
@@ -462,61 +841,61 @@
                                         <div class="primary  d-flex align-items-center gap-1">
                                             <dl id="sample" class="dropdown" data-id="secondary_color">
                                                 <dt><a href="#"><b class="secondary1 theme1"> Theme 1</b><span
-                                                        class="value">#0EFFD4|#0076D0</span></a>
+                                                        class="value">0EFFD4|0076D0</span></a>
                                                 </dt>
                                                 <dd>
                                                     <ul>
                                                         <li><a href="#">
                                                             <b class="theme1"> Theme 1</b>
-                                                            <span class="value">#0EFFD4|#0076D0</span></a>
+                                                            <span class="value">0EFFD4|0076D0</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme2"> Theme 2</b>
-                                                            <span class="value">#08F5FF|#D914F4</span></a>
+                                                            <span class="value">08F5FF|D914F4</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme3"> Theme 3</b>
-                                                            <span class="value">#FF0F87|#4612CC</span></a>
+                                                            <span class="value">FF0F87|4612CC</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme4"> Theme 4</b>
-                                                            <span class="value">#FF191D|#043E9F</span></a>
+                                                            <span class="value">FF191D|043E9F</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme5"> Theme 5</b>
-                                                            <span class="value">#FF161B|#580DBF</span></a>
+                                                            <span class="value">FF161B|580DBF</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme6"> Theme 6</b>
-                                                            <span class="value">#08F5FF|#580DBF</span></a>
+                                                            <span class="value">08F5FF|580DBF</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme7"> Theme 7</b>
-                                                            <span class="value">#FF1BC6|#0066A6</span></a>
+                                                            <span class="value">FF1BC6|0066A6</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme8"> Theme 8</b>
-                                                            <span class="value">#FFAC1B|#E10B90</span></a>
+                                                            <span class="value">FFAC1B|E10B90</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme9"> Theme 9</b>
-                                                            <span class="value">#FF161B|#A810B3</span></a>
+                                                            <span class="value">FF161B|A810B3</span></a>
                                                         </li>
                                                         <li><a href="#">
                                                             <b class="theme10"> Theme 10</b>
-                                                            <span class="value">#00FFB4|#0F2FFF</span></a>
+                                                            <span class="value">00FFB4|0F2FFF</span></a>
                                                         </li>
 
                                                         <li><a href="#">
                                                             <b class="theme11"> Theme 11</b>
-                                                            <span class="value">#FF1B1B|#0A34D4</span></a>
+                                                            <span class="value">FF1B1B|0A34D4</span></a>
                                                         </li>
 
                                                     </ul>
                                                 </dd>
                                             </dl>
                                             <input type="hidden" name="secondary_color" id="secondary_color"
-                                                   value="rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)">
+                                                   value="0EFFD4|0076D0">
                                         </div>
                                     </div>
                                 </div>
@@ -596,7 +975,11 @@
                         <td>
                             <label class="toggle-switch">
                                 <input type="checkbox" class="checkbox ckbox" ${v.is_active} data-id="${v.marriage_id}"  id="checkbox${n}"/>
-                                <span class="switch-btn"></span>
+                                <span class="switch-btn">
+
+                                <span class="on">ON</span>
+  <span class="off">OFF</span>
+</span>
                             </label>
                         </td>
                     </tr>`;

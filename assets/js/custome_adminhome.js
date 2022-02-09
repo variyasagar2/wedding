@@ -35,7 +35,7 @@ function printHome(response) {
             $(document).find('#d_primary').addClass('white-color');
             $(document).find('#sample1 dt a b').addClass('white')
         }
-        color = data.secondary_color.join(',');
+        color = "#" + data.secondary_color.join(',#');
         // console.log(color)
         $(document).find('#d_secondory').attr('style', 'background:linear-gradient(' + color + ') !important');
         $('head').append(`<style>.secondary1:before{background:linear-gradient( ${color} ) !important;}</style>`);
@@ -157,7 +157,7 @@ function gallerycount() {
     settings.data = JSON.stringify({marriage_id: id});
     $.ajax(settings).done(function (response) {
         if (getresopncesuccess(response)) {
-            $(document).find("#approvecount").html(response.data.approved_feed)
+            $(document).find("#approvecount").html(response.data.pending_feed)
             $(document).find("#rejectcount").html(response.data.rejected_feed)
             $(document).find("#totalcount").html(response.data.all_feed)
         }
@@ -394,7 +394,9 @@ function add_event() {
     var data = {marriage_id: id};
     $.each(frm, function (k, v) {
         // console.log(v.name);
-        data[v.name] = v.value;
+        if (v.name == 'event_tagline_color') {
+            data[v.name] = v.value.toString().replace('#', '');
+        } else data[v.name] = v.value;
     })
     data.dress_code = {
         for_men: data['dress_code[for_men]'],
@@ -623,7 +625,9 @@ function update_event() {
     var data = {marriage_id: id};
     $.each(frm, function (k, v) {
         // console.log(v.name);
-        data[v.name] = v.value;
+        if (v.name == 'event_tagline_color') {
+            data[v.name] = v.value.toString().replace('#', '');
+        } else data[v.name] = v.value;
     })
     data.dress_code = {
         for_men: data['dress_code[for_men]'],

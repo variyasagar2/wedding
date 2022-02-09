@@ -1031,6 +1031,10 @@ select.marriage {
     color: #000 !important;
 }
 
+.body-light .home-main .notyfy-box {
+    border-radius: 5px;
+}
+
 .body-light *::-webkit-scrollbar-track {
     background: #efefef !important; /* color of the tracking area */
 }
@@ -1043,6 +1047,12 @@ select.marriage {
 
 .notfound {
     color: white;
+}
+
+.dropdown dt {
+    padding: 5px 13px 5px 0px;
+    background: #202020 !important;
+    border-radius: 33px;
 }
 
 .body-light .home-main .notyfy-box {
@@ -1085,6 +1095,12 @@ select.marriage {
     color: #000 !important;
 }
 
+.body-light .dropdown dt {
+    padding: 5px 13px 5px 0px;
+    background: #f1edee !important;
+    border-radius: 33px;
+}
+
 .body-light .detail-box, .body-light .mehendi-box, .body-light .box-g,
 .body-light .admin-table1 > span,
 .body-light .table-responsive,
@@ -1100,10 +1116,14 @@ select.marriage {
     border-radius: 5px;
 }
 
-.body-light .upload-btn,
-.body-light .logout-btn button {
+.body-light .upload-btn {
     background: white !important;
     color: black !important;
+    border: 1px solid black;
+}
+
+.body-light .logout-btn button {
+    background: white !important;
     border: 1px solid black;
 }
 
@@ -1120,6 +1140,10 @@ select.marriage {
 .body-light .modal-title span,
 .body-light .dropdown dd li b, .dropdown dt b {
     color: #000 !important;
+}
+
+.body-light .mehendi-box .gallary-mini span, .body-light .mehendi-box .gallary-mini h6 {
+    color: white !important;
 }
 
 .body-light .modal input,
