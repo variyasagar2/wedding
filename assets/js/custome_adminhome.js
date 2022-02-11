@@ -681,7 +681,7 @@ $(document).on("change", "#cllect_id_proof1,#approve_image1", function () {
         // console.log(response);
         response = JSON.parse(response);
         if (getresopncesuccess(response)) {
-            document.location.reload();
+            // document.location.reload();
         }
     }
     $.ajax(settingclon);
