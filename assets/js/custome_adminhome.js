@@ -479,6 +479,7 @@ function sendnoti() {
             $("#exampleModal4").modal('toggle');
             hiddmodel()
             $("#add_noti_from")[0].reset()
+            getnotification();
         }
     });
 }

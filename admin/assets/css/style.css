@@ -1050,7 +1050,7 @@ select.marriage {
 }
 
 .dropdown dt {
-    padding: 5px 13px 5px 0px;
+    padding: 5px 13px 5px 0px !important;
     background: #202020 !important;
     border-radius: 33px;
 }
@@ -1096,7 +1096,7 @@ select.marriage {
 }
 
 .body-light .dropdown dt {
-    padding: 5px 13px 5px 0px;
+    padding: 5px 13px 5px 0px !important;
     background: #f1edee !important;
     border-radius: 33px;
 }
@@ -1138,7 +1138,7 @@ select.marriage {
 .body-light .admin-table table tbody tr td span,
 .body-light .superadmin .admin-table span,
 .body-light .modal-title span,
-.body-light .dropdown dd li b, .dropdown dt b {
+.body-light .dropdown dd li b, .body-light .dropdown dt b {
     color: #000 !important;
 }
 
