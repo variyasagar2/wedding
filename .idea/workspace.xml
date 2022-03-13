@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c8d7c8e-9eb8-495c-a938-9e1fbe809c28" name="Changes" comment="">
+    <list default="true" id="5c8d7c8e-9eb8-495c-a938-9e1fbe809c28" name="Changes" comment="Bug fix (design)">
+      <change afterPath="$PROJECT_DIR$/assets/img/WeWed.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/custome_adminhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custome_adminhome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super_admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/super_admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +45,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wedding_app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/guestList" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -51,6 +56,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/guestList" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/assets/js" />
     </key>
   </component>
@@ -72,6 +80,8 @@
       <workItem from="1644413666091" duration="5761000" />
       <workItem from="1644596323264" duration="869000" />
       <workItem from="1644659926045" duration="402000" />
+      <workItem from="1647085406842" duration="6042000" />
+      <workItem from="1647146827870" duration="19373000" />
     </task>
     <servers />
   </component>
@@ -88,5 +98,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bug fix (design)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bug fix (design)" />
   </component>
 </project>

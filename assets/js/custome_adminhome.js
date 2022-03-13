@@ -339,7 +339,7 @@ function guest_list(status = null) {
             if ($(document).find('#cllect_id_proof1').prop('checked')) {
                 aaa = 3
             }
-            if (html == "") html = `<tr ><td colspan="${aaa}" class="text-center">Data not found!</td></tr>`;
+            if (html == "") html = `<tr ><td colspan="${aaa}" class="text-center notfound">Data not found!</td></tr>`;
             htmltag.html(html);
 
             if (!$('#cllect_id_proof1').prop('checked')) {
@@ -687,4 +687,37 @@ $(document).on("change", "#cllect_id_proof1,#approve_image1", function () {
     }
     $.ajax(settingclon);
 
-})
+});
+
+$(document).on("click", ".d-guest", function () {
+    $(document).find('.main-con').hide();
+    $(document).find('.superadmin').attr('style', "display:block !important");
+});
+$(document).on("click", ".back", function () {
+    $(document).find('.main-con').show();
+    $(document).find('.superadmin').attr('style', "display:none !important");
+    $(document).find('.gallary-sec-main').attr('style', "display:none !important");
+});
+$(document).on("click", ".showfeeed", function () {
+    var id = $(this).data('id')
+    if (id) {
+        $(document).find('.gall-show .feed_s[data-id="' + id + '"]').click();
+        $(document).find('.main-con').hide();
+        $(document).find('.superadmin').attr('style', "display:none !important");
+        $(document).find('.gallary-sec-main').attr('style', "display:none !important");
+        $(document).find('.gall-show').attr('style', "display:block !important");
+    }
+});
+$(document).on("click", ".showimage", function () {
+    var id = $(this).data('id')
+    if (id) {
+        $(document).find('.gallery-menu [data-id="' + id + '"]').click();
+        $(document).find('.main-con').hide();
+        $(document).find('.superadmin').attr('style', "display:none !important");
+        $(document).find('.gall-show').attr('style', "display:none !important");
+        $(document).find('.gallary-sec-main').attr('style', "display:block !important");
+    }
+
+});
+
+

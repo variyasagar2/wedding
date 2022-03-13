@@ -297,6 +297,30 @@
     </style>
 
     <style>
+        .plr-40 {
+            padding-left: 40px !important;
+            padding-right: 40px !important;
+            /*padding: 0px 40px;*/
+        }
+
+        .ptb-40 {
+            padding-top: 40px !important;
+            padding-bottom: 40px !important;
+            /*padding: 0px 40px;*/
+        }
+
+        .p-40 {
+            padding: 40px !important;
+        }
+        .wardrode-header{
+            padding-top: 48px !important;
+            padding-bottom: 10px !important;
+        }
+        .wardrode-box-main,.wardrode-header {
+            padding-left:  74px !important;
+            padding-right:  74px !important;
+        }
+
         #togglePassword {
             position: absolute;
             bottom: 12px;
@@ -304,18 +328,39 @@
             cursor: pointer;
         }
 
+        /*scrollbar*/
+        *::-webkit-scrollbar {
+            width: 12px; /* width of the entire scrollbar */
 
-        ::-webkit-calendar-picker-indicator {
+        }
+
+        *::-webkit-scrollbar-track {
+            background: #202020; /* color of the tracking area */
+            border-radius: 20px;
+        }
+
+        *::-webkit-scrollbar-thumb {
+            background-color: white; /* color of the scroll thumb */
+            border-radius: 20px; /* roundness of the scroll thumb */
+            border: 3px solid #202020; /* creates padding around scroll thumb */
+        }
+
+        *::-webkit-calendar-picker-indicator {
             filter: invert(1);
         }
 
         .logout-btn {
-            display: flex;
-            align-items: center;
-            justify-content: end;
-            padding: 8px;
+            display: flow-root;
+            /*align-items: center;*/
+            /*justify-content: end;*/
+            padding: 30px 40px 20px;
         }
-
+.float-l{
+    float: left;
+}
+.float-r{
+    float: right;
+}
         .logout-btn button {
             background-color: #333333;
             border: none;
@@ -666,37 +711,76 @@
 <body>
 <div class="loader" id="loader">
     <div class="flex-container">
-        <div class="unit">
-            <div class="heart">
-                <div class="heart-piece-0"></div>
-                <div class="heart-piece-1"></div>
-                <div class="heart-piece-2"></div>
-                <div class="heart-piece-3"></div>
-                <div class="heart-piece-4"></div>
-                <div class="heart-piece-5"></div>
-                <div class="heart-piece-6"></div>
-                <div class="heart-piece-7"></div>
-                <div class="heart-piece-8"></div>
-            </div>
-            <p>Loading</p>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+            <g transform="rotate(0 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite"></animate>
+                </rect>
+            </g><g transform="rotate(30 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8333333333333334s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(60 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(90 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(120 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5833333333333334s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(150 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(180 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4166666666666667s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(210 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(240 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(270 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.16666666666666666s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(300 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.08333333333333333s" repeatCount="indefinite"></animate>
+            </rect>
+        </g><g transform="rotate(330 50 50)">
+            <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s" repeatCount="indefinite"></animate>
+            </rect>
+        </g>
+        </svg>
+
     </div>
 </div>
 <section class="superadmin">
     <div class="logout-btn">
-        <button id="logout">Logout</button>
+        <img src="../assets/img/WeWed.png" alt="" height="48px" class="float-l">
+        <button id="logout" class="float-r">Logout</button>
     </div>
     <div class="superadmin-header">
-        <h5><span>Super</span>Admin</h5>
+        <h1><span>Super</span>Admin</h1>
         <div class="search-main ms-auto">
             <input type="text" placeholder="Search here" id="serchmrg">
             <button class="marriage" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Marriage</button>
         </div>
     </div>
-    <div class="table-main">
-        <div class="admin-table">
-            <span>Marriages</span>
-            <div class="table-responsive">
+    <div class="table-main plr-40">
+        <div class="admin-table p-40">
+            <h4>Marriages</h4>
+            <div class="table-responsive pt-4">
                 <table class="table table-borderless mb-0 mt-3">
                     <div class="admin-table-header">
                         <thead>
@@ -725,7 +809,7 @@
 
     <div class="wardrode-bg">
         <div class="wardrode-header d-flex justify-content-between align-items-center">
-            <h5>wardrode vectors</h5>
+            <h2>wardrode vectors</h2>
             <button class="marriage p-2 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Upload</button>
         </div>
         <div class="wardrode-box-main" id="wardrode-img">
@@ -739,7 +823,7 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-body p-4">
                 <div class="modal-title">
                     <span>Enter Marriages Details</span>
                     <!--                    <div class="img-counter" style="margin-right: -16px">-->
