@@ -598,6 +598,7 @@ function getfeeds(u = 'All') {
             if (html == "") html = `<h5 class="notfound">Data not found!</h5>`;
             $(document).find("#gest_details_glr").html(html);
         }
+        $(document).find('[data-toggle="tooltip"]').tooltip({html: true});
     });
 }
 
@@ -689,14 +690,21 @@ $(document).on("change", "#cllect_id_proof1,#approve_image1", function () {
 
 });
 
+function scrollTop() {
+    jQuery('html,body').animate({scrollTop: 0}, 0);
+}
+
 $(document).on("click", ".d-guest", function () {
     $(document).find('.main-con').hide();
     $(document).find('.superadmin').attr('style', "display:block !important");
+    scrollTop();
 });
 $(document).on("click", ".back", function () {
     $(document).find('.main-con').show();
     $(document).find('.superadmin').attr('style', "display:none !important");
     $(document).find('.gallary-sec-main').attr('style', "display:none !important");
+    $(document).find('.gall-show').attr('style', "display:none !important");
+    scrollTop();
 });
 $(document).on("click", ".showfeeed", function () {
     var id = $(this).data('id')
@@ -707,6 +715,7 @@ $(document).on("click", ".showfeeed", function () {
         $(document).find('.gallary-sec-main').attr('style', "display:none !important");
         $(document).find('.gall-show').attr('style', "display:block !important");
     }
+    scrollTop();
 });
 $(document).on("click", ".showimage", function () {
     var id = $(this).data('id')
@@ -717,7 +726,7 @@ $(document).on("click", ".showimage", function () {
         $(document).find('.gall-show').attr('style', "display:none !important");
         $(document).find('.gallary-sec-main').attr('style', "display:block !important");
     }
-
+    scrollTop();
 });
 
 

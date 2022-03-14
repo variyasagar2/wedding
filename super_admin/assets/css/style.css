@@ -100,6 +100,7 @@
 /*    U+FEFF, U+FFFD;*/
 /*}*/
 @import url('http://fonts.cdnfonts.com/css/gilroy-bold');
+
 body {
     background-color: #151516;
     font-family: 'Gilroy-Regular', sans-serif;
@@ -122,9 +123,10 @@ p {
     align-items: center;
 }
 
-.superadmin .superadmin-header h1{
+.superadmin .superadmin-header h1 {
     font-family: 'Gilroy-Bold'
 }
+
 .superadmin .superadmin-header span {
     font-weight: 200;
     font-family: 'Gilroy-Regular'
@@ -183,16 +185,27 @@ p {
     /*font-weight: 600;*/
 }
 
+.superadmin .admin-table table thead tr th:first-child {
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.superadmin .admin-table table thead tr th:last-child {
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
 
 .superadmin .admin-table table thead tr th {
-    color: rgba(255, 255, 255, 0.336);
-    font-weight: 400;
+    /*color: rgba(255, 255, 255, 0.336);*/
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Gilroy-Bold', sans-serif;
     white-space: nowrap;
 }
 
-.superadmin .admin-table table thead tr {
+.superadmin .admin-table table thead tr th {
     background-color: #404041;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
 }
 
 .superadmin .admin-table table tbody tr td {
@@ -268,11 +281,12 @@ p {
     /*padding: 20px 40px;*/
 }
 
-.wardrode .wardrode-bg h2,.wardrode .wardrode-bg h5 {
+.wardrode .wardrode-bg h2, .wardrode .wardrode-bg h5 {
     color: #fff;
     font-family: 'Gilroy-Bold'
 }
-.table>thead{
+
+.table > thead {
     border-radius: 15px;
 }
 
@@ -282,7 +296,7 @@ p {
     background-color: #313131;
     border-radius: 8px;
     margin-top: 15px;
-    margin-right: 11px ;
+    margin-right: 11px;
 }
 
 /*@media screen and (width: 768px) {*/

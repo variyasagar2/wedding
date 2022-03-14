@@ -8,7 +8,6 @@ body {
 }
 
 
-
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Gilroy-Bold', sans-serif;
     margin-bottom: 0;
@@ -33,13 +32,13 @@ h1, h2, h3, h4, h5, h6, p {
 .home-main .detail-box-left {
     background-color: #272728;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 25px 40px;
 }
 
 .home-main .detail-box {
     background-color: #383839;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px 20px;
     color: #fff;
     height: 100%;
@@ -82,7 +81,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 .home-main .banner {
     background-color: #272728;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px 25px;
 }
 
@@ -112,12 +111,12 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #383839;
     width: 120px;
     height: 50px;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .home-main .notify-main {
     background-color: #272728;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 20px;
     color: #ffff;
 }
@@ -613,24 +612,45 @@ h1, h2, h3, h4, h5, h6, p {
 
 .superadmin .admin-table span {
     color: #fff;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .superadmin .admin-table table thead tr th {
-    color: rgba(255, 255, 255, 0.336);
-    font-weight: 400;
+    /*color: rgba(255, 255, 255, 0.336);*/
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Gilroy-Bold', sans-serif;
     white-space: nowrap;
 }
 
-.superadmin .admin-table table thead tr {
+.superadmin .admin-table table thead tr th {
+    color: white;
+}
+
+.body-light .superadmin .admin-table table thead tr th {
+    color: black;
+}
+
+.superadmin .admin-table table thead tr th:first-child {
+    border-top-left-radius: 10px !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.superadmin .admin-table table thead tr th:last-child {
+    border-top-right-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+.superadmin .admin-table table thead tr th {
     background-color: #404041;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
 }
 
 .superadmin .admin-table table tbody tr td {
     vertical-align: middle;
     color: #fff;
-    font-size: 14px;
+    font-size: 18px;
+    padding: 0.75rem 1.5rem !important;
     font-weight: 100;
     border-bottom: 1px solid rgba(255, 255, 255, 0.486);
     white-space: nowrap;
@@ -830,7 +850,8 @@ select.marriage {
 
 .gallary .right-menu ul li button {
     text-decoration: none;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
     font-weight: 600;
     font-size: 18px;
     border-radius: 0;
@@ -840,7 +861,8 @@ select.marriage {
 }
 
 .gallary .right-menu ul li button.active {
-    text-decoration: underline;
+    /*text-decoration: underline;*/
+    color: white !important;
 }
 
 .gallary .right-menu ul li button:disabled {
@@ -932,6 +954,8 @@ select.marriage {
 .d-bt-m div {
     color: white !important;
     padding: 7px;
+    font-weight: bold !important;
+    text-transform: capitalize !important;
     text-decoration: none;
 }
 
@@ -1164,7 +1188,7 @@ select.marriage {
 
 /**/
 .fixsize {
-    height: 669px !important;
+    height: 662px !important;
     overflow-y: scroll;
 }
 
@@ -1242,4 +1266,14 @@ select.marriage {
     font-family: 'Poppins', sans-serif;
 }
 
+::-webkit-scrollbar {
+    height: 13px;
+}
+
+.gallary-header h4 {
+    font-weight: bold;
+}
+.d-guest,.showfeeed,.guest-id,.showimage{
+    cursor: pointer !important;
+}
 
