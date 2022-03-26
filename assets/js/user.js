@@ -21,7 +21,7 @@ if (myArray[0] != null && myArray[0].search("pdf") > -1) {
     $.each(myArray, function (k, v) {
         a += `
              <a href="${BASE_URL + v}" target="_blank">
-             <img src="${BASE_URL + v}" alt="" width="50px" height="50px" srcset="">
+             <img src="${BASE_URL + v}" loading="lazy" alt="" width="50px" height="50px" srcset="">
 </a>
             `
     })

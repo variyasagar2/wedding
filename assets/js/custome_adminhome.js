@@ -1,5 +1,6 @@
 checkLogin(null, true);
 
+$('#loader').show();
 
 function home() {
     settings.url = BASE_URL + 'get_single_marriages';
@@ -485,6 +486,14 @@ function sendnoti() {
 }
 
 $(document).on('click', '#save_btn_notification', function () {
+    if ($(document).find("[name=\"notification_title\"]").val() == "") {
+        alert("Please enter notification title");
+        return false;
+    }
+    if ($(document).find("[name=\"notification_body\"]").val() == "") {
+        alert("Please enter notification title");
+        return false;
+    }
     sendnoti();
 });
 
@@ -495,7 +504,10 @@ function add_invi() {
         alert("Please select image!")
         return false;
     }
-    formData.append('invitation_card', datfrom[0].files[0]);
+    $.each(datfrom[0].files,function (v,k){
+        formData.append('invitation_card[]', k);
+    })
+    // formData.append('invitation_card[]', datfrom[0].files);
     formData.append('marriage_id', id);
     // console.log(datfrom[0].files[0]);
     //

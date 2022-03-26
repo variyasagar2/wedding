@@ -616,6 +616,15 @@
         .mt--9 {
             margin-top: -9px;
         }
+
+        .mlr-40 {
+            margin-left: 40px !important;
+            margin-right: 40px !important;
+        }
+
+        .modal-footer, .modal-header {
+            border: none !important;
+        }
     </style>
 </head>
 <body class=" ">
@@ -702,7 +711,7 @@
 </div>
 <section class="home-main">
     <div class="logout-btn plr-40 pt-40 pb-20 ">
-        <img src="../assets/img/WeWed.png" alt="" height="48px" class="float-l">
+        <img src="../assets/img/WeWed.png" loading="lazy" alt="" height="48px" class="float-l">
         <button id="logout" class="float-r">Logout</button>
     </div>
     <div class="main-con plr-40 mt--9">
@@ -1044,7 +1053,7 @@
     </div>
 </section>
 
-<section class="gallary-sec-main m-2 d-none">
+<section class="gallary-sec-main m-2 mlr-40 d-none">
     <div class="gallary-sec p-40">
         <div class="gell-header  pb-40">
             <h4>Gallery
@@ -1115,7 +1124,7 @@
     </div>
 </section>
 
-<section class="superadmin  bg-div m-2 p-40 d-none">
+<section class="superadmin  bg-div m-2 p-40 mlr-40 d-none">
     <!--    <div class="">-->
     <div class="superadmin-header p-0 pt-20 pb-20">
         <h3 class="font-weight-bold">GUESTS</h3>
@@ -1129,7 +1138,7 @@
             </select>
         </div>
     </div>
-    <div class="table-main   p-0  pb-20 ">
+    <div class="table-main  pb-20 ">
         <div class="admin-table bg-div p-0">
             <div class="table-responsive ">
                 <table class="table table-borderless mb-0 mt-3">
@@ -1152,7 +1161,7 @@
     </div>
     <!--    </div>-->
 </section>
-<section class="gallary gall-show m-2 d-none">
+<section class="gallary gall-show m-2 mlr-40 d-none">
 
     <div class="gallary-main p-40">
         <div class="gallary-header">
@@ -1622,11 +1631,11 @@
                 <div class="moda-form mt-4">
                     <form id="add_noti_from">
                         <div class="material-textfield">
-                            <input placeholder=" " type="text" name="notification_title">
+                            <input placeholder=" " type="text" name="notification_title" required>
                             <label class="input-text">Notification Title</label>
                         </div>
                         <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="notification_body">
+                            <input placeholder=" " type="text" name="notification_body" required>
                             <label class="input-text">Notification Body</label>
                         </div>
                     </form>
@@ -1649,7 +1658,7 @@
                 <form id="image_nvi_form">
                     <div class="material-textfield">
                         <label>Select Invitation</label>
-                        <input type="file" accept="image/*" name="invitation_card" id="invitation_card">
+                        <input type="file" multiple accept="image/*" name="invitation_card" id="invitation_card">
                     </div>
                 </form>
             </div>
@@ -1688,7 +1697,7 @@
                 <button class="minus banner-remove" data-id="${path}">
                         <i class="fas fa-minus"></i>
                     </button>
-<img src="${BASE_URL + path}" alt="" srcset="" width="120px" height="50px">
+<img src="${BASE_URL + path}" alt="" loading="lazy" srcset="" width="120px" height="50px">
 </div>`;
     }
 
@@ -1712,7 +1721,7 @@
     function eventdi(data) {
         var old_date = new Date(data.event_date);
         var date = dateFormat(old_date, "dd/mm/yyyy");
-        return ` <div class="mehendi-box mb-4">
+        return ` <div class="mehendi-box mb-4 pb-40">
                         <div class="gallary-mini showimage" data-id="${data.event_id}">
                             <span>Gallery</span>
                             <h6>${data.total_gallery} Images</h6>
@@ -1780,7 +1789,7 @@
                     <button class="minus dalete-gellery" data-id="${path.gallery_id}">
                         <i class="fas fa-minus"></i>
                     </button>
-                    <img src="${BASE_URL + path.gallery_image}" width="100%" height="100%">
+                    <img src="${BASE_URL + path.gallery_image}" loading="lazy" width="100%" height="100%">
                     </div>
                 </div>`
     }
@@ -1805,7 +1814,7 @@
                 $.each(d.guest_id_proof, function (k, v) {
                     a += `
              <a href="${BASE_URL + v}" target="_blank">
-             <img src="${BASE_URL + v}" alt="" width="50px" height="50px" srcset="">
+             <img src="${BASE_URL + v}" loading="lazy" alt="" width="50px" height="50px" srcset="">
 </a>
             `
                 })
@@ -1861,9 +1870,10 @@
         return `<div class=" scroll-hro">
                                                 <div class="outfit-box">
                                                     <label for="${v._id}">
-                                                    <input type="radio" name="dress_code[outFit]" id="${v._id}" value="${v.wardrobe_image}">
+  <input class="form-check-input" type="radio" id="${v._id}"  name="dress_code[outFit]"  value="${v.wardrobe_image}">
+
                                                     <img src="${BASE_URL + v.wardrobe_image}"
-                                                         width="70px" height="105px" alt="">
+                                                      loading="lazy"   width="70px" height="105px" alt="">
                                                     </label>
                                                 </div>
                                             </div>`;
@@ -1873,9 +1883,9 @@
         var x = `
 <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
             <div class="box1" data-toggle="tooltip" data-placement="bottom"  title='<p>${v.guest_name}</p><p>${v.guest_mobile_number}</p>'>
-                    <img alt=""
+                    <img alt="" loading="lazy"
                          src="${BASE_URL + v.feed_image}">`
-        if (v.feed_status == "Panding") {
+        if (v.feed_status == "Pending") {
             x += `<button class="minus change_det" data-id="${v.feed_id}" data-value="Rejected">
                         <i class="fas fa-minus"></i>
                     </button>`
@@ -1889,8 +1899,8 @@
 
     $(document).on("click", '.edit-event', function () {
         var olddata = $(this).data('value')
-        // console.log(olddata);
-        $('#loader').show()
+        console.log(olddata);
+        // $('#loader').show()
         $.each(olddata, function (k, v) {
             var el = $(document).find("#event_data_edit [name=" + k + "]")
             if (el.length > 0) {
@@ -1904,9 +1914,12 @@
                 } else if (el.attr('type') != "checkbox" && k != "is_dress_code")
                     el.val(v)
 
+
             }
         })
+
         $(document).find("#imageCount").html(olddata.total_gallery)
+        $(document).find("[name=event_tagline_color]").val("#" + olddata.event_tagline_color).change();
         var chb = $(document).find("#event_data_edit .dress_code_switch[type=checkbox]")
         if (olddata.is_dress_code) {
 
@@ -1919,7 +1932,7 @@
                     el2.val(v)
                 }
             })
-            console.log(olddata.dress_code)
+            // console.log(olddata.dress_code)
             el2 = $(document).find('#event_data_edit [value="' + olddata.dress_code.outFit + '"]')
             if (el2.length > 0) {
                 console.log(el2);
