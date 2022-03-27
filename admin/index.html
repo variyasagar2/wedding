@@ -77,9 +77,11 @@
         }
 
         .outfit-box input[type=radio] {
-            top: 0px;
-            left: 44px;
             position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
         }
 
         .outfit-box img {
@@ -709,962 +711,1052 @@
         </svg>
     </div>
 </div>
-<section class="home-main">
-    <div class="logout-btn plr-40 pt-40 pb-20 ">
-        <img src="../assets/img/WeWed.png" loading="lazy" alt="" height="48px" class="float-l">
-        <button id="logout" class="float-r">Logout</button>
+<div class="loader" id="loader2">
+    <div class="flex-container">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+             style="margin:auto;display:block;" width="200px" height="200px" viewBox="0 0 100 100"
+             preserveAspectRatio="xMidYMid">
+            <g transform="rotate(0 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(30 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.8333333333333334s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(60 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.75s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(90 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.6666666666666666s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(120 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5833333333333334s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(150 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.5s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(180 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.4166666666666667s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(210 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.3333333333333333s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(240 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.25s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(270 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.16666666666666666s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(300 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.08333333333333333s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+            <g transform="rotate(330 50 50)">
+                <rect x="47" y="24" rx="3" ry="6" width="6" height="12" fill="#877f81">
+                    <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="0s"
+                             repeatCount="indefinite"></animate>
+                </rect>
+            </g>
+        </svg>
     </div>
-    <div class="main-con plr-40 mt--9">
-        <div class="row m-0">
-            <div class="col-xl-9 col-lg-12 col-md-12 mt-3 pr-3">
-                <div class="detail-box-left">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h4 class="d-inline-block">Details</h4>
+</div>
+<div class="main-section pb-40">
+    <section class="home-main">
+        <div class="logout-btn plr-40 pt-40 pb-20 ">
+            <img src="../assets/img/WeWed.png" loading="lazy" alt="" height="48px" class="float-l">
+            <button id="logout" class="float-r">Logout</button>
+        </div>
+        <div class="main-con plr-40 mt--9">
+            <div class="row m-0">
+                <div class="col-xl-9 col-lg-12 col-md-12 mt-3 pr-3">
+                    <div class="detail-box-left">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="d-inline-block">Details</h4>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="upload-btn d-inline-block float-r" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal3">Edit
+                                    Marriage
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <button class="upload-btn d-inline-block float-r" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal3">Edit
-                                Marriage
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5 col-md-6 col-sm-12 ml-3 mt-3 mb-2">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def d-guest">
+                                        <span>Hashtag</span>
+                                        <h6 id="d_wedding_hashtag">Enter your hashtag here</h6>
+                                    </div>
+                                    <input type="file" accept="image/*" class="d-none" name="profile" id="profile">
+                                    <label for="profile">
+                                        <div class="upload " id="profile_pic">
+                                            <!--                                    <span>Upload <br/> Logo</span>-->
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-12 ml-3 mt-3 mb-2">
+                                <div class="detail-box d-flex align-items-center justify-content-between d-guest">
+                                    <div class="detail-def">
+                                        <span>Guests</span>
+                                        <h6 id="d_users">235 users</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def">
+                                        <span>Select Color</span>
+                                        <div class="d-flex align-items-center justify-content-between gap-4">
+                                            <div class="select-color gap-2 d-flex align-items-center">
+                                                <div class="color-box" id="d_primary"></div>
+                                                <span>Primary</span>
+                                            </div>
+                                            <div class="select-color gap-2 d-flex align-items-center">
+                                                <div class="color-box" id="d_secondory"></div>
+                                                <span>Secondary</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def">
+                                        <span>Bride's Name</span>
+                                        <h6 id="d_bride_name">Enter your hashtag here</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def">
+                                        <span>Groom's Name</span>
+                                        <h6 id="d_groom_name">Enter your hashtag here</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def">
+                                        <span>Wedding Date</span>
+                                        <h6 id="d_wedding_date">12/10/2021</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7 col-md-6 col-sm-12 mt-3 mb-4">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def">
+                                        <span>Wedding Venue</span>
+                                        <h6 id="d_wedding_venue">Enter your Venue's address here for the wedding</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 col-md-6 col-sm-12 mt-3 mb-4">
+                                <div class="detail-box d-flex align-items-center justify-content-between">
+                                    <div class="detail-def">
+
+                                        <span>Upload wedding invite</span>
+
+                                        <span id="count_inv" style="cursor: pointer"></span>
+                                        <ul id="images" class="d-none">
+                                        </ul>
+                                        <button class="upload-btn mt-2" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal5">
+                                            Upload +
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="banner mt-35  pb-40">
+                        <div class="banner-header d-flex align-items-center gap-4 plr-20 p-0 pt-20 ">
+                            <h4>Banner Images</h4>
+                            <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Upload
                             </button>
                         </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-5 col-md-6 col-sm-12 ml-3 mt-3 mb-2">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def d-guest">
-                                    <span>Hashtag</span>
-                                    <h6 id="d_wedding_hashtag">Enter your hashtag here</h6>
-                                </div>
-                                <input type="file" accept="image/*" class="d-none" name="profile" id="profile">
-                                <label for="profile">
-                                    <div class="upload " id="profile_pic">
-                                        <!--                                    <span>Upload <br/> Logo</span>-->
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 ml-3 mt-3 mb-2">
-                            <div class="detail-box d-flex align-items-center justify-content-between d-guest">
-                                <div class="detail-def">
-                                    <span>Guests</span>
-                                    <h6 id="d_users">235 users</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def">
-                                    <span>Select Color</span>
-                                    <div class="d-flex align-items-center justify-content-between gap-4">
-                                        <div class="select-color gap-2 d-flex align-items-center">
-                                            <div class="color-box" id="d_primary"></div>
-                                            <span>Primary</span>
-                                        </div>
-                                        <div class="select-color gap-2 d-flex align-items-center">
-                                            <div class="color-box" id="d_secondory"></div>
-                                            <span>Secondary</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def">
-                                    <span>Bride's Name</span>
-                                    <h6 id="d_bride_name">Enter your hashtag here</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def">
-                                    <span>Groom's Name</span>
-                                    <h6 id="d_groom_name">Enter your hashtag here</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 col-sm-12 mt-3 mb-2">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def">
-                                    <span>Wedding Date</span>
-                                    <h6 id="d_wedding_date">12/10/2021</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-7 col-md-6 col-sm-12 mt-3 mb-4">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def">
-                                    <span>Wedding Venue</span>
-                                    <h6 id="d_wedding_venue">Enter your Venue's address here for the wedding</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5 col-md-6 col-sm-12 mt-3 mb-4">
-                            <div class="detail-box d-flex align-items-center justify-content-between">
-                                <div class="detail-def">
+                        <div class="box-main d-flex pt-2 mlr-20 " id="banner_display">
 
-                                    <span>Upload wedding invite</span>
 
-                                    <span id="count_inv"></span>
-                                    <button class="upload-btn mt-2" data-bs-toggle="modal"
-                                            data-bs-target="#exampleModal5">
-                                        Upload +
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                            <div class="banner-box mt-3 ml-3"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-12 col-sm-12 mt-3 p-r-0">
+                    <div class="notify-main fixsize plr-40 pt-40">
+                        <h4>Notification</h4>
+                        <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal4">Send
+                            Notification
+                        </button>
+                        <div id="notification_id">
+                            <div class="notyfy-box mt-4">
+                                <div class="gap-con d-flex align-items-center">
+                                    <div class="white-box"></div>
+                                    <span>Get ready for the GALA night! and groove to the music.</span>
+                                </div>
+                                <p>Subcontent goes here and more so movement from here there asdjsa sadknsdkjnasd asd n
+                                    sdkmalkmdsa kna</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p>12:35pm</p>
+                                    <p>10/10/2020</p>
+                                </div>
+                            </div>
+                            <div class="notyfy-box mt-4">
+                                <div class="gap-con d-flex align-items-center">
+                                    <div class="white-box"></div>
+                                    <span>Get ready for the GALA night! and groove to the music.</span>
+                                </div>
+                                <p>Subcontent goes here and more so movement from here there asdjsa sadknsdkjnasd asd n
+                                    sdkmalkmdsa kna</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p>12:35pm</p>
+                                    <p>10/10/2020</p>
+                                </div>
+                            </div>
+                            <div class="notyfy-box mt-4">
+                                <div class="gap-con d-flex align-items-center">
+                                    <div class="white-box"></div>
+                                    <span>Get ready for the GALA night! and groove to the music.</span>
+                                </div>
+                                <p>Subcontent goes here and more so movement from here there asdjsa sadknsdkjnasd asd n
+                                    sdkmalkmdsa kna</p>
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <p>12:35pm</p>
+                                    <p>10/10/2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-con plr-40 mt--9">
+            <div class="row m-0">
+                <div class="col-xl-9 col-lg-12 col-md-12 mt-5 pr-3">
+                    <div class="detail-box-left">
+                        <div class="banner-header d-flex align-items-center gap-4 pt-20">
+                            <h3>Events</h3>
+                            <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add new
+                                events
+                            </button>
+                        </div>
+                        <div id="event_display" class="pt-20">
+                            <div class="mehendi-box mt-3">
+                                <div class="gallary-mini">
+                                    <span>Gallery</span>
+                                    <h6>250 Images</h6>
+                                </div>
+                                <div class="mehendi-box-header">
+                                    <h6>Mehendi</h6>
+                                    <h6 class="text-light-white">Dress code</h6>
+                                    <button class="toggle-btn text-light-white"><i class="fas fa-ellipsis-h"></i>
                                     </button>
                                 </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Time</span>
+                                            <span class="mt-4">Venue</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Date</span>
+                                            <span class="mt-4"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Men</span>
+                                            <span class="mt-4"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Women</span>
+                                            <span class="mt-4"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="mehendi-box mt-3 ">
+                                <div class="gallary-mini">
+                                    <span>Gallery</span>
+                                    <h6>250 Images</h6>
+                                </div>
+                                <div class="mehendi-box-header">
+                                    <h6>Mehendi</h6>
+                                    <h6 class="text-light-white">Dress code</h6>
+                                    <button class="toggle-btn text-light-white"><i class="fas fa-ellipsis-h"></i>
+                                    </button>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Time</span>
+                                            <span class="mt-4">Venue</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Date</span>
+                                            <span class="mt-4"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Men</span>
+                                            <span class="mt-4"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+                                            <span>Women</span>
+                                            <span class="mt-4"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
+                                        <div class="venue-box">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-12 col-sm-12 mt-5 p-r-0">
+                    <div class="notify-main pb-5 pt-40 plr-40">
+                        <h4>Feeds</h4>
+                        <div class="row mt-3">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                                <div class="request-box showfeeed" data-id="Pending">
+                                    <span>Request</span>
+                                    <h5 id="approvecount">2375</h5>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                                <div class="request-box showfeeed" data-id="Rejected">
+                                    <span>Rejected</span>
+                                    <h5 id="rejectcount">2375</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="total-img-box mt-3 showfeeed" data-id="All">
+                            <span>Total Images</span>
+                            <h5 class="mt-1" id="totalcount">2375 Images</h5>
+                        </div>
+                    </div>
+                    <div class="guest-id mt-35 p-3">
+
+
+                        <div class="col-md-8">
+                            <p>Collect guest ID during registration</p>
+                        </div>
+                        <div class="col-md-4 d-block text-right">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="checkbox is_guests_id_proof" id="cllect_id_proof1"
+                                       data-id="is_guests_id_proof"
+                                       value="true"/>
+                                <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="guest-id mt-35 p-3">
+                        <div class="col-md-8">
+                            <p>Approve social media before uploading</p>
+                        </div>
+                        <div class="col-md-4 d-block text-right">
+                            <label class="toggle-switch">
+                                <input type="checkbox" class="checkbox is_approve_post" id="approve_image1"
+                                       data-id="is_approve_post"
+                                       value="true"/>
+                                <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
+                            </label>
                         </div>
                     </div>
                 </div>
-                <div class="banner mt-35  pb-40">
-                    <div class="banner-header d-flex align-items-center gap-4 plr-20 p-0 pt-20 ">
-                        <h4>Banner Images</h4>
-                        <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">+ Upload
-                        </button>
-                    </div>
-                    <div class="box-main d-flex pt-2 mlr-20 " id="banner_display">
-
-
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                        <div class="banner-box mt-3 ml-3"></div>
-                    </div>
-                </div>
             </div>
-            <div class="col-xl-3 col-lg-12 col-sm-12 mt-3 p-r-0">
-                <div class="notify-main fixsize plr-40 pt-40">
-                    <h4>Notification</h4>
-                    <button class="upload-btn mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal4">Send
-                        Notification
+        </div>
+    </section>
+
+    <section class="gallary-sec-main m-2 mlr-40 d-none">
+        <div class="gallary-sec p-40">
+            <div class="gell-header  pb-40">
+                <h4>Gallery
+                    <button class="marriage d-inline back float-r">Back</button>
+                </h4>
+
+                <div class="gallery-menu mt-4 mb-3">
+                    <ul>
+                        <li>
+                            <a href="" class="active">All</a>
+                        </li>
+                        <li>
+                            <a href="">Mehndi</a>
+                        </li>
+                        <li>
+                            <a href="">Holidi</a>
+                        </li>
+                        <li>
+                            <a href="">Carnival</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="upload-div ">
+                    <button class="upload-btn mt-2 mb-3" id="upload_event" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2">+
+                        Upload
                     </button>
-                    <div id="notification_id">
-                        <div class="notyfy-box mt-4">
-                            <div class="gap-con d-flex align-items-center">
-                                <div class="white-box"></div>
-                                <span>Get ready for the GALA night! and groove to the music.</span>
-                            </div>
-                            <p>Subcontent goes here and more so movement from here there asdjsa sadknsdkjnasd asd n
-                                sdkmalkmdsa kna</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p>12:35pm</p>
-                                <p>10/10/2020</p>
-                            </div>
-                        </div>
-                        <div class="notyfy-box mt-4">
-                            <div class="gap-con d-flex align-items-center">
-                                <div class="white-box"></div>
-                                <span>Get ready for the GALA night! and groove to the music.</span>
-                            </div>
-                            <p>Subcontent goes here and more so movement from here there asdjsa sadknsdkjnasd asd n
-                                sdkmalkmdsa kna</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p>12:35pm</p>
-                                <p>10/10/2020</p>
-                            </div>
-                        </div>
-                        <div class="notyfy-box mt-4">
-                            <div class="gap-con d-flex align-items-center">
-                                <div class="white-box"></div>
-                                <span>Get ready for the GALA night! and groove to the music.</span>
-                            </div>
-                            <p>Subcontent goes here and more so movement from here there asdjsa sadknsdkjnasd asd n
-                                sdkmalkmdsa kna</p>
-                            <div class="d-flex align-items-center justify-content-between">
-                                <p>12:35pm</p>
-                                <p>10/10/2020</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="row justify-content-left" id="gallery_image">
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
+                        <div class="box-g"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="main-con plr-40 mt--9">
-        <div class="row m-0">
-            <div class="col-xl-9 col-lg-12 col-md-12 mt-5 pr-3">
-                <div class="detail-box-left">
-                    <div class="banner-header d-flex align-items-center gap-4 pt-20">
-                        <h3>Events</h3>
-                        <button class="upload-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add new
-                            events
-                        </button>
-                    </div>
-                    <div id="event_display" class="pt-20">
-                        <div class="mehendi-box mt-3">
-                            <div class="gallary-mini">
-                                <span>Gallery</span>
-                                <h6>250 Images</h6>
-                            </div>
-                            <div class="mehendi-box-header">
-                                <h6>Mehendi</h6>
-                                <h6 class="text-light-white">Dress code</h6>
-                                <button class="toggle-btn text-light-white"><i class="fas fa-ellipsis-h"></i></button>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Time</span>
-                                        <span class="mt-4">Venue</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Date</span>
-                                        <span class="mt-4"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Men</span>
-                                        <span class="mt-4"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Women</span>
-                                        <span class="mt-4"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mehendi-box mt-3 ">
-                            <div class="gallary-mini">
-                                <span>Gallery</span>
-                                <h6>250 Images</h6>
-                            </div>
-                            <div class="mehendi-box-header">
-                                <h6>Mehendi</h6>
-                                <h6 class="text-light-white">Dress code</h6>
-                                <button class="toggle-btn text-light-white"><i class="fas fa-ellipsis-h"></i></button>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Time</span>
-                                        <span class="mt-4">Venue</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Date</span>
-                                        <span class="mt-4"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Men</span>
-                                        <span class="mt-4"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-                                        <span>Women</span>
-                                        <span class="mt-4"></span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-6 col-sm-12 mt-2">
-                                    <div class="venue-box">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
+    <section class="superadmin  bg-div m-2 p-40 mlr-40 d-none">
+        <!--    <div class="">-->
+        <div class="superadmin-header p-0 pt-20 pb-20">
+            <h3 class="font-weight-bold">GUESTS</h3>
+            <div class="search-main ms-auto">
+                <button class="marriage approveall_guest">Approve All</button>
+                <button class="marriage back">Back</button>
+                <select id="marriage_gest" class="marriage">
+                    <option>All</option>
+                    <option>Approved</option>
+                    <option>Rejected</option>
+                    <option>Pending</option>
+                </select>
             </div>
-            <div class="col-xl-3 col-lg-12 col-sm-12 mt-5 p-r-0">
-                <div class="notify-main pb-5 pt-40 plr-40">
-                    <h4>Feeds</h4>
-                    <div class="row mt-3">
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                            <div class="request-box showfeeed" data-id="Pending">
-                                <span>Request</span>
-                                <h5 id="approvecount">2375</h5>
-                            </div>
+        </div>
+        <div class="table-main  pb-20 ">
+            <div class="admin-table bg-div p-0">
+                <div class="table-responsive ">
+                    <table class="table table-borderless mb-0 mt-3">
+                        <div class="admin-table-header">
+                            <thead>
+                            <tr>
+                                <th class="p-4">NAME</th>
+                                <th class="p-4">PHONE NUMBER</th>
+                                <th class="cllect_id_proof p-4">ID PROOF</th>
+                                <th class="p-4">STATUS</th>
+                            </tr>
+                            </thead>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
-                            <div class="request-box showfeeed" data-id="Rejected">
-                                <span>Rejected</span>
-                                <h5 id="rejectcount">2375</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="total-img-box mt-3 showfeeed" data-id="All">
-                        <span>Total Images</span>
-                        <h5 class="mt-1" id="totalcount">2375 Images</h5>
-                    </div>
-                </div>
-                <div class="guest-id mt-35 p-3">
+                        <tbody id="display_gest">
 
-
-                    <div class="col-md-8">
-                        <p>Collect guest ID during registration</p>
-                    </div>
-                    <div class="col-md-4 d-block text-right">
-                        <label class="toggle-switch">
-                            <input type="checkbox" class="checkbox is_guests_id_proof" id="cllect_id_proof1"
-                                   data-id="is_guests_id_proof"
-                                   value="true"/>
-                            <span class="switch-btn">
-
-                                        <span class="on">ON</span>
-                                        <span class="off">OFF</span>
-                                    </span>
-                        </label>
-                    </div>
-                </div>
-                <div class="guest-id mt-35 p-3">
-                    <div class="col-md-8">
-                        <p>Approve social media before uploading</p>
-                    </div>
-                    <div class="col-md-4 d-block text-right">
-                        <label class="toggle-switch">
-                            <input type="checkbox" class="checkbox is_approve_post" id="approve_image1"
-                                   data-id="is_approve_post"
-                                   value="true"/>
-                            <span class="switch-btn">
-
-                                        <span class="on">ON</span>
-                                        <span class="off">OFF</span>
-                                    </span>
-                        </label>
-                    </div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        <!--    </div>-->
+    </section>
+    <section class="gallary gall-show m-2 mlr-40 d-none">
 
-<section class="gallary-sec-main m-2 mlr-40 d-none">
-    <div class="gallary-sec p-40">
-        <div class="gell-header  pb-40">
-            <h4>Gallery
-                <button class="marriage d-inline back float-r">Back</button>
-            </h4>
-
-            <div class="gallery-menu mt-4 mb-3">
+        <div class="gallary-main p-40">
+            <div class="gallary-header">
+                <h4><span>Feed</span> Requests
+                    <button class="marriage d-inline back float-r">Back</button>
+                </h4>
+            </div>
+            <div class="right-menu left-menu">
                 <ul>
                     <li>
-                        <a href="" class="active">All</a>
+                        <button class="active feed_s" data-id="All">All</button>
                     </li>
                     <li>
-                        <a href="">Mehndi</a>
+                        <button class=" feed_s" data-id="Approved">Approved</button>
                     </li>
                     <li>
-                        <a href="">Holidi</a>
+                        <button class=" feed_s" data-id="Pending">Pending</button>
                     </li>
                     <li>
-                        <a href="">Carnival</a>
+                        <button class=" feed_s" data-id="Rejected">Rejected</button>
                     </li>
                 </ul>
             </div>
-            <div class="upload-div ">
-                <button class="upload-btn mt-2 mb-3" id="upload_event" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal2">+
-                    Upload
-                </button>
-            </div>
-            <div class="row justify-content-left" id="gallery_image">
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+
+            <div class="row list-box" id="gest_details_glr">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
-                </div>
-                <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12 mt-3">
-                    <div class="box-g"></div>
+                <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
+                    <div class="box1"></div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="superadmin  bg-div m-2 p-40 mlr-40 d-none">
-    <!--    <div class="">-->
-    <div class="superadmin-header p-0 pt-20 pb-20">
-        <h3 class="font-weight-bold">GUESTS</h3>
-        <div class="search-main ms-auto">
-            <button class="marriage back">Back</button>
-            <select id="marriage_gest" class="marriage">
-                <option>All</option>
-                <option>Approved</option>
-                <option>Rejected</option>
-                <option>Pending</option>
-            </select>
-        </div>
-    </div>
-    <div class="table-main  pb-20 ">
-        <div class="admin-table bg-div p-0">
-            <div class="table-responsive ">
-                <table class="table table-borderless mb-0 mt-3">
-                    <div class="admin-table-header">
-                        <thead>
-                        <tr>
-                            <th class="p-4">NAME</th>
-                            <th class="p-4">PHONE NUMBER</th>
-                            <th class="cllect_id_proof p-4">ID PROOF</th>
-                            <th class="p-4">STATUS</th>
-                        </tr>
-                        </thead>
-                    </div>
-                    <tbody id="display_gest">
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-    <!--    </div>-->
-</section>
-<section class="gallary gall-show m-2 mlr-40 d-none">
-
-    <div class="gallary-main p-40">
-        <div class="gallary-header">
-            <h4><span>Feed</span> Requests
-                <button class="marriage d-inline back float-r">Back</button>
-            </h4>
-        </div>
-        <div class="right-menu left-menu">
-            <ul>
-                <li>
-                    <button class="active feed_s" data-id="All">All</button>
-                </li>
-                <li>
-                    <button class=" feed_s" data-id="Approved">Approved</button>
-                </li>
-                <li>
-                    <button class=" feed_s" data-id="Pending">Pending</button>
-                </li>
-                <li>
-                    <button class=" feed_s" data-id="Rejected">Rejected</button>
-                </li>
-            </ul>
         </div>
 
-        <div class="row list-box" id="gest_details_glr">
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6 col-sx-12 mt-3">
-                <div class="box1"></div>
-            </div>
-        </div>
-    </div>
-
-</section>
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered " role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Banner</h5>
-            </div>
-            <div class="modal-body">
-                <form id="image_wardrode_form">
-                    <div class="material-textfield">
-                        <label>Select Banner</label>
-                        <input type="file" accept="image/*" name="wardrobe_image" id="wardrobe_image">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="d-flex align-items-center justify-content-center mt-3">
-                    <button class="save secondary" data-dismiss="modal" id="image_save_btn">Save</button>
+    </section>
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered " role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Banner</h5>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Gallery</h5>
-            </div>
-            <div class="modal-body">
-                <form id="image_gallery_form">
-                    <div class="material-textfield">
-                        <label>Select Gallery</label>
-                        <input type="file" accept="image/*" name="image_gallery" id="image_gallery">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="d-flex align-items-center justify-content-center mt-3">
-                    <button class="save secondary" data-dismiss="modal" id="gallery_save_btn">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog  modal-lg modal-fix-het">
-        <div class="modal-content p-4">
-            <form enctype="multipart/form-data" id="event_data">
                 <div class="modal-body">
-                    <div class="modal-title">
-                        <h4>Enter Event Details</h4>
-                        <!--                        <div class="img-counter">-->
-                        <!--                            <p>Gallery</p>-->
-                        <!--                            <span>250 Images</span>-->
-                        <!--                        </div>-->
-                    </div>
-                    <div class="moda-form mt-4">
+                    <form id="image_wardrode_form">
                         <div class="material-textfield">
-                            <input placeholder=" " type="text" name="event_name">
-                            <label class="input-text">Event Name</label>
-                        </div>
-                        <div class="material-textfield  mt-4">
-                            <input placeholder=" " class="font" name="event_tagline" id="id_event_tagline" type="text">
-                            <label class="input-text">Event Tagline</label>
-                            <input type="color" name="event_tagline_color" class="colorpikar">
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                                <div class="material-textfield">
-                                    <input placeholder=" " type="date" name="event_date">
-                                    <label class="input-text">Event Date</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                                <div class="material-textfield">
-                                    <input placeholder=" " type="time" name="event_time">
-                                    <label class="input-text">Event Time</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="login">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <h6>DRESS CODE</h6>
-                                <label class="toggle-switch">
-                                    <input type="hidden" name="is_dress_code" value="false">
-                                    <input type="checkbox" name="is_dress_code" value="true"
-                                           class="checkbox dress_code_switch"/>
-                                    <span class="switch-btn">
-
-                                        <span class="on">ON</span>
-                                        <span class="off">OFF</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div id="d_c" style="display: none">
-                                <div class="material-textfield mt-3">
-                                    <input placeholder=" " name="dress_code[for_men]" type="text">
-                                    <label class="bg-span input-text">For Men</label>
-                                </div>
-                                <div class="material-textfield mt-3">
-                                    <input placeholder=" " name="dress_code[for_women]" type="text">
-                                    <label class="bg-span input-text">For Women</label>
-                                </div>
-                                <div class="material-textfield mt-3" style="position: unset">
-
-                                    <span class="select-text" style="position: unset">Select outfit</span>
-                                    <!--                                    <input type="hidden" name="dress_code[for_women][outFit]"-->
-                                    <!--                                           value="wardrobe/0706188926_313202121338.png">-->
-                                    <div class="row ">
-                                        <div class="select-ver" id="werboost">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="event_venue">
-                            <label class="input-text">Venue</label>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <div class="d-flex align-items-center justify-content-center mt-3">
-                        <button class="save secondary" type="submit" id="save_event">Save</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form enctype="multipart/form-data" id="event_data_edit">
-                <div class="modal-body">
-                    <div class="modal-title">
-                        <span>Enter Event Details</span>
-                        <div class="img-counter">
-                            <p>Gallery</p>
-                            <span><b id="imageCount">250</b> Images</span>
-                        </div>
-                    </div>
-                    <input placeholder=" " type="hidden" name="event_id">
-                    <div class="moda-form mt-4">
-                        <div class="material-textfield">
-                            <input placeholder=" " type="text" name="event_name">
-                            <label class="input-text">Event Name</label>
-                        </div>
-                        <div class="material-textfield  mt-4">
-                            <input placeholder=" " class="font id_event_tagline" name="event_tagline" type="text">
-                            <label class="input-text">Event Tagline</label>
-                            <input type="color" name="event_tagline_color" class="colorpikar">
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                                <div class="material-textfield">
-                                    <input placeholder=" " type="date" name="event_date">
-                                    <label class="input-text">Event Date</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                                <div class="material-textfield">
-                                    <input placeholder=" " type="time" name="event_time">
-                                    <label class="input-text">Event Time</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="login">
-                            <div class="d-flex align-items-center justify-content-between">
-                                <span>DRESS CODE</span>
-                                <label class="toggle-switch">
-                                    <input type="hidden" name="is_dress_code" value="false">
-                                    <input type="checkbox" name="is_dress_code" value="true"
-                                           class="checkbox dress_code_switch" id=""/>
-                                    <span class="switch-btn">
-
-                                        <span class="on">ON</span>
-                                        <span class="off">OFF</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="d_c" style="display: none">
-                                <div class="material-textfield mt-3">
-                                    <input placeholder=" " name="dress_code[for_men]" type="text">
-                                    <label class="bg-span input-text">For Men</label>
-                                </div>
-                                <div class="material-textfield mt-3">
-                                    <input placeholder=" " name="dress_code[for_women]" type="text">
-                                    <label class="bg-span input-text">For Women</label>
-                                </div>
-                                <div class="material-textfield mt-3" style="position: unset">
-
-                                    <span class="select-text" style="position: unset">Select outfit</span>
-                                    <!--                                    <input type="hidden" name="dress_code[for_women][outFit]"-->
-                                    <!--                                           value="wardrobe/0706188926_313202121338.png">-->
-                                    <div class="row ">
-                                        <div class="select-ver" id="werboost_id">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="event_venue">
-                            <label class="input-text">Venue</label>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <div class="d-flex align-items-center justify-content-center mt-3">
-                        <button class="save secondary" type="button" id="save_event_new">Save</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="modal-title">
-                    <span>Update Marriages Details</span>
-                    <!--                    <div class="img-counter" style="margin-right: -16px">-->
-                    <!--                        <p>Gallery</p>-->
-                    <!--                        <span>250 Images</span>-->
-                    <!--                    </div>-->
-                </div>
-                <div class="moda-form mt-4">
-                    <form id="add_mrg_from">
-                        <div class="material-textfield">
-                            <input placeholder=" " type="text" name="marriage_name">
-                            <label class="input-text">Marriage Name</label>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                                <div class="material-textfield">
-                                    <input placeholder=" " type="text" name="wedding_hashtag">
-                                    <label class="input-text">#Hashtag</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
-                                <div class="material-textfield">
-                                    <input placeholder=" " type="date" name="wedding_date">
-                                    <label class="input-text">Event Date</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="event_manager_name">
-                            <label class="input-text">Event Manager name</label>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="bride_name">
-                            <label class="input-text">Event Bride Name</label>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="groom_name">
-                            <label class="input-text">Event Groom Name</label>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="wedding_venue">
-                            <label class="input-text">Venue</label>
-                        </div>
-                        <div class="guest-id mt-4">
-                            <div class="guest-id-box">
-                                <span>Collect guest ID during registration</span>
-                                <label class="toggle-switch">
-                                    <input type="hidden" name="is_guests_id_proof" class="is_guests_id_proof"
-                                           value="false">
-                                    <input type="checkbox" class="checkbox is_guests_id_proof" name="is_guests_id_proof"
-                                           value="true"/>
-                                    <span class="switch-btn">
-
-                                        <span class="on">ON</span>
-                                        <span class="off">OFF</span>
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="guest-id-box">
-                                <div>
-                                    <span>Enable approving posts before uploading</span>
-                                    <p>(from admin end)</p>
-                                </div>
-                                <label class="toggle-switch">
-                                    <input type="hidden" name="is_approve_post" class="is_approve_post" value="false">
-                                    <input type="checkbox" class="checkbox is_approve_post" name="is_approve_post"
-                                           value="true"/>
-                                    <span class="switch-btn">
-
-                                        <span class="on">ON</span>
-                                        <span class="off">OFF</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="select-color mt-4">
-                            <div class="row align-items-center">
-                                <div class="col-lg-4 col-md-4 col-sm-12">
-                                    <span>Select color</span>
-                                </div>
-                                <div class="col-lg-8 col-md-8 col-sm-12">
-                                    <div class="d-flex align-items-center gap-4">
-                                        <input type="hidden" name="is_dark" id="is_dark" value="true">
-                                        <div class="primary d-flex align-items-center gap-1">
-                                            <dl id="sample1" class="dropdown" data-id="is_dark">
-                                                <dt><a href="#"><b class="dark"> Primary</b><span
-                                                        class="value">true</span></a></dt>
-                                                <dd>
-                                                    <ul>
-                                                        <li><a href="#">
-                                                            <b class="dark"> Dark</b>
-                                                            <span class="value">true</span></a></li>
-                                                        <li><a href="#">
-                                                            <b class="white"> White</b>
-                                                            <span class="value">false</span></a></li>
-
-                                                    </ul>
-                                                </dd>
-                                            </dl>
-                                        </div>
-
-
-                                        <div class="primary  d-flex align-items-center gap-1">
-                                            <dl id="sample" class="dropdown" data-id="secondary_color">
-                                                <dt><a href="#"><b class="theme1"> Secondary</b><span
-                                                        class="value">#0EFFD4|#0076D0</span></a>
-                                                </dt>
-                                                <dd>
-                                                    <ul>
-                                                        <li><a href="#">
-                                                            <b class="theme1"> Theme 1</b>
-                                                            <span class="value">0EFFD4|0076D0</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme2"> Theme 2</b>
-                                                            <span class="value">08F5FF|D914F4</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme3"> Theme 3</b>
-                                                            <span class="value">FF0F87|4612CC</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme4"> Theme 4</b>
-                                                            <span class="value">FF191D|043E9F</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme5"> Theme 5</b>
-                                                            <span class="value">FF161B|580DBF</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme6"> Theme 6</b>
-                                                            <span class="value">08F5FF|580DBF</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme7"> Theme 7</b>
-                                                            <span class="value">FF1BC6|0066A6</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme8"> Theme 8</b>
-                                                            <span class="value">FFAC1B|E10B90</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme9"> Theme 9</b>
-                                                            <span class="value">FF161B|A810B3</span></a>
-                                                        </li>
-                                                        <li><a href="#">
-                                                            <b class="theme10"> Theme 10</b>
-                                                            <span class="value">00FFB4|0F2FFF</span></a>
-                                                        </li>
-
-                                                        <li><a href="#">
-                                                            <b class="theme11"> Theme 11</b>
-                                                            <span class="value">FF1B1B|0A34D4</span></a>
-                                                        </li>
-
-                                                    </ul>
-                                                </dd>
-                                            </dl>
-                                            <input type="hidden" name="secondary_color" id="secondary_color"
-                                                   value="rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <label>Select Banners</label>
+                            <input type="file" multiple accept="image/*" name="wardrobe_image" id="wardrobe_image">
                         </div>
                     </form>
                 </div>
-                <div class="d-flex align-items-center justify-content-center mt-3">
-                    <button class="save secondary" id="save_btn">Save</button>
+                <div class="modal-footer">
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" data-dismiss="modal" id="image_save_btn">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="modal-title">
-                    <span>Enter Notification Details</span>
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gallery</h5>
                 </div>
-                <div class="moda-form mt-4">
-                    <form id="add_noti_from">
+                <div class="modal-body">
+                    <form id="image_gallery_form">
                         <div class="material-textfield">
-                            <input placeholder=" " type="text" name="notification_title" required>
-                            <label class="input-text">Notification Title</label>
-                        </div>
-                        <div class="material-textfield mt-4">
-                            <input placeholder=" " type="text" name="notification_body" required>
-                            <label class="input-text">Notification Body</label>
+                            <label>Select Gallery</label>
+                            <input type="file" accept="image/*" name="image_gallery" id="image_gallery">
                         </div>
                     </form>
                 </div>
-                <div class="d-flex align-items-center justify-content-center mt-3">
-                    <button class="save secondary" id="save_btn_notification">Save</button>
+                <div class="modal-footer">
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" data-dismiss="modal" id="gallery_save_btn">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Invitation</h5>
-            </div>
-            <div class="modal-body">
-                <form id="image_nvi_form">
-                    <div class="material-textfield">
-                        <label>Select Invitation</label>
-                        <input type="file" multiple accept="image/*" name="invitation_card" id="invitation_card">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg modal-fix-het">
+            <div class="modal-content p-4">
+                <form enctype="multipart/form-data" id="event_data">
+                    <div class="modal-body">
+                        <div class="modal-title">
+                            <h4>Enter Event Details</h4>
+                            <!--                        <div class="img-counter">-->
+                            <!--                            <p>Gallery</p>-->
+                            <!--                            <span>250 Images</span>-->
+                            <!--                        </div>-->
+                        </div>
+                        <div class="moda-form mt-4">
+                            <div class="material-textfield">
+                                <input placeholder=" " type="text" name="event_name">
+                                <label class="input-text">Event Name</label>
+                            </div>
+                            <div class="material-textfield  mt-4">
+                                <input placeholder=" " class="font" name="event_tagline" id="id_event_tagline"
+                                       type="text">
+                                <label class="input-text">Event Tagline</label>
+                                <input type="color" name="event_tagline_color" class="colorpikar">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                    <div class="material-textfield">
+                                        <input placeholder=" " type="date" name="event_date">
+                                        <label class="input-text">Event Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                    <div class="material-textfield">
+                                        <input placeholder=" " type="time" name="event_time">
+                                        <label class="input-text">Event Time</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="login">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h6>DRESS CODE</h6>
+                                    <label class="toggle-switch">
+                                        <input type="hidden" name="is_dress_code" value="false">
+                                        <input type="checkbox" name="is_dress_code" value="true"
+                                               class="checkbox dress_code_switch"/>
+                                        <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
+                                    </label>
+                                </div>
+                                <div id="d_c" style="display: none">
+                                    <div class="material-textfield mt-3">
+                                        <input placeholder=" " name="dress_code[for_men]" type="text">
+                                        <label class="bg-span input-text">For Men</label>
+                                    </div>
+                                    <div class="material-textfield mt-3">
+                                        <input placeholder=" " name="dress_code[for_women]" type="text">
+                                        <label class="bg-span input-text">For Women</label>
+                                    </div>
+                                    <div class="material-textfield mt-3" style="position: unset">
+
+                                        <span class="select-text" style="position: unset">Select outfit</span>
+                                        <!--                                    <input type="hidden" name="dress_code[for_women][outFit]"-->
+                                        <!--                                           value="wardrobe/0706188926_313202121338.png">-->
+                                        <div class="row ">
+                                            <div class="select-ver" id="werboost">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="event_venue">
+                                <label class="input-text">Venue</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex align-items-center justify-content-center mt-3">
+                            <button class="save secondary" type="submit" id="save_event">Save</button>
+                        </div>
                     </div>
                 </form>
             </div>
-            <div class="modal-footer">
-                <div class="d-flex align-items-center justify-content-center mt-3">
-                    <button class="save secondary" data-dismiss="modal" id="invitation_card_Save">Save</button>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form enctype="multipart/form-data" id="event_data_edit">
+                    <div class="modal-body">
+                        <div class="modal-title">
+                            <span>Enter Event Details</span>
+                            <div class="img-counter">
+                                <p>Gallery</p>
+                                <span><b id="imageCount">250</b> Images</span>
+                            </div>
+                        </div>
+                        <input placeholder=" " type="hidden" name="event_id">
+                        <div class="moda-form mt-4">
+                            <div class="material-textfield">
+                                <input placeholder=" " type="text" name="event_name">
+                                <label class="input-text">Event Name</label>
+                            </div>
+                            <div class="material-textfield  mt-4">
+                                <input placeholder=" " class="font id_event_tagline" name="event_tagline" type="text">
+                                <label class="input-text">Event Tagline</label>
+                                <input type="color" name="event_tagline_color" class="colorpikar">
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                    <div class="material-textfield">
+                                        <input placeholder=" " type="date" name="event_date">
+                                        <label class="input-text">Event Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                    <div class="material-textfield">
+                                        <input placeholder=" " type="time" name="event_time">
+                                        <label class="input-text">Event Time</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="login">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <span>DRESS CODE</span>
+                                    <label class="toggle-switch">
+                                        <input type="hidden" name="is_dress_code" value="false">
+                                        <input type="checkbox" name="is_dress_code" value="true"
+                                               class="checkbox dress_code_switch" id=""/>
+                                        <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
+                                    </label>
+                                </div>
+                                <div class="d_c" style="display: none">
+                                    <div class="material-textfield mt-3">
+                                        <input placeholder=" " name="dress_code[for_men]" type="text">
+                                        <label class="bg-span input-text">For Men</label>
+                                    </div>
+                                    <div class="material-textfield mt-3">
+                                        <input placeholder=" " name="dress_code[for_women]" type="text">
+                                        <label class="bg-span input-text">For Women</label>
+                                    </div>
+                                    <div class="material-textfield mt-3" style="position: unset">
+
+                                        <span class="select-text" style="position: unset">Select outfit</span>
+                                        <!--                                    <input type="hidden" name="dress_code[for_women][outFit]"-->
+                                        <!--                                           value="wardrobe/0706188926_313202121338.png">-->
+                                        <div class="row ">
+                                            <div class="select-ver" id="werboost_id">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="event_venue">
+                                <label class="input-text">Venue</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="d-flex align-items-center justify-content-center mt-3">
+                            <button class="save secondary" type="button" id="save_event_new">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <span>Update Marriages Details</span>
+                        <!--                    <div class="img-counter" style="margin-right: -16px">-->
+                        <!--                        <p>Gallery</p>-->
+                        <!--                        <span>250 Images</span>-->
+                        <!--                    </div>-->
+                    </div>
+                    <div class="moda-form mt-4">
+                        <form id="add_mrg_from">
+                            <div class="material-textfield">
+                                <input placeholder=" " type="text" name="marriage_name">
+                                <label class="input-text">Marriage Name</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                    <div class="material-textfield">
+                                        <input placeholder=" " type="text" name="wedding_hashtag">
+                                        <label class="input-text">#Hashtag</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12 mt-4">
+                                    <div class="material-textfield">
+                                        <input placeholder=" " type="date" name="wedding_date">
+                                        <label class="input-text">Event Date</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="event_manager_name">
+                                <label class="input-text">Event Manager name</label>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="bride_name">
+                                <label class="input-text">Event Bride Name</label>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="groom_name">
+                                <label class="input-text">Event Groom Name</label>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="wedding_venue">
+                                <label class="input-text">Venue</label>
+                            </div>
+                            <div class="guest-id mt-4">
+                                <div class="guest-id-box">
+                                    <span>Collect guest ID during registration</span>
+                                    <label class="toggle-switch">
+                                        <input type="hidden" name="is_guests_id_proof" class="is_guests_id_proof"
+                                               value="false">
+                                        <input type="checkbox" class="checkbox is_guests_id_proof"
+                                               name="is_guests_id_proof"
+                                               value="true"/>
+                                        <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
+                                    </label>
+                                </div>
+                                <div class="guest-id-box">
+                                    <div>
+                                        <span>Enable approving posts before uploading</span>
+                                        <p>(from admin end)</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="hidden" name="is_approve_post" class="is_approve_post"
+                                               value="false">
+                                        <input type="checkbox" class="checkbox is_approve_post" name="is_approve_post"
+                                               value="true"/>
+                                        <span class="switch-btn">
+
+                                        <span class="on">ON</span>
+                                        <span class="off">OFF</span>
+                                    </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="select-color mt-4">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-4 col-md-4 col-sm-12">
+                                        <span>Select color</span>
+                                    </div>
+                                    <div class="col-lg-8 col-md-8 col-sm-12">
+                                        <div class="d-flex align-items-center gap-4">
+                                            <input type="hidden" name="is_dark" id="is_dark" value="true">
+                                            <div class="primary d-flex align-items-center gap-1">
+                                                <dl id="sample1" class="dropdown" data-id="is_dark">
+                                                    <dt><a href="#"><b class="dark"> Primary</b><span
+                                                            class="value">true</span></a></dt>
+                                                    <dd>
+                                                        <ul>
+                                                            <li><a href="#">
+                                                                <b class="dark"> Dark</b>
+                                                                <span class="value">true</span></a></li>
+                                                            <li><a href="#">
+                                                                <b class="white"> White</b>
+                                                                <span class="value">false</span></a></li>
+
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+
+
+                                            <div class="primary  d-flex align-items-center gap-1">
+                                                <dl id="sample" class="dropdown" data-id="secondary_color">
+                                                    <dt><a href="#"><b class="theme1"> Secondary</b><span
+                                                            class="value">#0EFFD4|#0076D0</span></a>
+                                                    </dt>
+                                                    <dd>
+                                                        <ul>
+                                                            <li><a href="#">
+                                                                <b class="theme1"> Theme 1</b>
+                                                                <span class="value">0EFFD4|0076D0</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme2"> Theme 2</b>
+                                                                <span class="value">08F5FF|D914F4</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme3"> Theme 3</b>
+                                                                <span class="value">FF0F87|4612CC</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme4"> Theme 4</b>
+                                                                <span class="value">FF191D|043E9F</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme5"> Theme 5</b>
+                                                                <span class="value">FF161B|580DBF</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme6"> Theme 6</b>
+                                                                <span class="value">08F5FF|580DBF</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme7"> Theme 7</b>
+                                                                <span class="value">FF1BC6|0066A6</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme8"> Theme 8</b>
+                                                                <span class="value">FFAC1B|E10B90</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme9"> Theme 9</b>
+                                                                <span class="value">FF161B|A810B3</span></a>
+                                                            </li>
+                                                            <li><a href="#">
+                                                                <b class="theme10"> Theme 10</b>
+                                                                <span class="value">00FFB4|0F2FFF</span></a>
+                                                            </li>
+
+                                                            <li><a href="#">
+                                                                <b class="theme11"> Theme 11</b>
+                                                                <span class="value">FF1B1B|0A34D4</span></a>
+                                                            </li>
+
+                                                        </ul>
+                                                    </dd>
+                                                </dl>
+                                                <input type="hidden" name="secondary_color" id="secondary_color"
+                                                       value="rgba(255, 96, 103, 1)|rgba(255, 55, 44, 1)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" id="save_btn">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="modal-title">
+                        <span>Enter Notification Details</span>
+                    </div>
+                    <div class="moda-form mt-4">
+                        <form id="add_noti_from">
+                            <div class="material-textfield">
+                                <input placeholder=" " type="text" name="notification_title" required>
+                                <label class="input-text">Notification Title</label>
+                            </div>
+                            <div class="material-textfield mt-4">
+                                <input placeholder=" " type="text" name="notification_body" required>
+                                <label class="input-text">Notification Body</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" id="save_btn_notification">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Invitation</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="image_nvi_form">
+                        <div class="material-textfield">
+                            <label>Select Invitations</label>
+                            <input type="file" multiple accept="image/*" name="invitation_card" id="invitation_card">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="d-flex align-items-center justify-content-center mt-3">
+                        <button class="save secondary" data-dismiss="modal" id="invitation_card_Save">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1683,6 +1775,12 @@
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://stevenlevithan.com/assets/misc/date.format.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.4/viewer.css"
+      integrity="sha512-caKp8jXImkCfnEGA8RCJPQeW/+wtI9reknlKZMlKnIE8RHgxMBCppLsPvM429eoo0+PSZc9J/dQjVH3OH/K3Xg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.4/viewer.min.js"
+        integrity="sha512-2HLzgJH7ZNywnEDB1HqijieFxszStt3QXS8Qk9m/VMUV/asMWlz9PmibHsvWIz9rtKOOr28z8zu1iJ3pf/TTHQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../assets/js/config.js"></script>
 <script src="../assets/js/custome_adminhome.js"></script>
 <script !src="">
@@ -1870,8 +1968,10 @@
         return `<div class=" scroll-hro">
                                                 <div class="outfit-box">
                                                     <label for="${v._id}">
-  <input class="form-check-input" type="radio" id="${v._id}"  name="dress_code[outFit]"  value="${v.wardrobe_image}">
-
+                                                    <div class="content1">
+                                                    <input class="form-check-input" type="radio" id="${v._id}"  name="dress_code[outFit]"  value="${v.wardrobe_image}">
+                                                    <span class="checkmark"></span>
+                                                    </div>
                                                     <img src="${BASE_URL + v.wardrobe_image}"
                                                       loading="lazy"   width="70px" height="105px" alt="">
                                                     </label>
@@ -1957,6 +2057,8 @@
         }
 
     })
+
+
 </script>
 </body>
 </html>

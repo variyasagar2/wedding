@@ -3,10 +3,13 @@
 @import url('http://fonts.cdnfonts.com/css/poppins');
 
 body {
-    background-color: #151516;
+
     font-family: 'Gilroy-Regular', sans-serif;
 }
 
+.main-section {
+    background-color: #151516;
+}
 
 h1, h2, h3, h4, h5, h6, p {
     font-family: 'Gilroy-Bold', sans-serif;
@@ -629,7 +632,7 @@ h1, h2, h3, h4, h5, h6, p {
     color: white;
 }
 
-.body-light .superadmin .admin-table table thead tr th, .body-light .back {
+.body-light .main-section, .body-light .superadmin .admin-table table thead tr th, .body-light .back, .body-light .approveall_guest {
     background: #f3f3f7 !important;
     color: black;
 }
@@ -1125,11 +1128,11 @@ select.marriage {
     color: #000 !important;
 }
 
-.body-light .gallery-menu ul li a,.body-light .d-bt-m div:hover {
+.body-light .gallery-menu ul li a, .body-light .d-bt-m div:hover {
     color: gray !important;
 }
 
-.body-light .mehendi-box .gallary-mini span, .body-light .mehendi-box .gallary-mini h6,.body-light .modal .img-counter span {
+.body-light .mehendi-box .gallary-mini span, .body-light .mehendi-box .gallary-mini h6, .body-light .modal .img-counter span {
     color: white !important;
 }
 
@@ -1312,5 +1315,35 @@ select.marriage {
 
 .d-guest, .showfeeed, .guest-id, .showimage {
     cursor: pointer !important;
+}
+
+.content1:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.content1 input:checked ~ .checkmark {
+    position: absolute;
+    right: 24px;
+    top: 0px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "\f058";
+    color: white;
+    left: 5px;
+    position: absolute;
+    display: none;
+    font-family: "Font Awesome 5 free";
+}
+
+.body-light .checkmark:after {
+    color: black !important;
+}
+
+/* Show the checkmark when checked */
+.content1 input:checked ~ .checkmark:after {
+    display: block;
 }
 

@@ -11,11 +11,18 @@ cnt = urlParams.get('cnt') || 0;
 if (cnt > 5) {
     localStorage.clear();
 }
+var strt = 0, end = 0;
 jQuery.ajaxSetup({
     beforeSend: function () {
+        strt++;
         $('#loader').show()
     }, complete: function () {
-        $("#loader").hide();
+        end++
+        if (strt == end) {
+            $("#loader").hide();
+
+            // alert();
+        }
     }
 });
 jQuery(document).ready(function () {
