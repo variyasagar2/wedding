@@ -8,9 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/custome_adminhome.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custome_adminhome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/login/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/custome_superadmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/custome_superadmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super_admin/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/super_admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/super_admin/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/guestList" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -85,8 +85,19 @@
       <workItem from="1648128003425" duration="178000" />
       <workItem from="1648215469050" duration="1504000" />
       <workItem from="1648290111519" duration="8690000" />
-      <workItem from="1648350430876" duration="7366000" />
+      <workItem from="1648350430876" duration="7920000" />
+      <workItem from="1648359125775" duration="233000" />
+      <workItem from="1648472220330" duration="646000" />
+      <workItem from="1648559894375" duration="3626000" />
     </task>
+    <task id="LOCAL-00001" summary="Bug fix (design)">
+      <created>1648357972961</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1648357972961</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

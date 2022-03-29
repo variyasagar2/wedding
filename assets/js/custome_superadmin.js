@@ -24,11 +24,15 @@ $(document).ready(function () {
     }
 
     get_all_marriages_ajax();
-    $(document).on('keypress', '#serchmrg', function () {
+    $(document).on('keypress', '#serchmrg', function (e) {
         // console.log($(this).val());
-        var that = this, value = $(this).val();
-        if (x != null) x.abort();
-        get_all_marriages_ajax(value);
+        var key = e.which;
+        if (key == 13)  // the enter key code
+        {
+            var that = this, value = $(this).val();
+            if (x != null) x.abort();
+            get_all_marriages_ajax(value);
+        }
     })
 
     function addmrg() {

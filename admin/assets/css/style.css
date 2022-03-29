@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6, p {
     font-size: 10px;
     color: #ffffff52;
     margin-top: 10px;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 .home-main .notyfy-box {
@@ -1085,7 +1085,7 @@ select.marriage {
 }
 
 .body-light .home-main .notyfy-box .white-box,
-.body-light .right-menu.left-menu, .d-bt-m {
+.body-light .right-menu.left-menu, .body-light .d-bt-m {
     background: #f3f3f7;
 }
 
@@ -1317,23 +1317,28 @@ select.marriage {
     cursor: pointer !important;
 }
 
-.content1:hover input ~ .checkmark {
-    background-color: #ccc;
+.content1 input  {
+    cursor: default !important;
 }
-
+input::-webkit-color-swatch {
+    border: none !important;
+}
 /* When the checkbox is checked, add a blue background */
 .content1 input:checked ~ .checkmark {
     position: absolute;
     right: 24px;
     top: 0px;
+    border: 0px !important;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "\f058";
     color: white;
-    left: 5px;
+    left: 17px;
+    /* right: 5px !important; */
     position: absolute;
+    top: -2px;
     display: none;
     font-family: "Font Awesome 5 free";
 }
@@ -1347,3 +1352,17 @@ select.marriage {
     display: block;
 }
 
+.checkmark {
+    display: block;
+    width: 13px;
+    height: 14px;
+    top: 4px;
+    position: absolute;
+    border: 1px solid;
+    right: 6px;
+    border-radius: 3px;
+}
+
+.body-light .dropdown dt b:before {
+    border:1px solid gray !important;
+}

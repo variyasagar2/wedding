@@ -2023,8 +2023,10 @@
         var chb = $(document).find("#event_data_edit .dress_code_switch[type=checkbox]")
         if (olddata.is_dress_code) {
 
-            if (!chb.prop('checked'))
-                chb.trigger('change')
+            if (!chb.prop('checked')) {
+                console.log(chb);
+                chb.change();
+            }
             chb.prop('checked', true)
             $.each(olddata.dress_code, function (k, v) {
                 var el2 = $(document).find('#event_data_edit [name="dress_code[' + k + ']"]')
