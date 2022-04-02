@@ -437,6 +437,14 @@ function add_event() {
 
 
     };
+    // console.log(data.is_dress_code)
+
+    data.is_dress_code = data.is_dress_code == "true" ? true : false;
+    if (data.is_dress_code == false) {
+        data.dress_code = {
+            for_men: "", for_women: "", outFit: ""
+        };
+    }
     delete data['dress_code[for_men]']
     delete data['dress_code[for_women]']
     delete data['dress_code[outFit]']
@@ -682,6 +690,16 @@ function update_event() {
 
 
     };
+
+
+    data.is_dress_code = data.is_dress_code == "true" ? true : false;
+    if (data.is_dress_code == false) {
+        data.dress_code = {
+            for_men: "", for_women: "", outFit: ""
+
+
+        };
+    }
     delete data['dress_code[for_men]']
     delete data['dress_code[for_women]']
     delete data['dress_code[outFit]']
@@ -689,7 +707,7 @@ function update_event() {
     console.log(settings.data)
     // return;
     settings.url = BASE_URL + "update_event"
-    // //
+
     $.ajax(settings).done(function (response) {
         if (getresopncesuccess(response)) {
             location.reload();
@@ -778,7 +796,7 @@ $(document).on('click', "#count_inv", function () {
     try {
         gallery.destroy();
     } catch (e) {
-        console.log("E",e);
+        console.log("E", e);
     }
     var glry = document.getElementById('images');
     gallery = new Viewer(glry)

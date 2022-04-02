@@ -2068,21 +2068,23 @@
 
     })
 
-    $(document ).on('shown.bs.modal',"#exampleModal", function(){
+    $(document).on('shown.bs.modal', "#exampleModal", function () {
         // alert("I want this to appear after the modal has opened!");
         // console.log($(this))
-        // console.log($(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked"))
-        if ($(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked")) {
+        var sts = $(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked");
+
+        if (sts == true) {
+
             $('#exampleModal .d_c').removeAttr("style")
         } else {
             // alert("no")
-            $('#exampleModal .d_c').attr("style", "display:none")
+            $('#exampleModal #d_c').attr("style", "display:none")
         }
     });
     $(document).on('shown.bs.modal', "#exampleModal6", function () {
         // alert("I want this to appear after the modal has opened!");
         // console.log($(this))
-        // console.log($(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked"))
+        // console.log($(document).find("#exampleModal6 .checkbox.dress_code_switch"),$(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked"))
         if ($(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked")) {
             $('#exampleModal6 .d_c').removeAttr("style")
         } else {
