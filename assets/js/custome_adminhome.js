@@ -13,6 +13,8 @@ function home() {
     });
 }
 
+var gallery
+
 function printHome(response) {
     if (getresopncesuccess(response)) {
         // console.log(response.data)
@@ -28,10 +30,7 @@ function printHome(response) {
         $(document).find("#images").html(ht1);
 
         var glry = document.getElementById('images');
-        if (glry) {
-            console.log(glry);
-            const gallery = new Viewer(glry)
-        }
+
         if (!data.is_dark) $(document).find('body').addClass('body-light')
         $(document).find('.main-section').show();
         $('#loader2').hide()
@@ -557,6 +556,7 @@ function add_invi() {
         hiddmodel()
         $("#image_nvi_form")[0].reset()
         printHome(response)
+
     }
     $.ajax(settingclon);
     settings.headers = {
@@ -773,6 +773,32 @@ $(document).on("click", ".showimage", function () {
     scrollTop();
 });
 $(document).on('click', "#count_inv", function () {
+    console.log($(document).find('#images li img'))
+
+    try {
+        gallery.destroy();
+    } catch (e) {
+        console.log("E",e);
+    }
+    var glry = document.getElementById('images');
+    gallery = new Viewer(glry)
     $(document).find('#images li img:first').click();
 });
+$(document).on("click", ".change_det", function () {
+    update_feed_status($(this).data('id'), $(this).data('value'))
+
+})
+
+function update_feed_status(feedid, sts) {
+
+    settings.data = JSON.stringify({'feed_id': feedid, feed_status: sts});
+    // console.log(data);
+    settings.url = BASE_URL + "update_feed_status"
+    // //
+    $.ajax(settings).done(function (response) {
+        if (getresopncesuccess(response)) {
+            getfeeds(x1);
+        }
+    });
+}
 

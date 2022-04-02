@@ -9,7 +9,6 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="../assets/css/image-uploader.min.css"></script>
     <style>
         #profile_pic {
             background-size: cover !important;
@@ -1786,7 +1785,6 @@
         integrity="sha512-2HLzgJH7ZNywnEDB1HqijieFxszStt3QXS8Qk9m/VMUV/asMWlz9PmibHsvWIz9rtKOOr28z8zu1iJ3pf/TTHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../assets/js/config.js"></script>
-<script src="../assets/js/image-uploader.min.js"></script>
 <script src="../assets/js/custome_adminhome.js"></script>
 <script !src="">
     function cutomdate(dat, formate) {
@@ -1998,6 +1996,11 @@
                         <i class="fas fa-check"></i>
                     </button>`
         }
+        if (v.feed_status == "Approved" || v.feed_status == "Rejected") {
+            x += `<button class="minus change_det" data-id="${v.feed_id}" data-value="Pending">
+                        <i class="fas fa-minus"></i>
+                    </button>`
+        }
         x += ` </div> </div>`;
         return x;
     }
@@ -2065,33 +2068,26 @@
 
     })
 
-    $('#wardrobe_image').imageUploader({
-        "string":"Select",
-    });
     $(document ).on('shown.bs.modal',"#exampleModal", function(){
         // alert("I want this to appear after the modal has opened!");
         // console.log($(this))
         // console.log($(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked"))
-       if( $(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked"))
-       {
-           $('#exampleModal .d_c').removeAttr("style")
-       }
-       else{
-           // alert("no")
-           $('#exampleModal .d_c').attr("style","display:none")
-       }
+        if ($(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked")) {
+            $('#exampleModal .d_c').removeAttr("style")
+        } else {
+            // alert("no")
+            $('#exampleModal .d_c').attr("style", "display:none")
+        }
     });
-    $(document ).on('shown.bs.modal',"#exampleModal6", function(){
+    $(document).on('shown.bs.modal', "#exampleModal6", function () {
         // alert("I want this to appear after the modal has opened!");
         // console.log($(this))
         // console.log($(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked"))
-        if( $(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked"))
-        {
+        if ($(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked")) {
             $('#exampleModal6 .d_c').removeAttr("style")
-        }
-        else{
+        } else {
             // alert("no")
-            $('#exampleModal6 .d_c').attr("style","display:none")
+            $('#exampleModal6 .d_c').attr("style", "display:none")
         }
     });
 </script>
