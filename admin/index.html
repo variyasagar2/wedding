@@ -9,6 +9,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="../assets/css/image-uploader.min.css"></script>
     <style>
         #profile_pic {
             background-size: cover !important;
@@ -79,9 +80,11 @@
         .outfit-box input[type=radio] {
             position: absolute;
             opacity: 0;
-            cursor: pointer;
-            height: 0;
-            width: 0;
+            top: -32px;
+            z-index: 1;
+            width: 100%;
+            height: 109px;
+            border-radius: 0px;
         }
 
         .outfit-box img {
@@ -1318,6 +1321,7 @@
                         <div class="material-textfield">
                             <label>Select Banners</label>
                             <input type="file" multiple accept="image/*" name="wardrobe_image" id="wardrobe_image">
+                            <div class="wardrobe_image" style="padding-top: .5rem;"></div>
                         </div>
                     </form>
                 </div>
@@ -1782,6 +1786,7 @@
         integrity="sha512-2HLzgJH7ZNywnEDB1HqijieFxszStt3QXS8Qk9m/VMUV/asMWlz9PmibHsvWIz9rtKOOr28z8zu1iJ3pf/TTHQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="../assets/js/config.js"></script>
+<script src="../assets/js/image-uploader.min.js"></script>
 <script src="../assets/js/custome_adminhome.js"></script>
 <script !src="">
     function cutomdate(dat, formate) {
@@ -2060,7 +2065,35 @@
 
     })
 
-
+    $('#wardrobe_image').imageUploader({
+        "string":"Select",
+    });
+    $(document ).on('shown.bs.modal',"#exampleModal", function(){
+        // alert("I want this to appear after the modal has opened!");
+        // console.log($(this))
+        // console.log($(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked"))
+       if( $(document).find("#exampleModal .checkbox.dress_code_switch").prop("checked"))
+       {
+           $('#exampleModal .d_c').removeAttr("style")
+       }
+       else{
+           // alert("no")
+           $('#exampleModal .d_c').attr("style","display:none")
+       }
+    });
+    $(document ).on('shown.bs.modal',"#exampleModal6", function(){
+        // alert("I want this to appear after the modal has opened!");
+        // console.log($(this))
+        // console.log($(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked"))
+        if( $(document).find("#exampleModal6 .checkbox.dress_code_switch").prop("checked"))
+        {
+            $('#exampleModal6 .d_c').removeAttr("style")
+        }
+        else{
+            // alert("no")
+            $('#exampleModal6 .d_c').attr("style","display:none")
+        }
+    });
 </script>
 </body>
 </html>
