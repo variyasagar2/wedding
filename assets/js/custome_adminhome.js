@@ -289,7 +289,9 @@ async function add_gallery() {
         alert("Please select image!");
         return false;
     }
-    formData.append('gallery_image', datfrom[0].files[0]);
+    $.each(datfrom[0].files, function (v, k) {
+        formData.append('gallery_image', k);
+    })
     formData.append('marriage_id', id);
     formData.append('event_id', eventid);
     // console.log(datfrom[0].files[0]);
