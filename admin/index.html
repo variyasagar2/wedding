@@ -629,6 +629,10 @@
         .modal-footer, .modal-header {
             border: none !important;
         }
+
+        .banner-box img{
+            border-radius: 5px !important;
+        }
     </style>
 </head>
 <body class=" ">
@@ -1319,7 +1323,7 @@
                     <form id="image_wardrode_form">
                         <div class="material-textfield">
                             <label>Select Banners</label>
-                            <input type="file" multiple accept="image/*" name="wardrobe_image" id="wardrobe_image">
+                            <input type="file" multiple name="wardrobe_image" id="wardrobe_image">
                             <div class="wardrobe_image" style="padding-top: .5rem;"></div>
                         </div>
                     </form>
@@ -1794,12 +1798,17 @@
     }
 
     function banner(path) {
-        return `<div class="banner-box  m-2" >
+        var a = `<div class="banner-box  m-2" >
                 <button class="minus banner-remove" data-id="${path}">
                         <i class="fas fa-minus"></i>
-                    </button>
-<img src="${BASE_URL + path}" alt="" loading="lazy" srcset="" width="120px" height="50px">
-</div>`;
+                    </button>`;
+        var xtz = path.split('.').pop()
+        if (jQuery.inArray(xtz, ["jpg", "jpeg", "png", "svg", "PNG", "JPG", "JPEG", "SVG"]) !== -1)
+            a += `<img src="${BASE_URL + path}" alt="" loading="lazy" srcset="" width="120px" height="50px">`
+        else
+            a += `<a href="${BASE_URL + path}" target="_blank"><img src="assets/img/videoplaceholder.png" alt="" loading="lazy" srcset="" width="120px" height="50px"></a>`
+        a += `</div>`;
+        return a;
     }
 
     function notificaion_details(data) {
