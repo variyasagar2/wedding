@@ -1789,9 +1789,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.4/viewer.css"
       integrity="sha512-caKp8jXImkCfnEGA8RCJPQeW/+wtI9reknlKZMlKnIE8RHgxMBCppLsPvM429eoo0+PSZc9J/dQjVH3OH/K3Xg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.10.4/viewer.min.js"
-        integrity="sha512-2HLzgJH7ZNywnEDB1HqijieFxszStt3QXS8Qk9m/VMUV/asMWlz9PmibHsvWIz9rtKOOr28z8zu1iJ3pf/TTHQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://momentjs.com/downloads/moment.js"></script>
+<script src="https://momentjs.com/downloads/moment-timezone.min.js"></script>
 <script src="../assets/js/config.js"></script>
 <script src="../assets/js/custome_adminhome.js"></script>
 <script !src="">
@@ -1816,9 +1815,10 @@
     }
 
     function notificaion_details(data) {
-        var old_date = new Date(data.created_date_time);
-        var time = dateFormat(old_date, "h:MM TT");
-        var date = dateFormat(old_date, "dd/mm/yyyy");
+        var old_date = moment(data.created_date_time).utc();
+        console.log(data.created_date_time,"==============>",old_date)
+        var time = old_date.format("HH:mm A");
+        var date = old_date.format("DD/MM/YYYY");
         return `<div class="notyfy-box mt-4">
                         <div class="gap-con d-flex align-items-center">
                             <div class="white-box"></div>
